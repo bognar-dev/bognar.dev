@@ -12,7 +12,7 @@ export default function MainNav({ items }: MainNavProps){
     return (
 
         
-        <div className="sticky top-0 z-50 flex flex-col gap-2 min-w-screen items-center justify-between divide-y m-3">
+        <div className="sticky top-0 z-50 flex flex-col gap-2 min-w-screen items-center justify-between divide-y-2 hover:divide-accent-600 divide-red-300 m-3">
         <Link href="/" className="font-head text-3xl flex items-center font-medium bg-opacity-10 hover:bg-orange-200 rounded-md px-4 mt-1">Bognar.dev</Link>
 
           {items?.length ? (
