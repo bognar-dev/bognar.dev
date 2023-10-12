@@ -3,6 +3,9 @@ import { Inter } from 'next/font/google'
 import {siteConfig } from '@/config/site';
 import '@/app/globals.css';
 import MainNav from '@/components/main-nav';
+
+import { ThemeProvider } from '@/components/theme-provider';
+import ThemeToggle from '@/components/theme-toggle';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -27,11 +30,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-      <MainNav items={siteConfig.mainNav}/>
-        {children}
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <MainNav items={siteConfig.mainNav} />
+            
+            {children}
+          </ThemeProvider>
         </body>
-    </html>
+      </html>
+    </>
   )
 }

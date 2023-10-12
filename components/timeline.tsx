@@ -4,16 +4,21 @@ import { TimeLine} from '@/types/timeline';
 import Link from 'next/link';
 import { Key } from 'react';
 import { Icons } from './icons';
+import Button from './button';
 
 
 
-export default function Timeline() {
+export default function Timeline({onHomePage}:{onHomePage : boolean}) {
     return (
         timelineData.length > 0 && (
-            <div className="flex flex-col relative m-4 after:bg-accent-500 after:absolute after:left-[calc(50%- 2px)] after:w-1 after:h-[100%]">
-                {timelineData.map((data: any, idx: Key | null | undefined) => (
+            <div className="flex flex-col relative m-4 after:bg-accent-500 after:absolute  after:w-1 after:h-[100%] after:rounded-full after:">
+                
+                {onHomePage ? timelineData.slice(0, 2).map((data: any, idx: Key | null | undefined) => (
+                    <TimelineItem data={data} key={idx} />
+                )) : timelineData.map((data: any, idx: Key | null | undefined) => (
                     <TimelineItem data={data} key={idx} />
                 ))}
+                {onHomePage && <Button><Link className='p-5 self-end rounded-sm' href={'/biography'} >See more</Link></Button>}
             </div>
         )
     );
@@ -22,7 +27,7 @@ export default function Timeline() {
 function TimelineItem({ data }: { data: TimeLine }) {
 
     return (
-            <div className="shadow-md rounded-sm bg-secondary-100 grid gap-4 m-5 p-5 ">
+            <div className="shadow-md rounded-sm bg-secondary-100 grid gap-4 m-5 p-5 "> 
             <span className="rounded-full px-3 text-text-100 justify-self-end " style={{ background: data.category?.color }}>
                     {data.category?.tag}
                 </span>

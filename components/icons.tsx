@@ -1,6 +1,8 @@
 import {
   ArrowRight,
   LucideProps,
+  SunIcon,
+  MoonIcon
 } from "lucide-react"
 
 
@@ -14,7 +16,8 @@ export const Icons = {
 
   ),
   arrowRight: ArrowRight,
-
+  sun: SunIcon,
+  moon: MoonIcon,
 }
 
 
