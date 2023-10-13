@@ -15,7 +15,7 @@ export const siteConfig = {
         },
         {
             title: "Biography",
-            href: "/bio",
+            href: "/biography",
         },
         {
             title: "Contact",
