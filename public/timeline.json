@@ -1,13 +1,13 @@
 [
     {
-        "text": "Hochschule Niederrhein",
-        "date": "2021-2023",
+        "text": "Scheidt&Bachmann",
+        "date": "2022-now",
         "category": {
-            "tag": "education",
-            "color": "#018f69"
+            "tag": "work",
+            "color": "#6E6991"
         },
         "link": {
-            "url": "https://www.hs-niederrhein.com/homepage/",
+            "url": "https://www.scheidt-bachmann.de/en/",
             "text": "more"
         }
     },

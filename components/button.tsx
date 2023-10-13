@@ -1,7 +1,10 @@
-export default function Button({ children }: { children: React.ReactNode }) {
+import { twMerge } from "tailwind-merge";
+
+export default function Button({ className,children }: {className?: string, children: React.ReactNode }) {
 return(
-    <div className='inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'>
+    <button className={twMerge('text-sm font-medium text-text-900 py-2 px-4 rounded-md bg-primary-500 mt-10 shadow-sm shadow-primary-200 hover:shadow-primary-500 hover:translate-x-1 transition-all justify-self-center',className)}>
     {children}
-    </div>
+    </button>
 )
 }
+

@@ -3,6 +3,8 @@
 import { siteConfig } from '@/config/site';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { Icons } from './icons';
+import { twMerge } from 'tailwind-merge';
 
 function AccordionItemTitle({ children }: { children: React.ReactNode }){
     return(
@@ -52,14 +54,9 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
     };
 
     return (
-        <div className={`text-text-900 main-1 pt-4 sm:pt-6 pb-8 mb-5 px-4 rounded-lg flex flex-col sm:flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-background-200' : 'border-background-300'}`}>
+        <div className={`text-text-900 main-1 pt-4 sm:pt-6  mb-5 px-4 rounded-lg flex flex-col sm:flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-background-200 pb-8' : 'border-background-300'}`}>
             <div className="btn-content" data-tab="1" onClick={toggleAccordion}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={`w-5 h-5 cursor-pointer btn btn-plus-1 bg-accent-300 rounded-full text-text-900 ${isExpanded ? 'hidden' : ''}`}>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15 " />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={`w-6 h-6 p-1 bg-accent-300 rounded-full cursor-pointer ${isExpanded ? '' : 'hidden'}`}>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
-                </svg>
+               {isExpanded?<Icons.circleMinus/>:<Icons.circlePlus/>}
             </div>
             <div className={`flex-grow ${isExpanded ? 'h-auto' : 'h-12'} overflow-visible transition-all duration-500`} onClick={toggleAccordion}>
                 {itemTitle}
@@ -73,9 +70,9 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
     );
 }
 
-function Accordion({ children }: { children: React.ReactNode }) {
+function Accordion({ children,className }: { children: React.ReactNode ,className?:string}) {
     return (
-        <div className="w-[24rem] sm:w-[30rem] p-8 gap-4  bg-background-50 shadow-sm shadow-background-400 rounded-lg ">
+        <div className={twMerge("w-[24rem] sm:w-[30rem] p-8 gap-4  bg-background-50 shadow-sm shadow-background-400 rounded-lg ",className)}>
            {children}
         </div>
     );

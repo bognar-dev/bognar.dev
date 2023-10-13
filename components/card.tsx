@@ -1,6 +1,8 @@
-export default function Card({ children }: { children: React.ReactNode }) {
+import { twMerge } from "tailwind-merge"
+
+export default function Card({ className,children }: {className?: string, children: React.ReactNode }) {
     return (
-        <div className="border pt-3 w-full rounded-xl text-card-foreground shadow-xl grid dark:border-transparent bg-background-200">
+        <div className={twMerge('pt-3 w-full text-card-foreground grid bg-background-50 shadow-sm shadow-background-400 rounded-lg ',className)}>
             {children}
         </div>
     )

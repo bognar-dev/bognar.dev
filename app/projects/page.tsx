@@ -20,7 +20,7 @@ export default async function Projects() {
     );
 
     return (
-      <main className="flex min-h-screen min-w-full flex-col bg-background-100 p-10 px-28 w-full">
+      <main className="flex min-h-screen min-w-full flex-col  bg-background-100 px-20 w-full">
         <div>
           {projectsData.map((project, index) => (
             <Project key={index} project={project} />

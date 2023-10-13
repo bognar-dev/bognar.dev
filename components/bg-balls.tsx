@@ -41,7 +41,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     const { width } = useWindowDimensions();
 
     const numRows = 6; // Adjust as needed
-    const numCols = 16; // Adjust as needed
+    const numCols = 13; // Adjust as needed
     const numBalls = numRows * numCols;
 
     useEffect(() => {
@@ -56,7 +56,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     }, []);
 
     return (
-        <div className="container min-h-100% min-w-full md:min-w-min mx-auto p-4 relative ">
+        <div className="container min-h-100% min-w-full md:min-w-min mx-auto relative ">
             <div className="flex flex-wrap gap-10 md:gap-24 mx-auto p-12">
                 {Array.from({ length: numBalls }, (_, i) => (
                     <Dot key={i} mousePos={mousePos}></Dot>

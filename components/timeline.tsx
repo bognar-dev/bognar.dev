@@ -11,6 +11,7 @@ import Button from './button';
 export default function Timeline({onHomePage}:{onHomePage : boolean}) {
     return (
         timelineData.length > 0 && (
+            <div className=''>
             <div className="flex flex-col relative m-4 after:bg-accent-500 after:absolute after:w-1 after:h-[100%] after:rounded-full ">
                 
                 {onHomePage ? timelineData.slice(0, 3).map((data: any, idx: Key | null | undefined) => (
@@ -18,9 +19,14 @@ export default function Timeline({onHomePage}:{onHomePage : boolean}) {
                 )) : timelineData.map((data: any, idx: Key | null | undefined) => (
                     <TimelineItem data={data} key={idx} />
                 ))}
-                {onHomePage && <Button><Link className='p-5 self-end rounded-sm' href={'/biography'} >See more</Link></Button>}
+                
+            </div>
+            <div className='flex justify-center items-center pb-5'>
+            {onHomePage && <Button><Link href={'/biography'} >See more</Link></Button>}
+            </div>
             </div>
         )
+        
     );
 }
 
