@@ -11,8 +11,8 @@ interface MainNavProps {
 export default function MainNav({ items }: MainNavProps) {
 
   return (
-    <div className=" sticky top-0 z-40 w-full">
-    <div className="sticky bg-transparent top-0 z-50 flex flex-col gap-2 min-w-screen items-center justify-between divide-y-2 hover:divide-accent-300 divide-accent-100 m-3">
+    <div className=" sticky top-0 z-40 w-full bg-transparent ">
+    <div className="sticky top-0 z-50 flex flex-col gap-2 min-w-screen items-center justify-between divide-y-2 hover:divide-accent-300 divide-accent-100 m-3">
      
       <Link href="/" className="font-head text-3xl flex items-center font-medium bg-opacity-10 hover:translate-x-1 hover: ease-out duration-100 rounded-md px-4 mt-1">Bognar.dev</Link>
       {items?.length ? (
@@ -24,7 +24,7 @@ export default function MainNav({ items }: MainNavProps) {
                   key={index}
                   href={item.href}
                   className=
-                  "flex items-center text-sm font-medium hover:bg-orange-200 ease-out duration-100 rounded-md px-4 mt-1"
+                  "flex items-center text-sm font-medium hover:translate-x-1 hover: ease-out duration-100 rounded-md px-4 mt-1"
                 >
                   {item.title}
                 </Link>

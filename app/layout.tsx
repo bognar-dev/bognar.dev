@@ -33,8 +33,8 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body>
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <body className='bg-background-100 text-text-900'>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             
             {children}

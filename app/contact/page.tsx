@@ -6,7 +6,7 @@ import { Accordion, AccordionItem, AccordionTitle, AccordionItemBody, AccordionD
 import { siteConfig } from '@/config/site'
 export default function Home() {
   return (
-    <main className="flex min-h-screen min-w-full flex-col  bg-background-50 p-10 w-full">
+    <main className="flex min-h-screen min-w-full flex-col  bg-background-100 p-10 w-full">
       <Accordion>
         <AccordionTitle>Contact</AccordionTitle>
         <AccordionItem
@@ -39,7 +39,7 @@ export default function Home() {
           accordionItemContent={<AccordionItemBody>Link to my GitHub</AccordionItemBody>}
           accordionItemButton={<AccordionItemButton href={siteConfig.links.github}>GitHub</AccordionItemButton>}
         />
-        
+
       </Accordion>
       
     </main>
