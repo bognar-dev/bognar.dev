@@ -9,7 +9,6 @@ const SMALL_SIZE = 10;
 const PER_PX = 0.3;
 
 function Dot({ mousePos }: { mousePos: { x: number; y: number } }) {
-    const { height, width } = useWindowDimensions();
     const size = useSpring(SMALL_SIZE, { damping: 30, stiffness: 200 });
 
     const dotRef = useRef<HTMLDivElement>(null);
@@ -38,7 +37,7 @@ function Dot({ mousePos }: { mousePos: { x: number; y: number } }) {
 
 export default function BGBalls({ children }: { children: React.ReactNode }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const { width } = useWindowDimensions();
+
 
     const numRows = 6; // Adjust as needed
     const numCols = 13; // Adjust as needed
