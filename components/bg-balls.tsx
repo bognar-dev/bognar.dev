@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
 
+
 const BIG_SIZE = 100;
 const SMALL_SIZE = 10;
 const PER_PX = 0.3;
