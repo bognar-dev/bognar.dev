@@ -4,7 +4,7 @@ import Card from '@/components/card'
 import Timeline from '@/components/timeline'
 export default function Home() {
   return (
-    <main className="flex min-h-screen min-w-full flex-col  bg-background-100 p-10 w-full">
+    <main className="flex min-h-screen min-w-full flex-col  bg-background-100 p-5 md:p-10 w-full">
       <BGBalls>
         <h1 className=' text-5xl md:text-9xl text-bold'>About me</h1>
       </BGBalls>

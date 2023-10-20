@@ -4,7 +4,7 @@ import { Icons } from "./icons";
 
 export default function Socials({ className }: {className?: string}) {
   return(
-    <Accordion className=''>
+    <Accordion className='w-full'>
     <AccordionTitle>Contact</AccordionTitle>
     <AccordionItem
       itemTitle={<AccordionItemTitle><Icons.gitHub className="w-5 h-5"/></AccordionItemTitle>}

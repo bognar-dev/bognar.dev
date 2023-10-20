@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 
 const BIG_SIZE = 100;
@@ -37,11 +38,24 @@ function Dot({ mousePos }: { mousePos: { x: number; y: number } }) {
 
 export default function BGBalls({ children }: { children: React.ReactNode }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const { width } = useWindowDimensions();
 
+    let numBalls = 80;
 
-    const numRows = 6; // Adjust as needed
-    const numCols = 13; // Adjust as needed
-    const numBalls = numRows * numCols;
+    switch (true) {
+        case width < 600:
+            numBalls = 10;
+            break;
+        case width < 1024:
+            numBalls = 20;
+            break;
+        case width < 1440:
+            numBalls = 40;
+            break;
+        default:
+            numBalls = 80;
+            break;
+    }
 
     useEffect(() => {
         const handler = (e: MouseEvent) => {
@@ -55,8 +69,8 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     }, []);
 
     return (
-        <div className="container min-h-100% min-w-full md:min-w-min mx-auto relative ">
-            <div className="flex flex-wrap gap-10 md:gap-24 mx-auto p-12">
+        <div className="container min-h-100% min-w-full justify-center items-center relative mb-12">
+            <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto p-12 md:mx-4 justify-center items-center">
                 {Array.from({ length: numBalls }, (_, i) => (
                     <Dot key={i} mousePos={mousePos}></Dot>
                 ))}
