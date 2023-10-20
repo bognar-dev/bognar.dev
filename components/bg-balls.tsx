@@ -54,6 +54,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
             break;
         default:
             numBalls = 96;
+            
             break;
     }
 
