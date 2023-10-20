@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 
 const BIG_SIZE = 100;
