@@ -40,7 +40,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const { width } = useWindowDimensions();
 
-    let numBalls = 80;
+    let numBalls = 82;
 
     switch (true) {
         case width < 600:
@@ -53,7 +53,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
             numBalls = 40;
             break;
         default:
-            numBalls = 80;
+            numBalls = 82;
             break;
     }
 
