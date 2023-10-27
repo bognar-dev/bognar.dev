@@ -14,9 +14,11 @@ function Project({ project }: { project: Project }) {
             <div className='grid gap-8 m-5 grid-flow-row items-center justify-between'>
                 <h2 className='text-3xl'>{project.name}</h2>
                 <p>{project.description}</p>
+                <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
                 <Link href={project.url} target="_blank" rel="noopener noreferrer">
                     Visit Project
                 </Link>
+                </Button>
                 <p className=''>{project.longDescription}</p>
                 <div>
                     <strong>Tags:</strong> {project.tags.join(', ')}

@@ -6,6 +6,7 @@ import MainNav from '@/components/main-nav';
 
 import { ThemeProvider } from '@/components/theme-provider';
 import ThemeToggle from '@/components/theme-toggle';
+import { fontBody, fontHead } from '@/config/fonts';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning className={fontBody.className}>
         <head />
         <body className='bg-background-100 text-text-900'>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
