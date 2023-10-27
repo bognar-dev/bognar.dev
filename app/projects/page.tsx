@@ -3,7 +3,7 @@ import Project from '@/components/project';
 
 export default async function Projects() {
     
-    const response = await fetch(`${process.env.BACKEND_URL}/api/projects`)
+    const response = await fetch(`https://bognar-dev-backend.fly.dev/api/projects`)
     if (response.ok) {
       const data = await response.json();
     return (
