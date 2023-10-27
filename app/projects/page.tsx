@@ -3,7 +3,7 @@ import Project from '@/components/project';
 
 export default async function Projects() {
     
-    const response = await fetch(`https://bognar-dev-backend.fly.dev/api/projects`)
+    const response = await fetch(`${process.env.BACKEND_URL}/api/projects`)
     const data = await response.json();
     return (
       <main className="flex min-h-screen min-w-full flex-col  bg-background-100 px-5 md:px-20 w-full">
