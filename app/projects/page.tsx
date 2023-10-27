@@ -1,6 +1,9 @@
+
+"use client"
 import Project from '@/components/project';
 
 export default async function Projects() {
+    console.log(`${process.env.BACKEND_URL}/api/projects`)
     const response = await fetch(`${process.env.BACKEND_URL}/api/projects`)
     if (response.ok) {
       const data = await response.json();
@@ -11,7 +14,6 @@ export default async function Projects() {
             <Project key={index} project={project} />
           ))}
         </div>
-        <h1 className='text-5xl'>{`${process.env.BACKEND_URL}/api/projects`}</h1>
       </main>
     );
   
