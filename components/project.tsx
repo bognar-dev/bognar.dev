@@ -10,7 +10,7 @@ function Project({ project }: { project: Project }) {
 
     return (
         <div className="grid grid-flow-col gap-4">
-            {project.image && <Image width={200} height={200} src={project.image} alt={project.name} className="project-image" />}
+            {project.image && <Image width={200} height={200} src={project.image} alt={project.name}/>}
             <div className='grid gap-8 m-5 grid-flow-row items-center justify-between'>
                 <h2 className='text-3xl'>{project.name}</h2>
                 <p>{project.description}</p>
@@ -30,9 +30,7 @@ function Project({ project }: { project: Project }) {
                 <div>
                     <strong>Status:</strong> {project.status}
                 </div>
-                <div>
-                    <strong>Team Members:</strong> {project.teamMembers.join(', ')}
-                </div>
+                
                 <Button>
                 <Link href={project.githubRepo} target="_blank" rel="noopener noreferrer">
                     GitHub Repository
