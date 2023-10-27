@@ -3,7 +3,7 @@
 import Project from '@/components/project';
 
 export default async function Projects() {
-    console.log(`${process.env.BACKEND_URL}/api/projects`)
+    
     const response = await fetch(`${process.env.BACKEND_URL}/api/projects`)
     if (response.ok) {
       const data = await response.json();
@@ -13,6 +13,8 @@ export default async function Projects() {
           {data.map((project:any, index:number) => (
             <Project key={index} project={project} />
           ))}
+
+          <h1 className='text-5xl'>{process.env.BACKEND_URL}</h1>
         </div>
       </main>
     );
