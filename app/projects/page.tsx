@@ -11,6 +11,7 @@ export default async function Projects() {
             <Project key={index} project={project} />
           ))}
         </div>
+        <h1>`${process.env.BACKEND_URL}/api/projects`</h1>
       </main>
     );
   

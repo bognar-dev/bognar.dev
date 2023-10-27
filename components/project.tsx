@@ -10,7 +10,7 @@ function Project({ project }: { project: Project }) {
 
     return (
         <div className="grid grid-flow-col gap-4">
-            {project.image && <Image src={project.image} alt={project.name} className="project-image" />}
+            {project.image && <Image width={200} height={200} src={project.image} alt={project.name} className="project-image" />}
             <div className='grid gap-8 m-5 grid-flow-row items-center justify-between'>
                 <h2 className='text-3xl'>{project.name}</h2>
                 <p>{project.description}</p>
