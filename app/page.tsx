@@ -13,7 +13,7 @@ export default function Home() {
       <BGBalls>
         <h1 className=' text-5xl md:text-9xl text-bold'>Bognar.dev</h1>
         <div className='text-xl md:text-2xl pt-5'>Where Algorithms Meet Aesthetics</div>
-        <Button className='shadow-none hover:scale-110 text-text-100'><Link href="/projects">See my projects</Link></Button>
+        <Button className='shadow-none hover:scale-110 text-text-50'><Link href="/projects">See my projects</Link></Button>
       </BGBalls>
       <div className='flex gap-10 flex-col lg:flex-row w-full'>
         <Card>
