@@ -14,7 +14,7 @@ export default async function Projects() {
             <Project key={index} project={project} />
           ))}
 
-          <h1 className='text-5xl'>{process.env.BACKEND_URL}</h1>
+          
         </div>
       </main>
     );
