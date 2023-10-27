@@ -1,4 +1,3 @@
-'use client'
 import Project from '@/components/project';
 
 export default async function Projects() {
