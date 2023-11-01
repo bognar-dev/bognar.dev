@@ -2,9 +2,6 @@
 import Button from "@/components/button";
 import { signIn } from '@/app/actions';
 
-const initialState = {
-  message: null,
-}
 
 
 
