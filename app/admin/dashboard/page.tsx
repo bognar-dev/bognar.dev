@@ -14,7 +14,7 @@ export default async function Home() {
       <main className="flex min-h-screen min-w-full flex-row  bg-background-100 px-5 md:px-20 w-full">
         <div className="grid gap-8 ">
           {projects.map((project: Project, index: number) => (
-            <Card className="p-6 ">
+            <Card key={index} className="p-6 ">
               {project.data.name}
               <Button>Edit project</Button>
             </Card>
