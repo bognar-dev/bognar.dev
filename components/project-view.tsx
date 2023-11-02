@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 import Button from './button';
 
-function Project({ project }: { project: ProjectData }) {
+function ProjectView({ project }: { project: ProjectData }) {
 
     console.log(project)
     return (
@@ -45,4 +45,4 @@ function Project({ project }: { project: ProjectData }) {
     );
 }
 
-export default Project;
+export default ProjectView;
