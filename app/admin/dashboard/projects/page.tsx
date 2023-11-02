@@ -1,7 +1,9 @@
-export async function generateStaticParams() {
-    const projects = await fetch(`${process.env.BACKEND_URL}/api/projects`).then((res) => res.json())
+import { Projects,Project } from "@/types/project"
 
-    return projects.map((project:any) => ({
+export async function generateStaticParams() {
+    const projects: Projects = await fetch(`${process.env.BACKEND_URL}/api/projects`).then((res) => res.json())
+
+    return projects.map((project:Project) => ({
         slug: project.id,
     }))
 }
