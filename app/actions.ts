@@ -22,16 +22,14 @@ export const signIn = async (formData: FormData) => {
   const response = await fetch(`${process.env.BACKEND_URL}/login`, options)
 
   const data = await response.json();
-  console.log(data)
+  console.log(data.status)
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
-  /* const statusResp = await fetch(`${process.env.BACKEND_URL}/private/status`, { headers: { Authorization: `Bearer ${cookies().get('jwt')?.value}` } })
-  const status = await statusResp.json();
-  console.log(status.status)
-  if (status.status === 'You are logged in') {
+  
+  if (data.status === "success") {
     redirect('/admin/dashboard')
   } else {
     console.log("cant auth")
-  } */
+  }
 
 };

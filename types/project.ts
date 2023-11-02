@@ -1,4 +1,6 @@
-export interface Project {
+
+
+export interface ProjectData {
     name: string,
     description: string,
     url: string,
@@ -11,3 +13,14 @@ export interface Project {
     githubRepo: string,
     image: string,
 }
+
+
+export interface Project{
+    id : number,
+    createdAt: string
+    updatedAt: string
+    data: ProjectData
+}
+
+
+export type Projects = Project[];

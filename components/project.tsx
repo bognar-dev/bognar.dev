@@ -1,13 +1,13 @@
 // Project.js
-import { Project } from '@/types/project';
+import { ProjectData } from '@/types/project';
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import Button from './button';
 
-function Project({ project }: { project: Project }) {
+function Project({ project }: { project: ProjectData }) {
 
-
+    console.log(project)
     return (
         <div className="grid grid-flow-col gap-4">
             {project.image && <Image width={200} height={200} src={project.image} alt={project.name}/>}
