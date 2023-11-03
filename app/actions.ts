@@ -27,9 +27,10 @@ export const signIn = async (formData: FormData) => {
   cookies().set('jwt', data.token)
   
   if (data.status === "success") {
+    console.log(data + " success")
     redirect('/admin/dashboard')
   } else {
-    console.log("cant auth")
+    console.log(data+" cant auth")
   }
 
 };
