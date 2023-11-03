@@ -34,7 +34,7 @@ export default function MainNav({ items }: MainNavProps) {
       ) : null}
      
     </div>
-      <ThemeToggle />
+      
     </div>
   )
 }

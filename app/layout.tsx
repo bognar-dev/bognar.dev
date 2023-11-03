@@ -40,7 +40,7 @@ export default function RootLayout({
         <body className='bg-background-100 text-text-900'>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
-            
+            <ThemeToggle />
             {children}
           </ThemeProvider>
         </body>

@@ -22,6 +22,24 @@ export const siteConfig = {
             href: "/contact",
         },
     ],
+    adminNav: [
+        {
+            title: "Dashboard",
+            href: "/admin/dashboard",
+        },
+        {
+            title: "Edit Projects",
+            href: "admin/projects",
+        },
+        {
+            title: "Edit Biography",
+            href: "admin/biography",
+        },
+        {
+            title: "Back to Website",
+            href: "/",
+        },
+    ],
     links: {
         github: "https://github.com/crueltyfreedev",
         email: "mailto:niklas@bognar.dev"

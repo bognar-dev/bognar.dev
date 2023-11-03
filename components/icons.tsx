@@ -3,7 +3,9 @@ import {
   LucideProps,
   SunIcon,
   MoonIcon,
-  Mail
+  Mail,
+  Clock9,
+  TagsIcon
 } from "lucide-react"
 
 
@@ -36,6 +38,8 @@ export const Icons = {
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
       </svg>
   ),
+  clock: Clock9,
+  tag: TagsIcon,
   arrowRight: ArrowRight,
   sun: SunIcon,
   moon: MoonIcon,

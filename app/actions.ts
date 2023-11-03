@@ -22,7 +22,7 @@ export const signIn = async (formData: FormData) => {
   const response = await fetch(`${process.env.BACKEND_URL}/login`, options)
 
   const data = await response.json();
-  console.log(data.status)
+  console.log(data)
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
   

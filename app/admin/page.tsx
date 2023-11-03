@@ -11,7 +11,7 @@ export default function SignupPage() {
 
   return (
     
-    <form action={signIn} method="POST">
+    <form className="grid gap-4 justify-center items-center" action={signIn} method="POST">
       <input type="username" name="username" required/>
       <input type="password" name="password" required/>
       <Button>
@@ -20,6 +20,7 @@ export default function SignupPage() {
       <p aria-live="polite" className="sr-only">
       </p>
     </form>
+    
   );
 }
 

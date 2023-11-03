@@ -1,5 +1,5 @@
 
-import ProjectView from '@/components/project-view';
+import ProjectPreview from '@/components/project-preview';
 import { Project, Projects } from '@/types/project';
 
 export default async function Projects() {
@@ -9,9 +9,9 @@ export default async function Projects() {
 
   return (
     <main className="flex min-h-screen min-w-full flex-row  bg-background-100 px-5 md:px-20 w-full">
-      <div>
+      <div className='grid gap-5 grid-cols-2 min-w-full'>
         {data.map((project: Project, index: number) => (
-          <ProjectView key={index} project={project.data}/>
+          <ProjectPreview key={index} project={project.data}/>
         ))}
 
 
