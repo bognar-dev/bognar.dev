@@ -24,7 +24,7 @@ function ProjectPreview({ project,editable }: { project: Project,editable: boole
                     {project.data.tags.join(', ')}
                 </div>
                 <h1 className="title">{project.data.description}</h1>
-                <Button><Link href={`${editable && 'admin'}/projects/${project.id}`}>More</Link></Button>
+                <Button><Link href={`/${editable && 'admin'}/projects/${project.id}`}>More</Link></Button>
             </div>
         </header>
     );
