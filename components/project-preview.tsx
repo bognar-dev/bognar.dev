@@ -10,7 +10,7 @@ import { Icons } from './icons';
 
 function ProjectPreview({ project,editable }: { project: Project,editable: boolean }) {
     return (
-        <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.image})`}} >
+        <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})`}} >
             <div className="flex justify-between pb-5">
                 <div className="text-lg font-bold uppercase">{project.data.name}</div>
                 <div className="flex items-center text-sm">
