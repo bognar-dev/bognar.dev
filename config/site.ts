@@ -29,11 +29,11 @@ export const siteConfig = {
         },
         {
             title: "Edit Projects",
-            href: "admin/projects",
+            href: "/admin/projects",
         },
         {
             title: "Edit Biography",
-            href: "admin/biography",
+            href: "/admin/biography",
         },
         {
             title: "Back to Website",
