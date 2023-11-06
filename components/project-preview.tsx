@@ -8,7 +8,7 @@ import Card from './card';
 import { Icons } from './icons';
 
 
-function ProjectPreview({ project,editable }: { project: Project,editable: boolean }) {
+function ProjectPreview({ project ,moreButton}: { project: Project,moreButton:boolean }) {
     return (
         <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})`}} >
             <div className="flex justify-between pb-5">
@@ -24,7 +24,8 @@ function ProjectPreview({ project,editable }: { project: Project,editable: boole
                     {project.data.tags.join(', ')}
                 </div>
                 <h1 className="title">{project.data.description}</h1>
-                <Button><Link href={`/${editable && 'admin'}/projects/${project.id}`}>More</Link></Button>
+                {moreButton && <Button><Link href={`/projects/${project.id}`}>More</Link></Button>}
+                
             </div>
         </header>
     );

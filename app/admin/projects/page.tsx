@@ -15,7 +15,7 @@ export default async function Projects() {
     <main className="flex min-h-screen min-w-full flex-row  bg-background-100 px-5 md:px-20 w-full">
       <div className='grid gap-5 grid-cols-2 min-w-full'>
         {data.map((project: Project, index: number) => (
-          <ProjectPreview key={index} editable={true} project={project}/>
+          <ProjectPreview key={index} moreButton={true} project={project}/>
         ))}
 
 

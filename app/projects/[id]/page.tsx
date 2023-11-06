@@ -12,12 +12,15 @@ export async function generateStaticParams() {
   
 
 
-export default function ProjectPage({ params }: { params: { id: string } }){
-    const {id} = params
+export default async function ProjectPage({ params }: { params: { id: string } }){
+  const response = await fetch(`${process.env.BACKEND_URL}/api/projects/${params.id}`, { next: { revalidate: 3600 } })
+  const post  = await( response.json()) as Project;
+    console.log(post)
     return(
-        <h1>
-        {id}
-        </h1>
+      <>
+        <ProjectPreview project={post} moreButton={false}/>
+        <ProjectView project={post.data}/>
+        </>
     )
 }
 
