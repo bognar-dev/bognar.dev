@@ -59,7 +59,6 @@ export const sendEditedProject = async(formData:FormData) => {
     }
   )
   console.log(formData)
-  console.log(formData.keys())
   const file = formData.get('image') as File;
   const { data, error } = await supabase
     .storage
@@ -68,6 +67,15 @@ export const sendEditedProject = async(formData:FormData) => {
       cacheControl: '3600',
       upsert: false
     })
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    };
+    const response = await fetch(`${process.env.BACKEND_URL}/updateProject`, options)
 
     console.log(data)
     console.log(error)

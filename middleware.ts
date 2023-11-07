@@ -6,15 +6,17 @@ import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const token = request.cookies.get('jwt')
-  const url = request.nextUrl.clone()
-  url.pathname = '/admin'
+  //const url = request.nextUrl.clone()
+  //url.pathname = '/admin'
   if (token === undefined) {
-    return NextResponse.rewrite(url)
+    return NextResponse.rewrite(new URL('/admin', request.url))
 
   }
   if (!isAuthenticated(token)) {
-    return NextResponse.rewrite(url)
+    return NextResponse.rewrite(new URL('/admin', request.url))
   }
+    
+  
 }
 
 

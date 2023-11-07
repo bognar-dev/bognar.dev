@@ -8,7 +8,6 @@ import { signIn } from '@/app/actions';
 
 export default function SignupPage() {
   
-
   return (
     
     <form className="grid gap-4 justify-center items-center" action={signIn} method="POST">

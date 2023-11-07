@@ -8,7 +8,8 @@ import Card from './card';
 import { Icons } from './icons';
 
 
-function ProjectPreview({ project ,moreButton}: { project: Project,moreButton:boolean }) {
+function ProjectPreview({ project ,moreButton,admin}: { project: Project,moreButton:boolean,admin: boolean }) {
+    const path = admin ? `/admin/projects/${project.id}`:`/projects/${project.id}`
     return (
         <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})`}} >
             <div className="flex justify-between pb-5">
@@ -24,7 +25,7 @@ function ProjectPreview({ project ,moreButton}: { project: Project,moreButton:bo
                     {project.data.tags.join(', ')}
                 </div>
                 <h1 className="title">{project.data.description}</h1>
-                {moreButton && <Button><Link href={`/projects/${project.id}`}>More</Link></Button>}
+                {moreButton && <Button><Link  href={path}>More</Link></Button>}
                 
             </div>
         </header>
