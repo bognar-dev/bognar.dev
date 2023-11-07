@@ -16,7 +16,6 @@ export async function generateStaticParams() {
 export default async function ProjectPage({ params }: { params: { id: string } }){
   const response = await fetch(`${process.env.BACKEND_URL}/api/projects/${params.id}`, { next: { revalidate: 3600 } })
   const post  = await( response.json()) as Project;
-    console.log(post)
     return(
       <>
         <ProjectEditForm project={post} moreButton={false}/>

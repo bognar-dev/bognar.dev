@@ -3,6 +3,9 @@
 
 import { redirect } from 'next/navigation'
 import { cookies } from "next/headers";
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
+
+
 
 export const signIn = async (formData: FormData) => {
 
@@ -22,7 +25,6 @@ export const signIn = async (formData: FormData) => {
   const response = await fetch(`${process.env.BACKEND_URL}/login`, options)
 
   const data = await response.json();
-  console.log(data)
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
   
@@ -34,3 +36,44 @@ export const signIn = async (formData: FormData) => {
   }
 
 };
+
+
+export const sendEditedProject = async(formData:FormData) => {
+  const cookieStore = cookies()
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          cookieStore.set({ name, value, ...options })
+        },
+        remove(name: string, options: CookieOptions) {
+          cookieStore.set({ name, value: '', ...options })
+        },
+      },
+    }
+  )
+  console.log(formData)
+  console.log(formData.keys())
+  const file = formData.get('image') as File;
+  const { data, error } = await supabase
+    .storage
+    .from('images')
+    .upload('test1.png',file, {
+      cacheControl: '3600',
+      upsert: false
+    })
+
+    console.log(data)
+    console.log(error)
+}
+
+
+
+
+

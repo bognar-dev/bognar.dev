@@ -8,9 +8,9 @@ export function middleware(request: NextRequest) {
   const token = request.cookies.get('jwt')
   const url = request.nextUrl.clone()
   url.pathname = '/admin'
-  if (token === undefined){
+  if (token === undefined) {
     return NextResponse.rewrite(url)
-    
+
   }
   if (!isAuthenticated(token)) {
     return NextResponse.rewrite(url)
@@ -20,7 +20,9 @@ export function middleware(request: NextRequest) {
 
 
 export const config = {
-  matcher: '/admin/dashboard/',
+  matcher: [
+    '/admin/(.*)',
+  ],
 }
 
 async function isAuthenticated(token: RequestCookie) {
@@ -34,7 +36,7 @@ async function isAuthenticated(token: RequestCookie) {
   const response = await fetch(`${process.env.BACKEND_URL}/private/status`, options)
 
   const data = await response.json();
-  if (data.status === "You are logged in"){
+  if (data.status === "You are logged in") {
     return true
   }
   return false
