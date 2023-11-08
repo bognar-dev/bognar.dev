@@ -6,6 +6,7 @@ import React from 'react';
 import Button from './button';
 
 function ProjectView({ project }: { project: ProjectData }) {
+    
     return (
         <div className="grid grid-flow-col gap-4 ">
             {project.image && <Image width={200} height={200} className='rounded-xl' src={project.image} alt={project.name}/>}
