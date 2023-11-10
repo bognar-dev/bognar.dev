@@ -2,7 +2,8 @@
 import Button from "@/components/button";
 import { signIn } from '@/app/actions';
 import { SubmitButton } from "@/components/submit-button";
-import {experimental_useFormState} from 'react-dom'
+// @ts-expect-error
+import { experimental_useFormState as useFormState } from "react-dom";
 
 const initialState = {
   message: null,
@@ -10,16 +11,17 @@ const initialState = {
 
 
 export default function SignupPage() {
-  const [state, formAction] = experimental_useFormState(signIn, initialState)
+ 
+  const [state, formAction] = useFormState(signIn, initialState)
   return (
-    // @ts-ignore
+    
     <form className="grid gap-4 justify-center items-center" action={formAction} method="POST">
       <input type="username" name="username" required/>
       <input type="password" name="password" required/>
       <Button>
       <SubmitButton>Login</SubmitButton>
       </Button>
-      <p aria-live="polite" className="sr-only">
+      <p aria-live="polite" className="self-center">
         {state?.message}
       </p>
     </form>

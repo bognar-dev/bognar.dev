@@ -26,16 +26,16 @@ export const signIn = async (prevState: any, formData: FormData) => {
   const response = await fetch(`${process.env.BACKEND_URL}/login`, options)
 
   const data = await response.json();
+  console.log(data)
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
   
   if (data.status === "success") {
     console.log(data + " success")
     redirect('/admin/dashboard')
-    return { message: 'Login success' }
   
   } else {
-    console.log(data+" cant auth")
+    console.log('login failed')
     return { message: 'Login failed' }
   }
 
