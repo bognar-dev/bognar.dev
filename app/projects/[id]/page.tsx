@@ -18,7 +18,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
     console.log(post)
     return(
       <>
-        <ProjectPreview project={post} moreButton={false} admin={false}/>
+        <ProjectPreview className="text-lg" project={post} moreButton={false} admin={false}/>
         <ProjectView project={post.data}/>
         </>
     )

@@ -8,11 +8,10 @@ import Button from './button';
 function ProjectView({ project }: { project: ProjectData }) {
     
     return (
-        <div className="grid grid-flow-col gap-4 ">
-            {project.image && <Image width={200} height={200} className='rounded-xl' src={project.image} alt={project.name}/>}
+        <div className="grid grid-flow-col gap-4 md:p-40 leading-loose">
+            
             <div className='grid gap-8 m-5 grid-flow-row items-center justify-between'>
-                <h2 className='text-3xl'>{project.name}</h2>
-                <p>{project.description}</p>
+               
                 <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
                 <Link href={project.url} target="_blank" rel="noopener noreferrer">
                     Visit Project

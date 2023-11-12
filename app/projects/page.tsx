@@ -8,8 +8,8 @@ export default async function Projects() {
   const data  = await( response.json()) as Project[];
 
   return (
-    <main className="flex min-h-screen min-w-full flex-row  bg-background-100 px-5 md:px-20 w-full">
-      <div className='grid gap-5 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 min-w-full'>
+    <main className="flex min-h-screen ">
+      <div className='grid gap-5 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 min-w-full'>
         {data.map((project: Project, index: number) => (
           <ProjectPreview moreButton={true} key={index} project={project} admin={false}/>
         ))}

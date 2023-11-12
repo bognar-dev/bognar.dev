@@ -6,12 +6,13 @@ import React from 'react';
 import Button from './button';
 import Card from './card';
 import { Icons } from './icons';
+import { twMerge } from 'tailwind-merge';
 
 
-function ProjectPreview({ project ,moreButton,admin}: { project: Project,moreButton:boolean,admin: boolean }) {
+function ProjectPreview({className, project ,moreButton,admin}: { className?: string,project: Project,moreButton:boolean,admin: boolean }) {
     const path = admin ? `/admin/projects/${project.id}`:`/projects/${project.id}`
     return (
-        <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})`}} >
+        <header className={twMerge('flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover',className)} style={{ backgroundImage: `url(${project.data.image})`}} >
             <div className="flex justify-between pb-5">
                 <div className="text-lg font-bold uppercase">{project.data.name}</div>
                 <div className="flex items-center text-sm">

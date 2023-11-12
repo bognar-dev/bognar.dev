@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site'
 import Socials from '@/components/socials'
 export default function Home() {
   return (
-    <main className="flex min-h-screen min-w-full flex-col justify-center items-center font-body  bg-background-100 px-5 w-full gap-10">
+    <main className="flex min-h-screen min-w-full flex-col justify-center items-center font-body  px-5 w-full gap-10">
       <BGBalls>
         <h1 className=' text-5xl md:text-9xl '>Bognar.dev</h1>
         <div className='text-xl md:text-2xl pt-5'>Where Algorithms Meet Aesthetics</div>

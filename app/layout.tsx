@@ -7,7 +7,8 @@ import MainNav from '@/components/main-nav';
 import { ThemeProvider } from '@/components/theme-provider';
 import ThemeToggle from '@/components/theme-toggle';
 import { fontBody, fontHead } from '@/config/fonts';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
+import BGBalls from '@/components/bg-balls';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,9 +17,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -26,6 +25,12 @@ export const metadata: Metadata = {
   },
 }
 
+
+export const viewport:Viewport={
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+}
 
 export default function RootLayout({
   children,
@@ -40,8 +45,12 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             <ThemeToggle />
+            <div className='p-5'>
             
             {children}
+            
+          
+            </div>
           </ThemeProvider>
         </body>
       </html>
