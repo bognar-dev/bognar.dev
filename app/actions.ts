@@ -4,10 +4,11 @@
 import { redirect } from 'next/navigation'
 import { cookies } from "next/headers";
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { revalidatePath } from 'next/cache';
 
 
 
-export const signIn = async (formData: FormData) => {
+export const signIn = async (prevState: any, formData: FormData) => {
 
   const username = formData.get("username");
   const password = formData.get("password");
@@ -25,20 +26,23 @@ export const signIn = async (formData: FormData) => {
   const response = await fetch(`${process.env.BACKEND_URL}/login`, options)
 
   const data = await response.json();
+  console.log(data)
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
   
   if (data.status === "success") {
     console.log(data + " success")
     redirect('/admin/dashboard')
+  
   } else {
-    console.log(data+" cant auth")
+    console.log('login failed')
+    return { message: 'Login failed' }
   }
 
 };
 
 
-export const sendEditedProject = async(formData:FormData) => {
+export const sendEditedProject = async ( formData:FormData) => {
   const cookieStore = cookies()
 
   const supabase = createServerClient(
@@ -79,6 +83,7 @@ export const sendEditedProject = async(formData:FormData) => {
 
     console.log(data)
     console.log(error)
+  revalidatePath('/')
 }
 
 
