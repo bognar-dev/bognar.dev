@@ -2,8 +2,8 @@
 import Button from "@/components/button";
 import { signIn } from '@/app/actions';
 import { SubmitButton } from "@/components/submit-button";
-// @ts-expect-error
-import { experimental_useFormState as useFormState } from "react-dom";
+
+import { useFormState } from "react-dom";
 
 const initialState = {
   message: null,
@@ -11,7 +11,7 @@ const initialState = {
 
 
 export default function SignupPage() {
- 
+ // @ts-expect-error
   const [state, formAction] = useFormState(signIn, initialState)
   return (
     

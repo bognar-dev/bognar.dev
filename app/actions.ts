@@ -42,7 +42,7 @@ export const signIn = async (prevState: any, formData: FormData) => {
 };
 
 
-export const sendEditedProject = async (prevState: any, formData:FormData) => {
+export const sendEditedProject = async ( formData:FormData) => {
   const cookieStore = cookies()
 
   const supabase = createServerClient(

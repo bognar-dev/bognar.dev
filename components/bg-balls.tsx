@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
+import { MotionDiv } from "./motion-div";
 
 
 const BIG_SIZE = 50;
@@ -48,10 +49,10 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
             <div ref={dotRef}>
                 {isVisible && (
 
-                    <motion.div
+                    <MotionDiv
                         className="bg-accent-600 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
                         style={{ width: SMALL_SIZE, height: SMALL_SIZE }}
-                    ></motion.div>
+                    ></MotionDiv>
                 )}
             </div>
         );
@@ -60,10 +61,10 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
         <div ref={dotRef}>
             {isVisible && (
 
-                <motion.div
+                <MotionDiv
                     className="bg-accent-600 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
                     style={{ width: size, height: size }}
-                ></motion.div>
+                ></MotionDiv>
             )}
         </div>
     );

@@ -1,7 +1,8 @@
 'use client'
 //@ts-ignore
-import {experimental_useFormStatus as useFormStatus } from "react-dom";
+import {useFormStatus } from "react-dom";
 export function SubmitButton({ children }: { children: React.ReactNode }) {
+    
     const { pending } = useFormStatus()
 
     return (
