@@ -5,13 +5,13 @@ import { motion, useSpring } from "framer-motion";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 
-const BIG_SIZE = 100;
-const SMALL_SIZE = 10;
+const BIG_SIZE = 50;
+const SMALL_SIZE = 3;
 const PER_PX = 0.3;
 
-function Dot({ mousePos }: { mousePos: { x: number; y: number } }) {
+function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y: number } }) {
     const size = useSpring(SMALL_SIZE, { damping: 30, stiffness: 200 });
-
+    const [isVisible, setIsVisible] = useState(false);
     const dotRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -25,38 +25,56 @@ function Dot({ mousePos }: { mousePos: { x: number; y: number } }) {
 
         size.set(Math.max(BIG_SIZE - PER_PX * distance, SMALL_SIZE));
     }, [mousePos, size]);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { rootMargin: '0px', threshold: 0.5 } // You can adjust the threshold as needed
+        );
 
+        if (dotRef.current) {
+            observer.observe(dotRef.current);
+        }
+
+        return () => {
+            if (dotRef.current) {
+                observer.unobserve(dotRef.current);
+            }
+        };
+    }, []);
+    if( reactive === false){
+        return (
+            <div ref={dotRef}>
+                {isVisible && (
+
+                    <motion.div
+                        className="bg-accent-600 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
+                        style={{ width: SMALL_SIZE, height: SMALL_SIZE }}
+                    ></motion.div>
+                )}
+            </div>
+        );
+    }
     return (
-        <div ref={dotRef} className="relative">
-            <motion.div
-                className="bg-accent-600 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
-                style={{ width: size, height: size }}
-            ></motion.div>
+        <div ref={dotRef}>
+            {isVisible && (
+
+                <motion.div
+                    className="bg-accent-600 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
+                    style={{ width: size, height: size }}
+                ></motion.div>
+            )}
         </div>
     );
 }
 
 export default function BGBalls({ children }: { children: React.ReactNode }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const { width } = useWindowDimensions();
+    const { height,width } = useWindowDimensions();
 
-    let numBalls = 96;
+    let numBalls = Math.floor(height/3);
 
-    switch (true) {
-        case width < 600:
-            numBalls = 10;
-            break;
-        case width < 1024:
-            numBalls = 20;
-            break;
-        case width < 1440:
-            numBalls = 40;
-            break;
-        default:
-            numBalls = 96;
-            
-            break;
-    }
 
     useEffect(() => {
         const handler = (e: MouseEvent) => {
@@ -71,12 +89,16 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
 
     return (
         <div className="container min-h-100% min-w-full justify-center items-center relative mb-12">
-            <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto p-12 md:mx-4 justify-center items-center">
-                {Array.from({ length: numBalls }, (_, i) => (
-                    <Dot key={i} mousePos={mousePos}></Dot>
-                ))}
+            <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto  justify-center items-center -z-10">
+                
+                {width > 600?Array.from({ length: numBalls }, (_, i) => (
+                    <Dot reactive={true} key={i} mousePos={mousePos}></Dot>
+                )):
+                    Array.from({ length: numBalls }, (_, i) => (
+                        <Dot reactive={false }key={i} mousePos={mousePos}></Dot>
+                    )) }
             </div>
-            <div className="w-1/2 h-1/2 absolute top-1/4 left-1/4 flex flex-col justify-center items-center">
+            <div className="w-1/2  absolute top-1/4 left-1/4 gap-5 flex flex-col justify-center items-center">
                 {children}
             </div>
         </div>
