@@ -41,7 +41,7 @@ export const siteConfig = {
         },
     ],
     links: {
-        github: "https://github.com/crueltyfreedev",
+        github: "https://github.com/bognar-dev",
         email: "mailto:niklas@bognar.dev"
     },
 }
