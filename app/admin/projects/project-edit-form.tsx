@@ -8,6 +8,7 @@ import { Project } from "@/types/project";
 import { sendEditedProject } from '@/app/actions';
 import { useState } from "react";
 import { Textarea } from "@/components/textarea";
+import { SubmitButton } from "@/components/submit-button";
 
 function ProjectEditForm({ project, moreButton }: { project: Project, moreButton: boolean }) {
     const [header, setHeader] = useState(project.data.name)
@@ -76,6 +77,8 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                     <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
                         <input defaultValue={project.data.githubRepo} placeholder={project.data.githubRepo} required />
                     </Button>
+
+                    <SubmitButton>Submit</SubmitButton>
                 </div>
         </form>
     );

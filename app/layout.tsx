@@ -1,12 +1,14 @@
-import type { Metadata, Viewport } from 'next'
+
 import { Inter } from 'next/font/google'
-import {siteConfig } from '@/config/site';
+import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
 import MainNav from '@/components/main-nav';
 
 import { ThemeProvider } from '@/components/theme-provider';
 import ThemeToggle from '@/components/theme-toggle';
 import { fontBody, fontHead } from '@/config/fonts';
+import { Metadata, Viewport } from 'next';
+import BGBalls from '@/components/bg-balls';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -22,7 +24,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 }
-export const viewport:Viewport = {
+
+
+export const viewport:Viewport={
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
@@ -41,7 +45,12 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             <ThemeToggle />
+            <div className='p-5'>
+            
             {children}
+            
+          
+            </div>
           </ThemeProvider>
         </body>
       </html>
