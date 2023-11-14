@@ -28,7 +28,7 @@ const technologies = [
         svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#D4A93B"><g fill="none" stroke="#D4A93B" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M2 2h60v60H2z"></path><path d="M12 6h40M12 18h40M12 30h40M12 42h40M12 54h40"></path></g></svg>`
     },
     {
-        name: "Next (app and pages router)",
+        name: "Next",
         svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#000000"><g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M4 32l6-6M4 32l6 6M20 16l6-6M20 16l6 6M36 4l6-6M36 4l6 6M52 16l6-6M52 16l6 6M60 32l-6 6M60 32l-6-6M44 48l-6 6M44 48l-6-6M28 60l-6 6M28 60l-6-6M12 48l-6 6M12 48l-6-6"></path></g></svg>`
     },
     {
@@ -40,11 +40,15 @@ const technologies = [
         svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#06B6D4"><g fill="none" stroke="#06B6D4" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M30 3h4M3 16h58M7 3h50M15 54h34M5 47h14M7 60h10M21 47h6M17 60h22M53 47h3M27 28l5-5-5-5M37 3v54M31 3v54"></path></g></svg>`
     },
     {
-        name: "Golang (Gin/ Fiber)",
+        name: "Golang",
         svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#00ADD8"><path d="M0 0h64v64H0z" fill="none"></path><path d="M16 2v60l15-15V17L16 2zM32 2v26h15v15L32 2zM48 2v45l16-16V2z"></path></svg>`
     },
     {
-        name: "Java (Spring)",
+        name: "Gin",
+        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#00ADD8"><path d="M0 0h64v64H0z" fill="none"></path><path d="M16 2v60l15-15V17L16 2zM32 2v26h15v15L32 2zM48 2v45l16-16V2z"></path></svg>`
+    },
+    {
+        name: "Java ",
         svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#6DB33F"><g fill="none" stroke="#6DB33F" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M32 2l2.837 8.511h7.326L38.04 23.65l6.795 20.349H32l-6.795-20.348 3.413-13.139H6.963L2 32l7.326 22.26h10.53L18.96 40.35h3.556L27.762 62 32 64l4.238-1.65 2.206-6.65h3.556l5.174 16.31h10.53L62 32 56.037 2H32z"></path></g></svg>`
     },
     {
@@ -64,7 +68,11 @@ const technologies = [
         svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#A8B9CC"><g fill="none" stroke="#A8B9CC" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M32 2v60"></path><path d="M54 14l-22 8 22 8M10 14l22 8-22 8"></path></g></svg>`
     },
     {
-        name: "C++ (SDL)",
+        name: "C++",
+        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#00599C"><path d="M32 2v60"></path><g fill="none" stroke="#00599C" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><circle cx="15" cy="16" r="7"></circle><circle cx="32" cy="8" r="7"></circle><circle cx="49" cy="16" r="7"></circle></g></svg>`
+    },
+    {
+        name: "SDL",
         svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#00599C"><path d="M32 2v60"></path><g fill="none" stroke="#00599C" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><circle cx="15" cy="16" r="7"></circle><circle cx="32" cy="8" r="7"></circle><circle cx="49" cy="16" r="7"></circle></g></svg>`
     }
 ]
@@ -73,11 +81,11 @@ const TechStack = () => {
     return (
         <div className="text-center p-4 overflow-hidden">
             <h2 className="text-3xl font-bold mb-4">Tech Stack</h2>
-            <div className="flex  sm:overflow-x-auto no-scrollbar space-x-4">
+            <div className="flex  sm:overflow-x-auto overflow-auto touch-pan-x no-scrollbar space-x-4">
                 {technologies.map((tech, index) => (
-                    <div key={index} className="flex-shrink-0">
+                    <div key={index} className="flex flex-wrap justify-center items-center">
                         <div dangerouslySetInnerHTML={{ __html: tech.svg }} className="w-12 h-12 mb-2"></div>
-                        <p className="text-sm">{tech.name}</p>
+                        <p className="text-sm ">{tech.name}</p>
                     </div>
                 ))}
             </div>
