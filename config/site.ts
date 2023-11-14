@@ -44,4 +44,8 @@ export const siteConfig = {
         github: "https://github.com/bognar-dev",
         email: "mailto:niklas@bognar.dev"
     },
+
+
+  
+  
 }

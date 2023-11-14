@@ -99,7 +99,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
                         <Dot reactive={false }key={i} mousePos={mousePos}></Dot>
                     )) }
             </div>
-            <div className="w-1/2  absolute top-1/4 left-1/4 gap-5 flex flex-col justify-center items-center">
+            <div className="w-1/2 absolute top-16 left-1/4 gap-5 flex flex-col justify-center items-center">
                 {children}
             </div>
         </div>
