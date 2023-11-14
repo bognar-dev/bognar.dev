@@ -90,7 +90,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
 
     return (
         <div className="container min-h-100% min-w-full justify-center items-center relative mb-12">
-            <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto  justify-center items-center -z-10">
+            <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto min-w-full  justify-center items-center -z-10">
                 
                 {width > 600?Array.from({ length: numBalls }, (_, i) => (
                     <Dot reactive={true} key={i} mousePos={mousePos}></Dot>
@@ -99,7 +99,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
                         <Dot reactive={false }key={i} mousePos={mousePos}></Dot>
                     )) }
             </div>
-            <div className="w-1/2 absolute top-16 left-1/4 gap-5 flex flex-col justify-center items-center">
+            <div className="absolute top-16 gap-5 flex flex-col justify-center items-center">
                 {children}
             </div>
         </div>

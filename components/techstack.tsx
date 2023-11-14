@@ -71,9 +71,9 @@ const technologies = [
 
 const TechStack = () => {
     return (
-        <div className="text-center p-4">
+        <div className="text-center p-4 overflow-hidden">
             <h2 className="text-3xl font-bold mb-4">Tech Stack</h2>
-            <div className="flex overflow-x-auto no-scrollbar space-x-4">
+            <div className="flex  sm:overflow-x-auto no-scrollbar space-x-4">
                 {technologies.map((tech, index) => (
                     <div key={index} className="flex-shrink-0">
                         <div dangerouslySetInnerHTML={{ __html: tech.svg }} className="w-12 h-12 mb-2"></div>
