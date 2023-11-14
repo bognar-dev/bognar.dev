@@ -82,7 +82,7 @@ theme:{
     },
   },
 },
-  plugins: [],
+ 
   darkMode:'class',
 }
 export default config
