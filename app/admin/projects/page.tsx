@@ -9,7 +9,7 @@ import { cookies } from "next/headers";
 export default async function Projects() {
   
   const response = await fetch(`${process.env.BACKEND_URL}/api/projects`, { next: { revalidate: 3600 } })
-  const data  = await( response.json()) as Project[];
+  const data  = await(response.json()) as Project[];
 
   return (
     <main className="flex min-h-screen min-w-full flex-row  bg-background-100 px-5 md:px-20 w-full">

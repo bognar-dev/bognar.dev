@@ -46,7 +46,6 @@ export const sendEditedProject = async (prevState: any, formData:FormData) => {
   if(formData === null){
     return {message:'updateProject failed'}
   }
-  console.log(formData)
   const cookieStore = cookies()
 
   const supabase = createServerClient(
@@ -68,29 +67,45 @@ export const sendEditedProject = async (prevState: any, formData:FormData) => {
   )
   
   const file = formData.get('image') as File;
-  const { data, error } = await supabase
+  console.log("filename: "+file.name)
+  if(file.name !== 'undefined'){
+    console.log("new file found")
+    const { data, error } = await supabase
     .storage
     .from('images')
-    .upload('test1.png',file, {
+    .upload(`/${file.name}`,file, {
       cacheControl: '3600',
       upsert: false
     })
     if(error !== null){
-      return {message:error}
+      return {message:error.stack}
     }
+    formData.set('image',data.path)
+    console.log(data.path)
+  }else{
+    const url = formData.get('imageURL') as string
+    formData.set('image',url)
+  }
+    formData.delete('imageURL')
+    console.log("imageURL: "+ formData.get('image'))
+    console.log(formData)
+    let formDataObject = Object.fromEntries(formData.entries());
+    // Format the plain form data as JSON
+    let formDataJsonString = JSON.stringify(formDataObject);
+    const token = cookies().get('jwt')?.value
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+
       },
-      body: JSON.stringify(formData),
+      body: formDataJsonString,
     };
-    const response = await fetch(`${process.env.BACKEND_URL}/updateProject`, options)
-    console.log("response:"+response.body)
-    console.log(data)
-    console.log(error)
+    const response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, options)
+    console.log(response.body)
+    revalidatePath('/')
     return {message:'success'}
-  revalidatePath('/')
+ 
 }
 
 

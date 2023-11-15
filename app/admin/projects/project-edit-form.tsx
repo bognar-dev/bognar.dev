@@ -33,6 +33,7 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
     return (
         <form action={formAction}>
             <input name="id" hidden value={project.id} />
+            <input name="imageURL" hidden value={project.data.image}/>
             <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})` }} >
                 <input
                     id="image"
@@ -88,12 +89,12 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                 </Button>
 
                 <Button>
-                    <SubmitButton>Login</SubmitButton>
+                    <SubmitButton>Update</SubmitButton>
                 </Button>
                
             </div>
             <p aria-live="polite" className="self-center">
-                    {(state.message === 'StorageError')&& state?.message}
+                    {state?.message}
                 </p>
         </form>
         
