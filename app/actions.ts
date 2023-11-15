@@ -42,7 +42,11 @@ export const signIn = async (prevState: any, formData: FormData) => {
 };
 
 
-export const sendEditedProject = async ( formData:FormData) => {
+export const sendEditedProject = async (prevState: any, formData:FormData) => {
+  if(formData === null){
+    return {message:'updateProject failed'}
+  }
+  console.log(formData)
   const cookieStore = cookies()
 
   const supabase = createServerClient(
@@ -62,7 +66,7 @@ export const sendEditedProject = async ( formData:FormData) => {
       },
     }
   )
-  console.log(formData)
+  
   const file = formData.get('image') as File;
   const { data, error } = await supabase
     .storage
@@ -71,7 +75,9 @@ export const sendEditedProject = async ( formData:FormData) => {
       cacheControl: '3600',
       upsert: false
     })
-
+    if(error !== null){
+      return {message:error}
+    }
     const options = {
       method: 'POST',
       headers: {
@@ -80,9 +86,10 @@ export const sendEditedProject = async ( formData:FormData) => {
       body: JSON.stringify(formData),
     };
     const response = await fetch(`${process.env.BACKEND_URL}/updateProject`, options)
-
+    console.log("response:"+response.body)
     console.log(data)
     console.log(error)
+    return {message:'success'}
   revalidatePath('/')
 }
 

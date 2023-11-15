@@ -5,7 +5,7 @@ import Button from './button';
 
 function ProjectView({ project }: { project: ProjectData }) {
     return (
-        <article className="py-5 max-w-5xl mx-auto prose-slate font-light">
+        <article className="py-5 max-w-5xl break-words leading-relaxed mx-auto prose-slate font-light">
                 <Button className="bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200 text-white py-2 px-4 rounded">
                     <Link href={project.url} target="_blank" rel="noopener noreferrer">
                         Visit Project

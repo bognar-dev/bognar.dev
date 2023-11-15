@@ -3,27 +3,36 @@
 import Button from "@/components/button";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
-import Image from "next/image";
 import { Project } from "@/types/project";
 import { sendEditedProject } from '@/app/actions';
 import { useState } from "react";
-import { Textarea } from "@/components/textarea";
+import { useFormState } from "react-dom";
 import { SubmitButton } from "@/components/submit-button";
+
+const initialState = {
+    message: null,
+}
 
 function ProjectEditForm({ project, moreButton }: { project: Project, moreButton: boolean }) {
     const [header, setHeader] = useState(project.data.name)
+    const [longDescription, setLongDescription] = useState(project.data.longDescription)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setHeader(e.target.value);
+    };
+    const handleDescriptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setHeader(e.target.value);
     };
 
 
 
-    
-    
+
+    // @ts-expect-error
+    const [state, formAction] = useFormState(sendEditedProject, initialState);
+
     return (
-        <form action={sendEditedProject}>
-            <input name="id" hidden value={project.id}/>
+        <form action={formAction}>
+            <input name="id" hidden value={project.id} />
             <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})` }} >
                 <input
                     id="image"
@@ -57,30 +66,37 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                 </div>
             </header>
 
-                <div className='grid gap-8 m-5 grid-flow-row'>
-                    <input className='text-3xl' value={header} name="projectName" onInput={handleChange} defaultValue={header} />
+            <div className='grid gap-8 m-5 grid-flow-row break-words'>
+                <input className='text-3xl' value={header} name="projectName" onInput={handleChange} defaultValue={header} />
 
-                    <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
-                        <input defaultValue={project.data.url} placeholder={project.data.url} required />
-                    </Button>
-                    <Textarea wrap="soft" contentEditable={true} className="" name="longDescription" placeholder={project.data.longDescription} defaultValue={project.data.longDescription} />
-
-                    <div>
-                        <label>Start Date</label>
-                        <input type="date" defaultValue={project.data.startDate} required/>
-                    </div>
-                    <div>
-                    <label>End Date</label>
-                        <input type="date" defaultValue={project.data.endDate} required/>
-                    </div>
-                    
-                    <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
-                        <input defaultValue={project.data.githubRepo} placeholder={project.data.githubRepo} required />
-                    </Button>
-
-                    <SubmitButton>Submit</SubmitButton>
+                <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
+                    <input defaultValue={project.data.url} placeholder={project.data.url} required />
+                </Button>
+                <div className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} >{project.data.longDescription} </div>
+                <input value={longDescription} name="longDescription" hidden={true}></input>
+                <div>
+                    <label>Start Date</label>
+                    <input type="date" defaultValue={project.data.startDate} required />
                 </div>
+                <div>
+                    <label>End Date</label>
+                    <input type="date" defaultValue={project.data.endDate} required />
+                </div>
+
+                <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
+                    <input defaultValue={project.data.githubRepo} placeholder={project.data.githubRepo} required />
+                </Button>
+
+                <Button>
+                    <SubmitButton>Login</SubmitButton>
+                </Button>
+               
+            </div>
+            <p aria-live="polite" className="self-center">
+                    {(state.message === 'StorageError')&& state?.message}
+                </p>
         </form>
+        
     );
 }
 
