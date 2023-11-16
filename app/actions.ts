@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { cookies } from "next/headers";
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { revalidatePath } from 'next/cache';
+import { Options } from 'next/dist/server/base-server';
 
 
 
@@ -29,11 +30,11 @@ export const signIn = async (prevState: any, formData: FormData) => {
   console.log(data)
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
-  
+
   if (data.status === "success") {
     console.log(data + " success")
     redirect('/admin/dashboard')
-  
+
   } else {
     console.log('login failed')
     return { message: 'Login failed' }
@@ -42,10 +43,10 @@ export const signIn = async (prevState: any, formData: FormData) => {
 };
 
 
-export const sendEditedProject = async (prevState: any, formData:FormData) => {
+export const sendEditedProject = async (prevState: any, formData: FormData) => {
   console.log(formData)
-  if(formData === null){
-    return {message:'updateProject failed'}
+  if (formData === null) {
+    return { message: 'updateProject failed' }
   }
   const cookieStore = cookies()
 
@@ -66,48 +67,48 @@ export const sendEditedProject = async (prevState: any, formData:FormData) => {
       },
     }
   )
-  
+
   const file = formData.get('image') as File;
-  if(file.name !== 'undefined'){
+  if (file.name !== 'undefined') {
     console.log("new file found")
     const { data, error } = await supabase
-    .storage
-    .from('images')
-    .upload(`/${file.name}`,file, {
-      cacheControl: '3600',
-      upsert: false
-    })
-    if(error !== null){
-      return {message:error.stack}
+      .storage
+      .from('images')
+      .upload(`/${file.name}`, file, {
+        cacheControl: '3600',
+        upsert: false
+      })
+    if (error !== null) {
+      return { message: error.stack }
     }
-    formData.set('image',data.path)
+    formData.set('image', data.path)
     console.log(data.path)
-  }else{
+  } else {
     const url = formData.get('imageURL') as string
-    formData.set('image',url)
+    formData.set('image', url)
   }
-    formData.delete('imageURL')
-    console.log("imageURL: "+ formData.get('image'))
-    console.log(formData)
-    const token = cookies().get('jwt')
-    if(token === undefined){
-      return {message:"token not defined"}
-    }
-    const options = {
-      method: 'POST',
-      headers: {
-        headers: {
-          'Authentication': `Bearer:${token.value}`,
-        },
+  formData.delete('imageURL')
+  console.log("imageURL: " + formData.get('image'))
+  console.log(formData)
+  const token = cookies().get('jwt')
+  if (token === undefined) {
+    return { message: "token not defined" }
+  }
 
-      },
-      formData,
-    };
-    const response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, options)
+  const response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
+    method: 'POST',
 
-    revalidatePath('/')
-    return {message:'success'}
- 
+    headers: {
+      'Authentication': token.value,
+    },
+
+
+    body: formData
+  })
+
+  revalidatePath('/')
+  return { message: 'success' }
+
 }
 
 
