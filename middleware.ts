@@ -37,7 +37,6 @@ async function isAuthenticated(token: RequestCookie) {
   };
   const response = await fetch(`${process.env.BACKEND_URL}/private/status`, options)
   const data = await response.json();
-  console.log(data)
   if (data.status === "You are logged in") {
     return true
   }

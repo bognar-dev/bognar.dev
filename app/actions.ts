@@ -43,6 +43,7 @@ export const signIn = async (prevState: any, formData: FormData) => {
 
 
 export const sendEditedProject = async (prevState: any, formData:FormData) => {
+  console.log(formData)
   if(formData === null){
     return {message:'updateProject failed'}
   }
@@ -67,7 +68,6 @@ export const sendEditedProject = async (prevState: any, formData:FormData) => {
   )
   
   const file = formData.get('image') as File;
-  console.log("filename: "+file.name)
   if(file.name !== 'undefined'){
     console.log("new file found")
     const { data, error } = await supabase
@@ -89,20 +89,22 @@ export const sendEditedProject = async (prevState: any, formData:FormData) => {
     formData.delete('imageURL')
     console.log("imageURL: "+ formData.get('image'))
     console.log(formData)
-    let formDataObject = Object.fromEntries(formData.entries());
-    // Format the plain form data as JSON
-    let formDataJsonString = JSON.stringify(formDataObject);
-    const token = cookies().get('jwt')?.value
+    const token = cookies().get('jwt')
+    if(token === undefined){
+      return {message:"token not defined"}
+    }
     const options = {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${token}`,
+        headers: {
+          'Authentication': `Bearer:${token.value}`,
+        },
 
       },
-      body: formDataJsonString,
+      formData,
     };
     const response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, options)
-    console.log(response.body)
+
     revalidatePath('/')
     return {message:'success'}
  

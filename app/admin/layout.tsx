@@ -9,7 +9,8 @@ import ThemeToggle from '@/components/theme-toggle';
 import { fontBody, fontHead } from '@/config/fonts';
 import Link from 'next/link';
 import Button from '@/components/button';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -18,14 +19,17 @@ export const metadata: Metadata = {
         template: `%s - ${siteConfig.name}`,
     },
     description: siteConfig.description,
-    themeColor: [
-        { media: "(prefers-color-scheme: dark)", color: "black" },
-    ],
+    
     icons: {
         icon: "/favicon.ico",
         shortcut: "/favicon-16x16.png",
         apple: "/apple-touch-icon.png",
     },
+}
+export const viewport:Viewport = {
+    themeColor: [
+        { media: "(prefers-color-scheme: dark)", color: "black" },
+    ],
 }
 
 
