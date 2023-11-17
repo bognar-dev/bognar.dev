@@ -19,7 +19,7 @@ const HorizontalScrollCarousel = () => {
       <div className="flex  sm:overflow-x-auto overflow-auto touch-pan-x space-x-4">
         <motion.div style={{ x }} className="flex gap-4">
         {technologies.map((tech, index) => (
-                    <TechCard index={index} tech={tech}/>
+                    <TechCard key={index} index={index} tech={tech}/>
                 ))}
         </motion.div>
       </div>
