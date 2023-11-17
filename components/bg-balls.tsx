@@ -74,7 +74,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const { height,width } = useWindowDimensions();
 
-    let numBalls = Math.floor(height/3);
+    let numBalls = Math.floor(height/2);
 
 
     useEffect(() => {

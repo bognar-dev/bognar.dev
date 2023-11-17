@@ -9,6 +9,7 @@ import ThemeToggle from '@/components/theme-toggle';
 import { fontBody, fontHead } from '@/config/fonts';
 import { Metadata, Viewport } from 'next';
 import BGBalls from '@/components/bg-balls';
+import Footer from '@/components/footer';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function RootLayout({
             
           
             </div>
+            <Footer/>
           </ThemeProvider>
         </body>
       </html>

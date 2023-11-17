@@ -26,15 +26,11 @@ const technologies : {name:string,svg:JSX.Element}[] = [
     },
     {
         name: "SolidJs",
-        svg:   <Icons.SolidJS width={50} height={50}/>
+        svg: <Icons.SolidJS width={50} height={50}/>
     },
     {
         name: "Next",
         svg: <Icons.Next width={50} height={50}/>
-    },
-    {
-        name: "Qt",
-        svg: <Icons.Qt width={50} height={50}/>
     },
     {
         name: "Tailwind",
@@ -70,7 +66,7 @@ const technologies : {name:string,svg:JSX.Element}[] = [
     },
     {
         name: "C++",
-        svg:<Icons.CPP width={50} height={50}/>
+        svg: <Icons.CPP width={50} height={50}/>
     },
     {
         name: "SDL",
@@ -81,7 +77,7 @@ const technologies : {name:string,svg:JSX.Element}[] = [
 const TechStack = () => {
     return (
         <div className="text-center p-4 overflow-hidden">
-            <h2 className="text-3xl font-bold mb-4">Tech Stack</h2>
+            <h2 className="text-3xl mb-4">What I like to use:</h2>
             <div className="flex  sm:overflow-x-auto overflow-auto touch-pan-x no-scrollbar space-x-4">
                 {technologies.map((tech, index) => (
                     <div key={index} className="flex flex-wrap justify-center items-center">

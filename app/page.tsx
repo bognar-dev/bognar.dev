@@ -9,12 +9,16 @@ import { Accordion, AccordionTitle, AccordionItem, AccordionItemTitle, Accordion
 import { siteConfig } from '@/config/site'
 import Socials from '@/components/socials'
 import TechStack from '@/components/techstack'
+import Title from '@/components/title'
+import HorizontalScrollCarousel from '@/components/horizontal-scroll-carousel'
+
+
+
 export default function Home() {
   return (
     <main className="flex min-h-screen min-w-full flex-col justify-center items-center font-body  px-5 w-full gap-5">
       <BGBalls>
-        <h1 className=' text-5xl md:text-9xl '>Bognar.dev</h1>
-        <div className='text-xl md:text-2xl pt-5 self-center text-center'>Where Algorithms Meet Aesthetics</div>
+        <Title/>
         <Button className='shadow-none hover:scale-110 text-text-50 md:scale-125'><Link href="/projects">See my projects</Link></Button>
         <div className='grid grid-rows-1 gap-5'>
           <div className='flex gap-5 flex-col lg:flex-row w-full'>
@@ -36,8 +40,16 @@ export default function Home() {
 
 
           </div>
-          <Card>
-            <TechStack />
+          <Card className='mt-6'>
+            <TechStack/>
+          </Card>
+        </div>
+        <div className='flex gap-5 flex-col lg:flex-row w-full'>
+          <Card className='h-[300px]'>
+            Recent projects
+          </Card>
+          <Card className='h-[300px]'>
+            Recent Blogposts
           </Card>
         </div>
       </BGBalls>
