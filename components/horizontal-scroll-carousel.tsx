@@ -11,12 +11,12 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "95"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "95%"]);
 
   return (
     <section ref={targetRef} className="text-center p-4 overflow-hidden">
           <h2 className="text-3xl pb-3">What I like to use:</h2>
-      <div className="flex  sm:overflow-x-auto overflow-auto touch-pan-x space-x-4">
+      <div className="flex  sm:overflow-x-auto overflow-auto touch-pan-x no-scrollbar space-x-4">
         <motion.div style={{ x }} className="flex gap-4">
         {technologies.map((tech, index) => (
                     <TechCard key={index} index={index} tech={tech}/>
