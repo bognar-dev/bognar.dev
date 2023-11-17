@@ -41,7 +41,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning className={fontBody.className}>
         <head />
-        <body className='bg-background-100 text-text-900'>
+        <body className='bg-background-100 text-text-900 no-scrollbar'>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             <ThemeToggle />

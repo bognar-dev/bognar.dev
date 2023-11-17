@@ -14,8 +14,8 @@ export default function Home() {
     <main className="flex min-h-screen min-w-full flex-col justify-center items-center font-body  px-5 w-full gap-5">
       <BGBalls>
         <h1 className=' text-5xl md:text-9xl '>Bognar.dev</h1>
-        <div className='text-xl md:text-2xl pt-5'>Where Algorithms Meet Aesthetics</div>
-        <Button className='shadow-none hover:scale-110 text-text-50'><Link href="/projects">See my projects</Link></Button>
+        <div className='text-xl md:text-2xl pt-5 self-center text-center'>Where Algorithms Meet Aesthetics</div>
+        <Button className='shadow-none hover:scale-110 text-text-50 md:scale-125'><Link href="/projects">See my projects</Link></Button>
         <div className='grid grid-rows-1 gap-5'>
           <div className='flex gap-5 flex-col lg:flex-row w-full'>
             <Card className='p-5'>
@@ -30,6 +30,7 @@ export default function Home() {
                   `}
                 </p>
               </div>
+              <Button><Link href={'/biography'}>See my CV</Link></Button>
             </Card>
             <Socials />
 
