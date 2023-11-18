@@ -6,7 +6,6 @@ import MainNav from '@/components/main-nav';
 
 import { ThemeProvider } from '@/components/theme-provider';
 import ThemeToggle from '@/components/theme-toggle';
-import { fontBody, fontHead } from '@/config/fonts';
 import { Metadata, Viewport } from 'next';
 import BGBalls from '@/components/bg-balls';
 import Footer from '@/components/footer';
@@ -40,13 +39,13 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning className={fontBody.className}>
+      <html lang="en" suppressHydrationWarning className="">
         <head />
-        <body className='bg-background-100 text-text-900 no-scrollbar'>
+        <body className='bg-background-100 text-text-900 no-scrollbar font-body'>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             <ThemeToggle />
-            <div className='p-5'>
+            <div className='p-5 '>
             
             {children}
             
