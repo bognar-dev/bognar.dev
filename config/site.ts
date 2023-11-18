@@ -42,7 +42,8 @@ export const siteConfig = {
     ],
     links: {
         github: "https://github.com/bognar-dev",
-        email: "mailto:niklas@bognar.dev"
+        email: "mailto:niklas@bognar.dev",
+        discord: "https://discordapp.com/users/691677819947843644",
     },
 
 

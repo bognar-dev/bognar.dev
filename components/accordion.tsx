@@ -32,7 +32,7 @@ function AccordionItemBody({ children,className }: { children: React.ReactNode,c
 
 function AccordionItemButton({ children,href,className }: { children: React.ReactNode,href:string,className?:string }) {
     return (
-        <Link href={href} className={twMerge("text-xs sm:text-sm font-medium text-text-900 py-1 px-3 sm:py-2 sm:px-8 rounded-3xl bg-primary-500 mt-10 shadow-sm shadow-primary-200 hover:shadow-primary-500 transition-all",className)}>{children}</Link>
+        <Link href={href} rel="noopener noreferrer" target="_blank" className={twMerge("text-xs sm:text-sm font-medium text-text-900 py-1 px-3 sm:py-2 sm:px-8 rounded-3xl bg-primary-500 mt-10 shadow-sm shadow-primary-200 hover:shadow-primary-500 transition-all",className)}>{children}</Link>
     )
 }
 function AccordionItemContent({ children, isExpanded }: { children: React.ReactNode, isExpanded: boolean }) {
