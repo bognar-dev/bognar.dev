@@ -6,7 +6,6 @@ import MainNav from '@/components/main-nav';
 
 import { ThemeProvider } from '@/components/theme-provider';
 import ThemeToggle from '@/components/theme-toggle';
-import { fontBody, fontHead } from '@/config/fonts';
 import Link from 'next/link';
 import Button from '@/components/button';
 import { Metadata, Viewport } from 'next';
@@ -39,7 +38,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className='grid grid-flow-cols grid-cols-9 gap-5'>
+        <div className='grid grid-flow-cols grid-cols-9 gap-5 font-body'>
 
             {siteConfig.adminNav?.length ? (
 
