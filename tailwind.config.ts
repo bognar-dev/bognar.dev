@@ -7,11 +7,10 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
 theme:{
- 
   extend:{
     fontFamily: {
-      "head": "var(--head-font)",
-      "body": "var(--body-font)",
+      plaster: ['var(--font-plaster)'],
+      body: ['var(--font-body)'],
     },
     colors: {
       'text': {

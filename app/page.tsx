@@ -41,7 +41,7 @@ export default function Home() {
 
           </div>
           <Card className='mt-6'>
-            <HorizontalScrollCarousel/>
+            <TechStack/>
           </Card>
         </div>
         <div className='flex gap-5 flex-col lg:flex-row w-full'>
