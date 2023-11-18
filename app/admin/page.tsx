@@ -11,21 +11,19 @@ const initialState = {
 
 
 export default function SignupPage() {
- // @ts-expect-error
+  // @ts-expect-error
   const [state, formAction] = useFormState(signIn, initialState)
   return (
-    
+
     <form className="grid gap-4 justify-center items-center" action={formAction} method="POST">
-      <input type="username" name="username" required/>
-      <input type="password" name="password" required/>
-      <Button>
+      <input type="username" name="username" required />
+      <input type="password" name="password" required />
       <SubmitButton>Login</SubmitButton>
-      </Button>
       <p aria-live="polite" className="self-center">
         {state?.message}
       </p>
     </form>
-    
+
   );
 }
 

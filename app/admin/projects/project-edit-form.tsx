@@ -62,7 +62,7 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                     ))}
 
                     <input className="" name="description" placeholder={project.data.description} required defaultValue={project.data.description} />
-                    {moreButton && <Button><Link href={`/projects/${project.id}`}>More</Link></Button>}
+                    {moreButton && <Button href={`/projects/${project.id}`}>More</Button>}
 
                 </div>
             </header>
@@ -88,9 +88,9 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                     <input defaultValue={project.data.githubRepo} placeholder={project.data.githubRepo} required />
                 </Button>
 
-                <Button>
+
                     <SubmitButton>Update</SubmitButton>
-                </Button>
+
                
             </div>
             <p aria-live="polite" className="self-center">

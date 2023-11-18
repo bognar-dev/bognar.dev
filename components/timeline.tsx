@@ -22,7 +22,7 @@ export default function Timeline({onHomePage}:{onHomePage : boolean}) {
                 
             </div>
             <div className='flex justify-center items-center pb-5'>
-            {onHomePage && <Button><Link href={'/biography'} >See more</Link></Button>}
+            {onHomePage && <Button href={'/biography'} >See more</Button>}
             </div>
             </div>
         )

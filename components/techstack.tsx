@@ -8,21 +8,14 @@ import { Icons } from './icons';
 
 
 const technologies : {name:string,svg:JSX.Element}[] = [
-    {
-        name: "HTML",
-        svg: <Icons.HTML width={20} height={20}/>
-    },
-    {
-        name: "CSS",
-        svg: <Icons.CSS width={20} height={20}/>
-    },
-    {
-        name: "JavaScript",
-        svg: <Icons.JavaScript width={20} height={20}/>
-    },
+    
     {
         name: "React",
         svg: <Icons.React width={20} height={20}/>
+    },
+    {
+        name: "Tailwind",
+        svg: <Icons.Tailwind width={20} height={20}/>
     },
     {
         name: "Framer Motion",
@@ -36,10 +29,7 @@ const technologies : {name:string,svg:JSX.Element}[] = [
         name: "Next",
         svg: <Icons.Next width={20} height={20}/>
     },
-    {
-        name: "Tailwind",
-        svg: <Icons.Tailwind width={20} height={20}/>
-    },
+    
     {
         name: "Golang",
         svg: <Icons.Go width={20} height={20}/> 
@@ -73,26 +63,16 @@ const technologies : {name:string,svg:JSX.Element}[] = [
         svg: <Icons.CPP width={20} height={20}/>
     },
     {
+        name: "Qt",
+        svg: <Icons.Qt width={20} height={20}/>
+    },
+    {
         name: "SDL",
         svg: <Icons.SDL width={20} height={20}/>
     }
 ]
 
-/* const TechStack = () => {
-    return (
-        <div className="text-center p-4 overflow-hidden">
-            <h2 className="text-3xl mb-4">What I like to use:</h2>
-            <div className="flex  sm:overflow-x-auto overflow-auto touch-pan-x no-scrollbar space-x-4">
-                {technologies.map((tech, index) => (
-                    <div key={index} className="flex flex-wrap justify-center items-center">
-                        {tech.svg}
-                        <p className="text-sm ">{tech.name}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    )
-}; */
+
 const fadeInAnimationVariants = {
     initial: {
         opacity: 0,

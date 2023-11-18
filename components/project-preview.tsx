@@ -28,7 +28,7 @@ function ProjectPreview({className, project ,moreButton,admin}: { className?: st
                 ))}
                 </div>
                 <h3 className="text-sm ">{project.data.description}</h3>
-                {moreButton && <Button className='mt-3 '><Link  href={path}>More</Link></Button>}
+                {moreButton && <Button className='mt-3 '  href={path}>More</Button>}
                 
             </div>
         </header>

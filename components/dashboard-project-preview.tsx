@@ -13,7 +13,7 @@ export default async function ProjectPreview() {
       {projects.map((project: Project, index: number) => (
         <Card key={index} className="p-6 ">
           {project.data.name}
-          <Button><Link href={`/admin/projects/${project.id}`}>Edit project</Link></Button>
+          <Button href={`/admin/projects/${project.id}`}>Edit project</Button>
         </Card>
       ))}
 

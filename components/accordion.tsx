@@ -7,32 +7,32 @@ import React, { useState } from 'react';
 import { Icons } from './icons';
 import { twMerge } from 'tailwind-merge';
 
-function AccordionItemTitle({ children }: { children: React.ReactNode }){
+function AccordionItemTitle({ children,className }: { children: React.ReactNode,className?:string }){
     return(
-        <h2 className="text-sm align-middle font-medium mt-0.5">{children}</h2>
+        <h2 className={twMerge("text-sm mt-0.5",className)}>{children}</h2>
     )
 }
 
-function AccordionTitle({ children }: { children: React.ReactNode }) {
+function AccordionTitle({ children,className }: { children: React.ReactNode,className?:string }) {
     return (
-        <h1 className="text-xl font-medium mb-2">{children}</h1>
+        <h1 className={twMerge("text-xl uppercase first-letter:text-3xl  mb-2 ",className)}>{children}</h1>
     )
 }
-function AccordionDescription({ children }: { children: React.ReactNode }) {
+function AccordionDescription({ children,className }: { children: React.ReactNode,className?:string }) {
     return (
-        <p className = "text-xs leading-relaxed" >{children}</p >
+        <p className={twMerge("text-xs leading-relaxed" ,className)}>{children}</p >
     )
 }
-function AccordionItemBody({ children }: { children: React.ReactNode }) {
+function AccordionItemBody({ children,className }: { children: React.ReactNode,className?:string }) {
     return (
-        <p className="text-xs leading-relaxed my-5">{children}</p>
+        <p className={twMerge("text-xs leading-relaxed my-5",className)}>{children}</p>
     )
 }
 
 
-function AccordionItemButton({ children,href }: { children: React.ReactNode,href:string }) {
+function AccordionItemButton({ children,href,className }: { children: React.ReactNode,href:string,className?:string }) {
     return (
-        <Link href={href} className="text-xs sm:text-sm font-medium text-text-900 py-1 px-3 sm:py-2 sm:px-8 rounded-3xl bg-primary-500 mt-10 shadow-sm shadow-primary-200 hover:shadow-primary-500 transition-all">{children}</Link>
+        <Link href={href} className={twMerge("text-xs sm:text-sm font-medium text-text-900 py-1 px-3 sm:py-2 sm:px-8 rounded-3xl bg-primary-500 mt-10 shadow-sm shadow-primary-200 hover:shadow-primary-500 transition-all",className)}>{children}</Link>
     )
 }
 function AccordionItemContent({ children, isExpanded }: { children: React.ReactNode, isExpanded: boolean }) {
@@ -73,7 +73,7 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
 
 function Accordion({ children,className }: { children: React.ReactNode ,className?:string}) {
     return (
-        <div className={twMerge("w-max p-8 gap-4  bg-background-50 shadow-sm shadow-background-400 rounded-lg ",className)}>
+        <div className={twMerge("w-max p-8 gap-4 items-center justify-center bg-background-50 shadow-sm shadow-background-400 rounded-lg ",className)}>
            {children}
         </div>
     );

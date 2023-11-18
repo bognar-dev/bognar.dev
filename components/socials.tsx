@@ -5,7 +5,7 @@ import { Icons } from "./icons";
 export default function Socials({ className }: {className?: string}) {
   return(
     <Accordion className='w-full bg-white/10 backdrop-blur-sm'>
-    <AccordionTitle>Contact</AccordionTitle>
+    <AccordionTitle className="text-3xl first-letter:text-4xl">Contact</AccordionTitle>
     <AccordionItem
       itemTitle={<AccordionItemTitle><Icons.gitHub className="w-5 h-5"/></AccordionItemTitle>}
       accordionItemContent={<AccordionItemBody>Link to my GitHub</AccordionItemBody>}
