@@ -7,11 +7,11 @@ import Tag from './tag';
 
 function ProjectView({ project }: { project: ProjectData }) {
     return (
-        <article className="py-5 max-w-5xl break-words leading-relaxed mx-auto prose-slate font-light">
-            <div className="mt-10 before:block before:absolute before:-inset-3 before:-skew-y-3 before:bg-gradient-to-r from-accent-200 to-primary-200 relative inline-block">
-                <span className="font-semibold text-4xl relative text-accent-900">{project.name}</span>
+        <article className="py-5 max-w-5xl break-words leading-relaxed mx-auto prose-slate font-light flex flex-col justify-items-start items-center md:items-start ">
+            <div className=" self-center min-w-fit my-10 before:block before:absolute before:-inset-3 before:-skew-y-3 before:bg-gradient-to-r from-accent-200 to-primary-200 relative inline-block">
+                <span className=" font-semibold text-4xl relative text-accent-900">{project.name}</span>
             </div>
-            <Button className="p-10 m-10 bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200 text-white py-2 px-4 rounded"
+            <Button className="self-center m-10 bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200 text-white py-2 px-4 rounded"
                 href={project.url} >
                 Visit Project
             </Button>
