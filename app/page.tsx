@@ -40,6 +40,8 @@ export default function Home() {
           </div>
 
         </div>
+          <Timeline/>
+        
         {/* <div className='flex gap-5 flex-col lg:flex-row w-full'>
           <Card className='h-[300px]'>
             Recent projects
