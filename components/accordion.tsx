@@ -55,7 +55,7 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
     };
 
     return (
-        <div className={` text-text-900 main-1 pt-4 sm:pt-6  mb-5 px-4 rounded-lg flex flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-background-200 pb-8' : 'border-background-300'}`}>
+        <div className={` text-text-900 main-1 pt-4 sm:pt-6  mb-5 px-4 rounded-lg flex flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-accent-200 pb-8' : 'border-accent-300'}`}>
             <div className="btn-content" data-tab="1" onClick={toggleAccordion}>
                {isExpanded?<Icons.circleMinus/>:<Icons.circlePlus/>}
             </div>
@@ -73,7 +73,7 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
 
 function Accordion({ children,className }: { children: React.ReactNode ,className?:string}) {
     return (
-        <div className={twMerge("w-max p-8 gap-4 items-center justify-center bg-background-50 shadow-sm shadow-background-400 rounded-lg ",className)}>
+        <div className={twMerge("w-max p-8 gap-4 items-center justify-center bg-background-50 shadow-sm shadow-accent-400 rounded-lg ",className)}>
            {children}
         </div>
     );

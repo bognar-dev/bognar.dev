@@ -1,8 +1,16 @@
 import { twMerge } from "tailwind-merge"
+import ScrollMotionDiv from "./scroll-motion-div"
 
-export default function Card({ className,children }: {className?: string, children: React.ReactNode }) {
+export default function Card({ className, children, motion = false }: { className?: string, children: React.ReactNode, motion?: boolean }) {
+    if (motion) {
+        return (
+            <ScrollMotionDiv className={twMerge(className, 'pt-3 w-full text-card-foreground grid bg-accent-100 backdrop-blur-sm shadow-sm shadow-accent-400 rounded-lg ')}>
+                {children}
+            </ScrollMotionDiv>
+        )
+    }
     return (
-        <div className={twMerge(className,'pt-3 w-full text-card-foreground grid bg-accent-100 backdrop-blur-sm shadow-sm shadow-accent-400 rounded-lg ')}>
+        <div className={twMerge(className, 'pt-3 w-full text-card-foreground grid bg-accent-100 backdrop-blur-sm shadow-sm shadow-accent-400 rounded-lg ')}>
             {children}
         </div>
     )

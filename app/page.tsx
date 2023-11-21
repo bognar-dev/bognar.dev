@@ -12,6 +12,7 @@ import TechStack from '@/components/techstack'
 import Title from '@/components/title'
 import About from '@/components/about'
 import Newsletter from '@/components/newsletter'
+import ScrollMotionDiv from '@/components/scroll-motion-div'
 
 
 
@@ -23,18 +24,20 @@ export default function Home() {
         <Button className='shadow-none hover:scale-110 text-text-50 md:scale-125' href="/projects">See my projects</Button>
         <div className='grid grid-cols-1 gap-5'>
           <div className='grid gap-5 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
-            <Card className='p-5 md:col-span-3'>
+     
+            <Card motion={true} className='p-5 md:col-span-3'>
               <About />
             </Card>
-            <Socials className='md:col-span-1' />
+            
+            <Socials motion={true} className='md:col-span-1' />
 
 
           </div>
           <div className='grid gap-5  grid-cols-1 xl:grid-cols-4 xl:grid-rows-4 xl:grid-flow-row w-full '>
-            <Card className='xl:row-span-4'>
+            <Card motion={true} className='xl:row-span-4'>
               <TechStack />
             </Card>
-            <Card className='xl:row-span-4 xl:col-span-3'>
+            <Card motion={true} className='xl:row-span-4 xl:col-span-3'>
               Recent Blogposts
             </Card>
           </div>

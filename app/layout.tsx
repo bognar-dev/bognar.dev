@@ -45,7 +45,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             
-            <div className='p-5 '>
+            <div className='md:p-5 '>
             
             {children}
             

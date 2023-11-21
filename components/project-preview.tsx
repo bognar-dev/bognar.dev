@@ -1,18 +1,17 @@
-// Project.js
 import { Project } from '@/types/project';
-import Link from 'next/link';
-import Image from 'next/image';
 import React from 'react';
 import Button from './button';
-import Card from './card';
 import { Icons } from './icons';
 import { twMerge } from 'tailwind-merge';
 import Tag from './tag';
+import Card from './card';
+import ScrollMotionDiv from './scroll-motion-div';
 
 
 function ProjectPreview({className, project ,moreButton,admin}: { className?: string,project: Project,moreButton:boolean,admin: boolean }) {
     const path = admin ? `/admin/projects/${project.id}`:`/projects/${project.id}`
     return (
+        <ScrollMotionDiv>
         <header className={twMerge('flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md shadow-sm bg-no-repeat bg-cover bg-bottom',className)} style={{ backgroundImage: `url(${project.data.image})`}} >
             <div className="flex justify-between pb-5 ">
                 <div className="text-lg font-bold uppercase p-1 bg-white/30 backdrop-blur-sm shadow-md rounded-lg">{project.data.name}</div>
@@ -32,6 +31,7 @@ function ProjectPreview({className, project ,moreButton,admin}: { className?: st
                 
             </div>
         </header>
+        </ScrollMotionDiv>
     );
 }
 
