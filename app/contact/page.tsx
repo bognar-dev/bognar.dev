@@ -6,7 +6,7 @@ import { Accordion, AccordionItem, AccordionTitle, AccordionItemBody, AccordionD
 import { siteConfig } from '@/config/site'
 export default function Home() {
   return (
-    <main className="flex min-h-screen min-w-full flex-col  bg-background-100 px-5 md:px-20 w-full">
+    <main className="flex min-h-screen min-w-full flex-col px-5 md:px-20 w-full">
       <Accordion className='min-w-full'>
         <AccordionTitle>Contact</AccordionTitle>
         <AccordionItem

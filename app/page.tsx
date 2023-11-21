@@ -30,7 +30,7 @@ export default function Home() {
 
 
           </div>
-          <div className='grid gap-5  xl:grid-cols-4 grid-rows-4 xl:grid-flow-row w-full '>
+          <div className='grid gap-5  grid-cols-1 xl:grid-cols-4 xl:grid-rows-4 xl:grid-flow-row w-full '>
             <Card className='xl:row-span-4'>
               <TechStack />
             </Card>
@@ -40,8 +40,9 @@ export default function Home() {
           </div>
 
         </div>
-          <Timeline/>
+        <Timeline/>
         
+          
         {/* <div className='flex gap-5 flex-col lg:flex-row w-full'>
           <Card className='h-[300px]'>
             Recent projects
