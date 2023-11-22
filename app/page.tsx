@@ -11,7 +11,7 @@ import Socials from '@/components/socials'
 import TechStack from '@/components/techstack'
 import Title from '@/components/title'
 import About from '@/components/about'
-import Newsletter from '@/components/newsletter'
+import LatestProjects from '@/components/latest-projects'
 import ScrollMotionDiv from '@/components/scroll-motion-div'
 
 
@@ -25,21 +25,19 @@ export default function Home() {
         <div className='grid grid-cols-1 gap-5'>
           <div className='grid gap-5 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
      
-            <Card motion={true} className='p-5 md:col-span-3'>
+            <Card motion={false} className='p-5 md:col-span-3'>
               <About />
             </Card>
             
-            <Socials motion={true} className='md:col-span-1' />
+            <Socials motion={false} className='md:col-span-1' />
 
 
           </div>
-          <div className='grid gap-5  grid-cols-1 xl:grid-cols-4 xl:grid-rows-4 xl:grid-flow-row w-full '>
-            <Card motion={true} className='xl:row-span-4'>
+          <div className='grid gap-5 grid-cols-1 xl:grid-cols-4 xl:grid-rows-4 xl:grid-flow-row w-full '>
+            <Card motion={false} className='xl:row-span-1'>
               <TechStack />
             </Card>
-            <Card motion={true} className='xl:row-span-4 xl:col-span-3'>
-              Recent Blogposts
-            </Card>
+            <LatestProjects className='xl:row-span-1 xl:col-span-3' amount={2}/>
           </div>
 
         </div>

@@ -73,7 +73,7 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
 
 function Accordion({ children,className }: { children: React.ReactNode ,className?:string}) {
     return (
-        <div className={twMerge("w-max p-8 gap-4 items-center justify-center bg-background-50 shadow-sm shadow-accent-400 rounded-lg ",className)}>
+        <div className={twMerge("w-max p-8 gap-4 items-center justify-center bg-accent-100 shadow-sm shadow-accent-400 rounded-lg ",className)}>
            {children}
         </div>
     );
