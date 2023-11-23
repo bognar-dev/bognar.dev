@@ -16,9 +16,9 @@ export default async function LatestProjects({amount=2,className}:{amount?:numbe
         <Card className={twMerge('p-5',className)}>
         <SectionHeading>Recent Projects:</SectionHeading>
         <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-3  '>
-            {data.map((project: Project, index: number) => (
+            {data.map((project: Project, key: number) => (
                 
-                <ProjectCard project={project} key={index} className='bg-accent-50'/>
+                <ProjectCard project={project} key={key} className='bg-accent-50'/>
             ))}
         </div>
         </Card>
