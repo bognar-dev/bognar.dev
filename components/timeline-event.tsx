@@ -53,11 +53,11 @@ export default function TimelineEvent({
 
                 <Image
                     src={image}
-                    width={200}
-                    height={200}
+                    width={400}
+                    height={400}
                     alt={title}
                     quality={95}
-                    className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
+                    className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl bg-accent-50
                     transition 
                     group-hover:scale-[1.04]
                     group-hover:-translate-x-3

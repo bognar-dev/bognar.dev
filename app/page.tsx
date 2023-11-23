@@ -33,7 +33,7 @@ export default function Home() {
 
 
           </div>
-          <div className='grid gap-5 grid-cols-1 xl:grid-cols-4 xl:grid-rows-4 xl:grid-flow-row w-full '>
+          <div className='grid gap-5 grid-cols-1 xl:grid-cols-4 xl:grid-rows-1 xl:grid-flow-row w-full '>
             <Card motion={false} className='xl:row-span-1'>
               <TechStack />
             </Card>

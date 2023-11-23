@@ -17,6 +17,31 @@ const nextConfig = {
                 hostname: 'howtoabroad.com',
                 port: '',
             },
+            {
+                protocol: 'https',
+                hostname:'www.gymnasium-feuerbach.de',
+                port: '',
+            },
+            {
+                protocol: 'https',
+                hostname:'upload.wikimedia.org',
+                port: '',
+            },
+            {
+                protocol: 'https',
+                hostname:'tonimarino.co.uk',
+                port: '',
+            },
+            {
+                protocol: 'https',
+                hostname:'yvlgmxrunsfqgobqceqr.supabase.co',
+                port: '',
+            },
+            {
+                protocol: 'https',
+                hostname:'yvlgmxrunsfqgobqceqr.supabase.co',
+                port: '',
+            },
         ],
     },
 

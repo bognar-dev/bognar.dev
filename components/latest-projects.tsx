@@ -4,6 +4,7 @@ import ProjectPreview from './project-preview';
 import Card from './card';
 import { twMerge } from 'tailwind-merge';
 import SectionHeading from './section-header';
+import ProjectCard from './project-card';
 
 export default async function LatestProjects({amount=2,className}:{amount?:number,className?:string}) {
     const response = await fetch(`${process.env.BACKEND_URL}/api/projects`, { next: { revalidate: 3600 } })
@@ -16,7 +17,8 @@ export default async function LatestProjects({amount=2,className}:{amount?:numbe
         <SectionHeading>Recent Projects:</SectionHeading>
         <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-3  '>
             {data.map((project: Project, index: number) => (
-                <ProjectPreview className='rounded-xl' moreButton={true} key={index} project={project} admin={false} />
+                
+                <ProjectCard project={project} className='bg-accent-50'/>
             ))}
         </div>
         </Card>
