@@ -74,8 +74,6 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const { height,width } = useWindowDimensions();
 
-    let numBalls = Math.floor(height/6);
-
 
     useEffect(() => {
         const handler = (e: MouseEvent) => {
@@ -92,10 +90,10 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
         <div className="container min-h-100% min-w-full justify-center items-center relative mb-12">
             <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto min-w-full  justify-center items-center -z-10">
                 
-                {width > 600?Array.from({ length: numBalls }, (_, i) => (
+                {width > 600?Array.from({ length: 100 }, (_, i) => (
                     <Dot reactive={true} key={i} mousePos={mousePos}></Dot>
                 )):
-                    Array.from({ length: numBalls }, (_, i) => (
+                    Array.from({ length: 100 }, (_, i) => (
                         <Dot reactive={false }key={i} mousePos={mousePos}></Dot>
                     )) }
             </div>
