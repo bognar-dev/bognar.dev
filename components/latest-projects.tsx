@@ -9,7 +9,7 @@ import ProjectCard from './project-card';
 export default async function LatestProjects({amount=2,className}:{amount?:number,className?:string}) {
     const response = await fetch(`${process.env.BACKEND_URL}/api/projects`, { next: { revalidate: 3600 } })
     const data  = await( response.json()) as Project[];
-    data.sort((a,b)=>new Date(b.data.endDate).getTime()-new Date(a.data.endDate).getTime()).splice(amount)
+    data.sort((a,b)=>new Date(b.data.endDate).getTime() - new Date(a.data.endDate).getTime()).splice(amount)
 
     
     return (
@@ -18,7 +18,7 @@ export default async function LatestProjects({amount=2,className}:{amount?:numbe
         <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-3  '>
             {data.map((project: Project, index: number) => (
                 
-                <ProjectCard project={project} className='bg-accent-50'/>
+                <ProjectCard project={project} key={index} className='bg-accent-50'/>
             ))}
         </div>
         </Card>

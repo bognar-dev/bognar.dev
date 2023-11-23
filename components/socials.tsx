@@ -3,13 +3,14 @@ import { Accordion, AccordionTitle, AccordionItem, AccordionItemTitle, Accordion
 import { Icons } from "./icons";
 import { twMerge } from "tailwind-merge";
 import ScrollMotionDiv from "./scroll-motion-div";
+import SectionHeading from "./section-header";
 
 export default function Socials({ className,motion=false }: {className?: string,motion?:boolean}) {
   if(motion){
     return(
       <ScrollMotionDiv>
       <Accordion className={twMerge('w-full bg-accent-100 backdrop-blur-sm',className)}>
-      <AccordionTitle className="text-3xl first-letter:text-4xl">Contact</AccordionTitle>
+      <SectionHeading>My biography</SectionHeading>
       <AccordionItem
         itemTitle={<AccordionItemTitle><Icons.gitHub className="w-5 h-5"/></AccordionItemTitle>}
         accordionItemContent={<AccordionItemBody>Link to my GitHub</AccordionItemBody>}
