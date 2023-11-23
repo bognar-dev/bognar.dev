@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 import { MotionDiv } from "./motion-div";
+import { useMediaQuery } from "react-responsive";
 
 
 const BIG_SIZE = 50;
@@ -72,7 +72,7 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
 
 export default function BGBalls({ children }: { children: React.ReactNode }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const { height,width } = useWindowDimensions();
+    const isMobile = useMediaQuery({ query: '(min-width: 700px)' });
 
 
     useEffect(() => {
@@ -85,12 +85,11 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
             window.removeEventListener('mousemove', handler);
         };
     }, []);
-
     return (
         <div className="container min-h-100% min-w-full justify-center items-center relative mb-12">
             <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto min-w-full  justify-center items-center -z-10">
                 
-                {width > 600?Array.from({ length: 100 }, (_, i) => (
+                {isMobile?Array.from({ length: 100 }, (_, i) => (
                     <Dot reactive={true} key={i} mousePos={mousePos}></Dot>
                 )):
                     Array.from({ length: 100 }, (_, i) => (

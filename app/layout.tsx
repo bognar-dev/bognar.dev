@@ -39,9 +39,9 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning className="">
+      <html lang="en" suppressHydrationWarning={true} className="">
         <head />
-        <body className='bg-background-50 text-text-900 no-scrollbar font-body'>
+        <body className='bg-background-50 text-text-900 no-scrollbar font-mono'>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             

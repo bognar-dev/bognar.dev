@@ -9,8 +9,8 @@ const config: Config = {
 theme:{
   extend:{
     fontFamily: {
-      plaster: ['var(--font-plaster)'],
-      body: ['var(--font-body)'],
+      sans: ['var(--font-inter)'],
+      mono: ['var(--font-roboto-mono)'],
     },
     colors: {
       'text': {

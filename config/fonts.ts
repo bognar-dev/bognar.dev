@@ -1,13 +1,15 @@
-import { Plaster , Roboto_Slab as FontBody } from "next/font/google"
-
-export const fontBody = FontBody({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-body",
+import { Inter, Arbutus } from 'next/font/google'
+ 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 })
-
-export const fontPlaster = Plaster({
-  subsets: ["latin-ext"],
+ 
+const roboto_mono = Arbutus({
   weight: "400",
-  variable: "--font-plaster",
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
 })
+ 
