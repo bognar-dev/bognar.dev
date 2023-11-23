@@ -1,3 +1,5 @@
+'use client'
+
 import { Project } from '@/types/project';
 import React from 'react';
 import ProjectPreview from './project-preview';
