@@ -7,7 +7,6 @@ import Card from './card';
 import { twMerge } from 'tailwind-merge';
 import SectionHeading from './section-header';
 import ProjectCard from './project-card';
-import { useMediaQuery } from 'react-responsive';
 
 export default async function LatestProjects({amount=2,className}:{amount?:number,className?:string}) {
 
@@ -17,7 +16,7 @@ export default async function LatestProjects({amount=2,className}:{amount?:numbe
 
    
     return (
-        <Card className={twMerge('p-5',className)}>
+        <Card className={twMerge(className,'p-5 ')}>
         <SectionHeading>Recent Projects:</SectionHeading>
         <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-3  '>
             {data.map((project: Project, key: number) => (

@@ -1,23 +1,20 @@
 
 import ProjectCard from '@/components/project-card';
+import ProjectFilter from '@/components/project-filter';
 import ProjectPreview from '@/components/project-preview';
-import { Project, Projects } from '@/types/project';
+import { Project } from '@/types/project';
+import Projects from '@/components/projects';
 
-export default async function Projects() {
+export default async function ProjectsPage() {
+
 
   const response = await fetch(`${process.env.BACKEND_URL}/api/projects`, { next: { revalidate: 3600 } })
-  const data  = await( response.json()) as Project[];
+  const data = await response.json() as Project[];
+
 
   return (
-    <main className="flex min-h-screen sm:p-5">
-      <div className='grid gap-5 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 min-w-full'>
-        {data.map((project: Project, index: number) => (
-          <ProjectCard project={project} key={index} className='bg-accent-50'/>
-        ))}
-
-
-      </div>
+    <main className="flex flex-col min-h-screen p-2 sm:p-5">
+      <Projects data={data} />
     </main>
   );
-
 }

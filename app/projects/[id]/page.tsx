@@ -17,10 +17,10 @@ export default async function ProjectPage({ params }: { params: { id: string } }
   const post  = await( response.json()) as Project;
     console.log(post)
     return(
-      <>
+      <main className="p-2">
         <ProjectPreview className="text-lg" project={post} moreButton={false} admin={false}/>
         <ProjectView project={post.data}/>
-        </>
+        </main>
     )
 }
 
