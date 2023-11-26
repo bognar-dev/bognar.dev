@@ -8,7 +8,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 type ProjectProps = (typeof timeLineData)[number];
 
 export default function TimelineEvent({
-    title, text, date, category, link,image
+    title, text, date, tag, link,image
 }: ProjectProps) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -39,7 +39,7 @@ export default function TimelineEvent({
                             className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
 
                         >
-                            {category.tag}
+                            {tag}
                         </li>
                         <li
                             className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"

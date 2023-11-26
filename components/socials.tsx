@@ -26,6 +26,11 @@ export default function Socials({ className,motion=false }: {className?: string,
         accordionItemContent={<AccordionItemBody>Ask me anything on Discord</AccordionItemBody>}
         accordionItemButton={<AccordionItemButton href={siteConfig.links.discord}>Follow me</AccordionItemButton>}
       />
+      <AccordionItem
+        itemTitle={<AccordionItemTitle><Icons.linkedIn className="w-5 h-5"/></AccordionItemTitle>}
+        accordionItemContent={<AccordionItemBody>See my linkedIn profile</AccordionItemBody>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.linkedin}>Follow me</AccordionItemButton>}
+      />
     </Accordion>
     </ScrollMotionDiv>
     )
@@ -48,6 +53,11 @@ export default function Socials({ className,motion=false }: {className?: string,
       accordionItemContent={<AccordionItemBody>Ask me anything on Discord</AccordionItemBody>}
       accordionItemButton={<AccordionItemButton href={siteConfig.links.discord}>Follow me</AccordionItemButton>}
     />
+    <AccordionItem
+        itemTitle={<AccordionItemTitle><Icons.linkedIn className="w-5 h-5"/></AccordionItemTitle>}
+        accordionItemContent={<AccordionItemBody>See my linkedIn profile</AccordionItemBody>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.linkedin}>Follow me</AccordionItemButton>}
+      />
   </Accordion>
   )
   }

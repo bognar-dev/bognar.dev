@@ -46,7 +46,7 @@ export default function ProjectCard({
                             <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
 
 
-                                {project.data.tags.map((tag, key) => (
+                                {project.data.tags.slice(0,3).map((tag, key) => (
                                     <Tag key={key} tag={tag} colour={"secondary"} />
                                 ))}
 
@@ -94,9 +94,9 @@ export default function ProjectCard({
                         <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
 
 
-                            {project.data.tags.map((tag, key) => (
-                                <Tag key={key} tag={tag} colour={"secondary"} />
-                            ))}
+                        {project.data.tags.slice(0,3).map((tag, key) => (
+                                    <Tag key={key} tag={tag} colour={"secondary"} />
+                                ))}
 
 
                         </ul>

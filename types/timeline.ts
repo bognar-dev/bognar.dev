@@ -1,15 +1,17 @@
 export interface TimeLine {
+    title: string;
     text?: string | null;
     date?: string | null;
-    category?: Category | null;
+    tag: string ;
     link?: Link | null;
+    image: string;
   }
-  export interface Category {
-    tag: string;
-    color: string;
-  }
+  
   export interface Link {
     url: string;
     text: string;
   }
+  
+
+
   
