@@ -4,6 +4,8 @@ import React from 'react';
 import Button from './button';
 import Card from './card';
 import Tag from './tag';
+import MarkdownView from 'react-showdown';
+
 
 function ProjectView({ project }: { project: ProjectData }) {
     return (
@@ -15,8 +17,13 @@ function ProjectView({ project }: { project: ProjectData }) {
                 href={project.url} >
                 Visit Project
             </Button>
-            <p className='pt-10 leading-7'> {project.longDescription}</p>
-           
+            <p className='pt-10 self-center prose'>
+                <MarkdownView
+                    markdown={project.longDescription}
+                    options={{ tables: true, emoji: true,noHeaderId: true }}
+                />
+            </p>
+
             <blockquote className="py-5">
                 When did I start this project ? {project.startDate}
             </blockquote>

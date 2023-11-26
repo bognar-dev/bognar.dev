@@ -55,7 +55,7 @@ export const timeLineData:TimeLine[] = [
         "image": "https://tonimarino.co.uk/wp-content/uploads/2019/08/London-Underground-Logo.png"
     },
     {
-        "title": "Abitur at Neues Gymnasium Leibniz",
+        "title": "Neues Gymnasium Leibniz",
         "text":"Stuttgart, Germany",
         "date": "2012-2020",
         
