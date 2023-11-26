@@ -5,7 +5,8 @@ import Button from './button';
 import Card from './card';
 import Tag from './tag';
 import MarkdownView from 'react-showdown';
-
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'
 
 function ProjectView({ project }: { project: ProjectData }) {
     return (
@@ -18,10 +19,7 @@ function ProjectView({ project }: { project: ProjectData }) {
                 Visit Project
             </Button>
             <p className='pt-10 self-center prose'>
-                <MarkdownView
-                    markdown={project.longDescription}
-                    options={{ tables: true, emoji: true,noHeaderId: true }}
-                />
+            <Markdown remarkPlugins={[remarkGfm]}>{project.longDescription}</Markdown>
             </p>
 
             <blockquote className="py-5">

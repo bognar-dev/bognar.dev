@@ -8,6 +8,7 @@ import { sendEditedProject } from '@/app/actions';
 import { useState } from "react";
 import { useFormState } from "react-dom";
 import { SubmitButton } from "@/components/submit-button";
+import MarkdownView from "react-showdown";
 
 const initialState = {
     message: null,
@@ -21,7 +22,8 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
         setHeader(e.target.value);
     };
     const handleDescriptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setHeader(e.target.value);
+        console.log(e.target.value)
+        setLongDescription(e.target.value);
     };
 
 
@@ -67,14 +69,20 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                 </div>
             </header>
 
-            <div className='grid gap-8 m-5 grid-flow-row break-words'>
+            <div className='grid gap-8 m-5 grid-flow-row justify-items-center justify-center'>
                 <input className='text-3xl' value={header} name="projectName" onInput={handleChange} defaultValue={header} />
 
                 <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
                     <input defaultValue={project.data.url} placeholder={project.data.url} required />
                 </Button>
-                <div className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} >{project.data.longDescription} </div>
-                <input value={longDescription} name="longDescription" hidden={true}></input>
+                <div className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} >{longDescription} </div>
+                <p className='pt-10 self-center prose dark:prose-invert'>
+                <MarkdownView
+                    markdown={longDescription}
+                    options={{ tables: true, emoji: true,noHeaderId: true }}
+                />
+            </p>
+                <input value={longDescription} readOnly name="longDescription" hidden={true}></input>
                 <div>
                     <label>Start Date</label>
                     <input type="date" defaultValue={project.data.startDate} required />
