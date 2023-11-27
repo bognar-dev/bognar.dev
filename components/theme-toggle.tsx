@@ -1,20 +1,30 @@
 "use client"
 import * as React from "react"
 import { useTheme } from "next-themes"
+import { motion } from "framer-motion"
 import { Icons } from "./icons"
+
+const variants = {
+    initial: { opacity: 0, scale: 0.5, x: 0, rotate: -90 },
+    animate: { opacity: 1, scale: 1, x: 0, rotate: 0 },
+    exit: { opacity: 0, scale: 0.5, x: 0, rotate: 90 }
+};
 
 export default function ThemeToggle() {
     const { theme, setTheme } = useTheme();
 
-
     return (
-
-        <button className="border bg-accent-200 border-accent-200  rounded-lg p-2 hover:bg-accent-500 hover:border-accent-500 ease-in duration-100 ml-1 z-10"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-
-            {theme == "light" ? <Icons.sun /> :
-                <Icons.moon />}
-        </button>
-    )
+        <motion.button
+            className="group rounded-lg p-2 hover:bg-primary-100 ease-in duration-100 ml-1 z-10"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={variants}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+        >
+            {theme === "light" ? <Icons.sun className=" group-hover:scale-75 ease-in duration-200" /> : <Icons.moon className=" ease-in  duration-200 group-hover:scale-75" />}
+        </motion.button>
+    );
 }
 
