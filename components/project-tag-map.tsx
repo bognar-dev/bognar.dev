@@ -15,7 +15,7 @@ const TagMap = ({ tags, handleTagClick, selectedTags }: TagProps) => {
         <div ref={parent}  className='flex flex-wrap justify-center gap-2 text-lg p-5'>
             {sortedTags.map((tag:string, index:number) => (
                 <Tag key={index} tag={tag} onClick={() => handleTagClick(tag)}
-                    className={`select-none ${selectedTags.includes(tag) ? 'bg-primary-400 hover:bg-primary-500' : 'bg-accent-300 hover:bg-accent-200'
+                    className={`select-none ${selectedTags.includes(tag) ? 'bg-primary-300 hover:bg-primary-400' : 'bg-accent-200 hover:bg-accent-300'
                         }`} colour='' />
             ))}
         </div>

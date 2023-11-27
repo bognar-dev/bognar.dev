@@ -11,37 +11,36 @@ import { TimeLine } from "@/types/timeline";
 
 export default function Timeline() {
   const [filteredEvents, setFilteredEvents] = React.useState<TimeLine[]>(timeLineData);
-  const [selectedTags, setSelectedTags] = React.useState<string[]>([]);
+  const [selectedTag, setSelectedTag] = React.useState<string>("all");
   const [parent] = useAutoAnimate();
   const allTags = timeLineData.reduce((tags: string[], event: TimeLine) => {
     if (!tags.includes(event.tag)) {
-        tags.push(event.tag);
+      tags.push(event.tag);
     }
     return tags;
-}, []);
-
-
+  }, [])
+  allTags.push("all")
+  allTags.sort();
+  
   React.useEffect(() => {
-    let filteredEvents;
-
-    if (selectedTags.length === 0) {
-        filteredEvents = timeLineData;
-    } else {
-        filteredEvents = timeLineData.filter((event: TimeLine) => {
-            return selectedTags.some((tag: string) => event.tag.includes(tag));
-        });
+    console.log(selectedTag);
+    if(selectedTag === "all") {
+      setFilteredEvents(timeLineData);
+      return;
     }
-
+    const filteredEvents = timeLineData.filter((event: TimeLine) => {
+      return selectedTag === event.tag;
+    });
     setFilteredEvents(filteredEvents);
-}, [selectedTags, timeLineData]);
+  }, [selectedTag, timeLineData]);
 
   return (
-    <section className="scroll-mt-28 mb-28 mx-4">
-      <TimeLineFilter tags={allTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+    <section className=" mb-28 mx-4">
+      <TimeLineFilter tags={allTags} selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
       <SectionHeading>My biography</SectionHeading>
       <div ref={parent}>
-        {filteredEvents.map((project, index) => (
-          <TimelineEvent key={index} {...project} />
+        {filteredEvents.map((event, index) => (
+          <TimelineEvent key={index} {...event} />
         ))}
       </div>
     </section>
