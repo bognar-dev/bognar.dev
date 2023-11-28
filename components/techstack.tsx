@@ -98,7 +98,7 @@ export default function TechStack() {
             <ul className="flex flex-wrap justify-center gap-2 text-lg p-5">
                 {technologies.map((tech, index) => (
                     <motion.li
-                        className="flex flex-wrap justify-center items-center gap-3 bg-background-50 border-primary-500 rounded-xl px-5 py-3 hover:rotate-3"
+                        className="flex flex-wrap justify-center items-center gap-3 bg-primary-100 border-primary-500 rounded-xl px-5 py-3 hover:rotate-3"
                         key={index}
                         variants={fadeInAnimationVariants}
                         initial="initial"
