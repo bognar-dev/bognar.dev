@@ -41,7 +41,7 @@ const Projects = ({ data }: ProjectsViewProps) => {
             <ProjectFilter tags={allTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags}/>
             <div ref={parent} className='grid gap-5 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 min-w-full'>
                 {filteredData.map((project: Project, index: number) => (
-                    <ProjectCard project={project} key={index} className='bg-accent-50' />
+                    <ProjectCard project={project} key={index} className='' />
                 ))}
             </div>
         </div>

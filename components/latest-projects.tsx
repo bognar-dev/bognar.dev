@@ -21,7 +21,7 @@ export default async function LatestProjects({amount=2,className}:{amount?:numbe
         <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-3  '>
             {data.map((project: Project, key: number) => (
                 
-                <ProjectCard animate={false} project={project} key={key} className='bg-accent-50'/>
+                <ProjectCard animate={false} project={project} key={key} className=''/>
             ))}
         </div>
         </Card>

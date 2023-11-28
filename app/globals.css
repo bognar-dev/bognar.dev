@@ -4,17 +4,17 @@
 
 @layer base {
   :root {
-    --text-50: #ecf9f4;
-    --text-100: #d9f2ea;
-    --text-200: #b3e6d5;
-    --text-300: #8cd9bf;
-    --text-400: #66ccaa;
-    --text-500: #40bf95;
-    --text-600: #339977;
-    --text-700: #267359;
-    --text-800: #194d3c;
-    --text-900: #0d261e;
-    --text-950: #06130f;
+    --text-50: #f3f4f1;
+    --text-100: #e8e8e3;
+    --text-200: #d0d1c7;
+    --text-300: #b9baab;
+    --text-400: #a2a38f;
+    --text-500: #8a8c73;
+    --text-600: #6f705c;
+    --text-700: #535445;
+    --text-800: #37382e;
+    --text-900: #1c1c17;
+    --text-950: #0e0e0b;
 
     --background-50: #faf4eb;
     --background-100: #f5e9d6;
@@ -66,79 +66,82 @@
 
   }
 
-    .dark {
-      --text-50: #071013;
-      --text-100: #0e2025;
-      --text-200: #1b414b;
-      --text-300: #296170;
-      --text-400: #368196;
-      --text-500: #44a1bb;
-      --text-600: #69b4c9;
-      --text-700: #8fc7d6;
-      --text-800: #b4dae4;
-      --text-900: #daecf1;
-      --text-950: #ecf6f8;
-  
-      --background-50: #081012;
-      --background-100: #101f23;
-      --background-200: #1f3e47;
-      --background-300: #2f5d6a;
-      --background-400: #3e7d8e;
-      --background-500: #4e9cb1;
-      --background-600: #71b0c1;
-      --background-700: #95c3d0;
-      --background-800: #b8d7e0;
-      --background-900: #dcebef;
-      --background-950: #edf5f7;
-  
-      --primary-50: #0a100e;
-      --primary-100: #13201b;
-      --primary-200: #273f37;
-      --primary-300: #3a5f52;
-      --primary-400: #4e7e6d;
-      --primary-500: #619e89;
-      --primary-600: #81b1a0;
-      --primary-700: #a0c5b8;
-      --primary-800: #c0d8d0;
-      --primary-900: #dfece7;
-      --primary-950: #eff5f3;
-  
-      --secondary-50: #071012;
-      --secondary-100: #0e2025;
-      --secondary-200: #1c3f4a;
-      --secondary-300: #2a5f6f;
-      --secondary-400: #387e94;
-      --secondary-500: #469eb9;
-      --secondary-600: #6bb1c7;
-      --secondary-700: #90c5d5;
-      --secondary-800: #b5d8e3;
-      --secondary-900: #daecf1;
-      --secondary-950: #edf5f8;
-  
-      --accent-50: #0b0b0f;
-      --accent-100: #17151e;
-      --accent-200: #2d2b3b;
-      --accent-300: #444059;
-      --accent-400: #5a5676;
-      --accent-500: #716b94;
-      --accent-600: #8d89a9;
-      --accent-700: #aaa6bf;
-      --accent-800: #c6c4d4;
-      --accent-900: #e3e1ea;
-      --accent-950: #f1f0f4;
-  
-    }
+  .dark {
+    --text-50: #111009;
+    --text-100: #212012;
+    --text-200: #424024;
+    --text-300: #636036;
+    --text-400: #858147;
+    --text-500: #a6a159;
+    --text-600: #b8b47a;
+    --text-700: #c9c69c;
+    --text-800: #dbd9bd;
+    --text-900: #edecde;
+    --text-950: #f6f6ee;
+
+    --background-50: #081012;
+    --background-100: #101f23;
+    --background-200: #1f3e47;
+    --background-300: #2f5d6a;
+    --background-400: #3e7d8e;
+    --background-500: #4e9cb1;
+    --background-600: #71b0c1;
+    --background-700: #95c3d0;
+    --background-800: #b8d7e0;
+    --background-900: #dcebef;
+    --background-950: #edf5f7;
+
+    --primary-50: #0a100e;
+    --primary-100: #020303;
+    --primary-200: #15221dd1;
+    --primary-300: #3a5f52;
+    --primary-400: #4e7e6d;
+    --primary-500: #619e89;
+    --primary-600: #81b1a0;
+    --primary-700: #a0c5b8;
+    --primary-800: #c0d8d0;
+    --primary-900: #dfece7;
+    --primary-950: #eff5f3;
+
+    --secondary-50: #071012;
+    --secondary-100: #0e2025;
+    --secondary-200: #1c3f4a;
+    --secondary-300: #2a5f6f;
+    --secondary-400: #387e94;
+    --secondary-500: #469eb9;
+    --secondary-600: #6bb1c7;
+    --secondary-700: #90c5d5;
+    --secondary-800: #b5d8e3;
+    --secondary-900: #daecf1;
+    --secondary-950: #edf5f8;
+
+    --accent-50: #0b0b0f;
+    --accent-100: #17151e;
+    --accent-200: #2d2b3b;
+    --accent-300: #444059;
+    --accent-400: #5a5676;
+    --accent-500: #716b94;
+    --accent-600: #8d89a9;
+    --accent-700: #aaa6bf;
+    --accent-800: #c6c4d4;
+    --accent-900: #e3e1ea;
+    --accent-950: #f1f0f4;
+
+  }
 }
 
 
 @layer utilities {
+
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }

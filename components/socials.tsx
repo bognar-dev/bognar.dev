@@ -9,7 +9,7 @@ export default function Socials({ className,motion=false }: {className?: string,
   if(motion){
     return(
       <ScrollMotionDiv>
-      <Accordion className={twMerge('w-full bg-accent-100 backdrop-blur-sm',className)}>
+      <Accordion className={twMerge('w-full bg-primary-100 backdrop-blur-sm',className)}>
       <SectionHeading>My biography</SectionHeading>
       <AccordionItem
         itemTitle={<AccordionItemTitle><Icons.gitHub className="w-5 h-5"/></AccordionItemTitle>}
@@ -57,6 +57,11 @@ export default function Socials({ className,motion=false }: {className?: string,
         itemTitle={<AccordionItemTitle><Icons.linkedIn className="w-5 h-5"/></AccordionItemTitle>}
         accordionItemContent={<AccordionItemBody>See my linkedIn profile</AccordionItemBody>}
         accordionItemButton={<AccordionItemButton href={siteConfig.links.linkedin}>Follow me</AccordionItemButton>}
+      />
+      <AccordionItem
+        itemTitle={<AccordionItemTitle><Icons.instagram className="w-5 h-5"/></AccordionItemTitle>}
+        accordionItemContent={<AccordionItemBody>Visit me!</AccordionItemBody>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.instagram}>Follow me</AccordionItemButton>}
       />
   </Accordion>
   )

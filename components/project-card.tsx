@@ -37,7 +37,7 @@ export default function ProjectCard({
                     }}
                     className="group mb-3 sm:mb-8 last:mb-0"
                 >
-                    <section className={twMerge(`bg-accent-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-accent-200 transition `, className)}>
+                    <section className={twMerge(`bg-primary-50 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-primary-200 transition `, className)}>
                         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] grid grid-flow-row h-full sm">
                             <h3 className="text-2xl font-semibold">{project.data.name}</h3>
                             <p className="my-2 leading-relaxed truncate text-gray-700 dark:text-white/70">
@@ -85,7 +85,7 @@ export default function ProjectCard({
                 ref={ref}
                 className="group mb-3 sm:mb-8 last:mb-0"
             >
-                <section className={twMerge(`bg-accent-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-accent-200 transition `, className)}>
+                <section className={twMerge(`bg-primary-50 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-primary-200 transition `, className)}>
                     <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] grid grid-flow-row h-full sm">
                         <h3 className="text-2xl font-semibold">{project.data.name}</h3>
                         <p className="my-2 leading-relaxed text-gray-700 dark:text-white/70">
