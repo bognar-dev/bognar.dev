@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { revalidatePath } from 'next/cache';
 import { Options } from 'next/dist/server/base-server';
+import { NextResponse } from 'next/server';
 
 
 
@@ -17,7 +18,8 @@ export const signIn = async (prevState: any, formData: FormData) => {
     username,
     password
   }
-  const options = {
+  const options: RequestInit = {
+    cache: 'no-store' as RequestCache,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -25,14 +27,13 @@ export const signIn = async (prevState: any, formData: FormData) => {
     body: JSON.stringify(user),
   };
   const response = await fetch(`${process.env.BACKEND_URL}/login`, options)
-
-  const data = await response.json();
+  const data = await response.json()
   console.log(data)
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
 
-  if (data.status === "success") {
-    console.log(data + " success")
+  if (data.status === "success"||data.status==='Successfully authenticated user'||data.status==='new token generated'||(data.token !== undefined||null)) {
+    console.log("success")
     redirect('/admin/dashboard')
 
   } else {
@@ -48,7 +49,7 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
   if (formData === null) {
     return { message: 'updateProject failed' }
   }
-  const cookieStore = cookies()
+  /* const cookieStore = cookies()
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -77,7 +78,7 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
       .upload(`/${file.name}`, file, {
         cacheControl: '3600',
         upsert: false
-      })
+      }) 
     if (error !== null) {
       return { message: error.stack }
     }
@@ -89,22 +90,28 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
   }
   formData.delete('imageURL')
   console.log("imageURL: " + formData.get('image'))
-  console.log(formData)
+  */
+  
+  
   const token = cookies().get('jwt')
-  if (token === undefined) {
+  if (token === undefined || token.value === '') {
     return { message: "token not defined" }
   }
+  const tags= formData.getAll('tag')
+  formData.delete('tag')
+  formData.set('tags',JSON.stringify(tags))
+  console.log(formData.get('tags'));
 
-  const response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
+  const response : Response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
+    cache: 'no-store' as RequestCache,
     method: 'POST',
-
     headers: {
-      'Authentication': token.value,
+      'Authorization': token.value,
     },
-
-
     body: formData
   })
+  const data = await response.json()
+  console.log(data)
 
   revalidatePath('/')
   return { message: 'success' }
