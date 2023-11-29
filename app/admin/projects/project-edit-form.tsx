@@ -73,7 +73,7 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                 <input className='text-3xl' value={header} name="projectName" onInput={handleChange} defaultValue={header} />
 
                 <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
-                    <input defaultValue={project.data.url} placeholder={project.data.url} required />
+                    <input name="url" defaultValue={project.data.url} placeholder={project.data.url} required />
                 </Button>
                 <div className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} >{longDescription} </div>
                 <p className='pt-10 self-center prose dark:prose-invert'>
@@ -85,7 +85,7 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                 <input value={longDescription} readOnly name="longDescription" hidden={true}></input>
                 <div>
                     <label>Start Date</label>
-                    <input type="date" defaultValue={project.data.startDate} required />
+                    <input name="startDate" type="date" defaultValue={project.data.startDate} required />
                 </div>
                 <div>
                     <label>End Date</label>

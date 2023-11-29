@@ -97,9 +97,10 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
   if (token === undefined || token.value === '') {
     return { message: "token not defined" }
   }
-  const tags= formData.getAll('tag')
+  const tags = formData.getAll('tag')
   formData.delete('tag')
   formData.set('tags',JSON.stringify(tags))
+  
   console.log(formData.get('tags'));
 
   const response : Response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
