@@ -13,7 +13,7 @@ export default async function ProjectsPage() {
 
 
   return (
-    <main className="flex flex-col min-h-screen p-2 sm:p-5">
+    <main className="flex flex-row justify-items-center justify-center min-h-screen p-2 sm:p-5">
       <Projects data={data} />
     </main>
   );

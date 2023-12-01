@@ -6,6 +6,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { Icons } from './icons';
 import { twMerge } from 'tailwind-merge';
+import { AnimatePresence , motion } from 'framer-motion';
+import { MotionDiv } from './motion-div';
 
 function AccordionItemTitle({ children,className }: { children: React.ReactNode,className?:string }){
     return(
@@ -44,10 +46,24 @@ function AccordionItemContent({ children, isExpanded }: { children: React.ReactN
 }
 
 
+const fadeInAnimationVariants = {
+    initial: {
+        opacity: 0.1,
+        y: 10,
+        x: 10
+    },
+    animate: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        x:0,
+        transition: {
+            delay: 0.05 * index,
+        },
+    }),
+};
 
 
-
-function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }: { itemTitle: React.ReactNode, accordionItemContent: React.ReactNode, accordionItemButton: React.ReactNode }) {
+function AccordionItem({ index,itemTitle, accordionItemContent, accordionItemButton }: { index:number,itemTitle: React.ReactNode, accordionItemContent: React.ReactNode, accordionItemButton: React.ReactNode }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleAccordion = () => {
@@ -55,7 +71,15 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
     };
 
     return (
-        <div className={` text-text-900 main-1 pt-4 sm:pt-6  mb-5 px-4 rounded-lg flex flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-primary-200 pb-8' : 'border-primary-300'}`}>
+        
+        <motion.li className={` text-text-900 main-1 pt-4 sm:pt-6  mb-5 px-4 rounded-lg flex flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-primary-200 pb-8' : 'border-primary-300'}`}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{
+                    once: true
+                }}
+                custom={index}>
             <div className="btn-content" data-tab="1" onClick={toggleAccordion}>
                {isExpanded?<Icons.circleMinus/>:<Icons.circlePlus/>}
             </div>
@@ -67,15 +91,17 @@ function AccordionItem({ itemTitle, accordionItemContent, accordionItemButton }:
                 {accordionItemButton}
             </div>
             </div>
-        </div>
+        </motion.li>
     );
 }
 
 function Accordion({ children,className }: { children: React.ReactNode ,className?:string}) {
     return (
+        <AnimatePresence>
         <div className={twMerge("w-max p-8 gap-4 items-center justify-center bg-primary-100 shadow-sm shadow-primary-400 rounded-lg ",className)}>
            {children}
         </div>
+        </AnimatePresence>
     );
 }
 
