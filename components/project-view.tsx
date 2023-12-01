@@ -1,10 +1,7 @@
 import { ProjectData } from '@/types/project';
-import Link from 'next/link';
 import React from 'react';
 import Button from './button';
-import Card from './card';
 import Tag from './tag';
-import MarkdownView from 'react-showdown';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 
