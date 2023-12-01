@@ -24,7 +24,7 @@ function ProjectPreview({className, project ,moreButton,admin,motion=true}: { cl
                 <div className="flex flex-col items-start justify-items-start  p-3 bg-primary-50 backdrop-blur-sm shadow-lg rounded-lg">
                     <div className='flex flex-wrap flex-row gap-3 p-3'>
                     {project.data.tags.map((tag, index) => (
-                        <Tag key={index} tag={tag} colour={"secondary"} />
+                        <Tag index={index} key={index} tag={tag} colour={"secondary"} />
                     ))}
                     </div>
                     <h3 className="text-sm ">{project.data.description}</h3>
@@ -48,7 +48,7 @@ function ProjectPreview({className, project ,moreButton,admin,motion=true}: { cl
             <div className="flex flex-col items-start justify-items-start  p-3 bg-primary-50 backdrop-blur-sm shadow-lg rounded-lg">
                 <div className='flex flex-wrap flex-row gap-3 p-3'>
                 {project.data.tags.map((tag, index) => (
-                    <Tag key={index} tag={tag} colour={"secondary"} />
+                    <Tag index={index} key={index} tag={tag} colour={"secondary"} />
                 ))}
                 </div>
                 <h3 className="text-sm ">{project.data.description}</h3>
