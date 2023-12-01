@@ -7,7 +7,6 @@ import Tag from './tag';
 
 function ProjectPreview({className, project ,moreButton,admin}: { className?: string,project: Project,moreButton:boolean,admin: boolean}) {
     const path = admin ? `/admin/projects/${project.id}`:`/projects/${project.id}`
-   
     return (
         <>
         <header className={twMerge('flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md shadow-sm bg-no-repeat bg-cover bg-bottom',className)} style={{ backgroundImage: `url(${project.data.image})`}} >
