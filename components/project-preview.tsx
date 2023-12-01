@@ -1,18 +1,19 @@
+"use client"
+
 import { Project } from '@/types/project';
 import React from 'react';
 import Button from './button';
 import { Icons } from './icons';
 import { twMerge } from 'tailwind-merge';
 import Tag from './tag';
-import Card from './card';
-import ScrollMotionDiv from './scroll-motion-div';
+import { motion } from 'framer-motion';
 
 
-function ProjectPreview({className, project ,moreButton,admin,motion=true}: { className?: string,project: Project,moreButton:boolean,admin: boolean ,motion?:boolean}) {
+function ProjectPreview({className, project ,moreButton,admin,motion: animate=true}: { className?: string,project: Project,moreButton:boolean,admin: boolean ,motion?:boolean}) {
     const path = admin ? `/admin/projects/${project.id}`:`/projects/${project.id}`
-    if(motion){
+    if(animate){
         return (
-            <ScrollMotionDiv>
+            <motion.div>
             <header className={twMerge('flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md shadow-sm bg-no-repeat bg-cover bg-bottom',className)} style={{ backgroundImage: `url(${project.data.image})`}} >
                 <div className="flex justify-between pb-5 ">
                     <div className="text-lg font-bold uppercase p-1 bg-white/30 backdrop-blur-sm shadow-md rounded-lg">{project.data.name}</div>
@@ -32,7 +33,7 @@ function ProjectPreview({className, project ,moreButton,admin,motion=true}: { cl
                     
                 </div>
             </header>
-            </ScrollMotionDiv>
+            </motion.div>
         );
     }
     return (
