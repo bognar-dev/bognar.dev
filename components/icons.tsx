@@ -8,7 +8,8 @@ import {
   TagsIcon,
   Instagram,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  ArrowUpRight
 } from "lucide-react"
 
 
@@ -108,6 +109,7 @@ export const Icons = {
   sun: SunIcon,
   moon: MoonIcon,
   mail: Mail,
+  arrowUpRight: ArrowUpRight,
 }
 
 
