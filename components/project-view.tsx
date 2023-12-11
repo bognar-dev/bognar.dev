@@ -18,7 +18,7 @@ function ProjectView({ project }: { project: ProjectData }) {
                 href={project.url} >
                 Visit Project
             </Button>
-            <p className='pt-10 self-center prose dark:prose-invert'>
+            <p className='pt-10 self-center prose dark:prose-invert '>
             <Markdown remarkPlugins={[remarkGfm]}>{project.longDescription}</Markdown>
             </p>
 

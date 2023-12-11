@@ -9,6 +9,7 @@ import ThemeToggle from '@/components/theme-toggle';
 import { Metadata, Viewport } from 'next';
 import BGBalls from '@/components/bg-balls';
 import Footer from '@/components/newsletter';
+import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -49,9 +50,10 @@ export default function RootLayout({
             
             {children}
             
-          
+
             </div>
           </ThemeProvider>
+          <Analytics/>
         </body>
       </html>
     </>
