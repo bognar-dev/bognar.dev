@@ -1,10 +1,7 @@
 import { ProjectData } from '@/types/project';
-import Link from 'next/link';
 import React from 'react';
 import Button from './button';
-import Card from './card';
 import Tag from './tag';
-import MarkdownView from 'react-showdown';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 
@@ -39,7 +36,7 @@ function ProjectView({ project }: { project: ProjectData }) {
 
             <div className='flex flex-wrap items-center justify-center md:items-start md:justify-start gap-4 m-3'>
                 {project.tags.map((tag, index) => (
-                    <Tag key={index} tag={tag} colour={"secondary"} />
+                    <Tag index={index} key={index} tag={tag} colour={"secondary"} />
                 ))}
             </div>
         </article>

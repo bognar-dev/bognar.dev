@@ -29,7 +29,7 @@ export default function Home() {
               <About />
             </Card>
             
-            <Socials motion={false} className='md:col-span-1' />
+            <Socials motion={true} className='md:col-span-1' />
 
 
           </div>

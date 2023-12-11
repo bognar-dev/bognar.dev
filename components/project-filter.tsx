@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Tag from './tag';
 import TagMap from './project-tag-map';
+import SectionHeading from './section-header';
 
 type FilterProps = {
     tags: string[],
@@ -37,7 +38,10 @@ const ProjectFilter = ({ tags, className, selectedTags, setSelectedTags }: Filte
     };
 
     return (
-        <TagMap tags={tags} handleTagClick={handleTagClick} selectedTags={selectedTags} />
+        <div >
+            
+            <TagMap tags={tags} handleTagClick={handleTagClick} selectedTags={selectedTags} />
+        </div>
     );
 };
 

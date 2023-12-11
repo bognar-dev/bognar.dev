@@ -4,12 +4,16 @@ import React from 'react';
 import ProjectCard from './project-card';
 import ProjectFilter from './project-filter';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
+import { AnimatePresence, motion ,useMotionValue,useSpring} from 'framer-motion';
+import SectionHeading from './section-header';
+import { Icons } from './icons';
 
 type ProjectsViewProps = {
     data: Project[],
 }
 
 const Projects = ({ data }: ProjectsViewProps) => {
+    const [filterOpen, setFilterOpen] = React.useState<boolean>(false);
     const [filteredData, setFilteredData] = React.useState<Project[]>(data);
     const [selectedTags, setSelectedTags] = React.useState<string[]>([]);
     const [parent] = useAutoAnimate();
@@ -24,7 +28,7 @@ const Projects = ({ data }: ProjectsViewProps) => {
 
     React.useEffect(() => {
         let filteredProjects;
-    
+
         if (selectedTags.length === 0) {
             filteredProjects = data;
         } else {
@@ -32,13 +36,20 @@ const Projects = ({ data }: ProjectsViewProps) => {
                 return selectedTags.some((tag: string) => project.data.tags.includes(tag));
             });
         }
-    
+
         setFilteredData(filteredProjects);
     }, [selectedTags, data]);
 
     return (
         <div>
-            <ProjectFilter tags={allTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags}/>
+            <SectionHeading className='flex flex-wrap items-center justify-center mb-3 gap-2 cursor-pointer' onClick={() => setFilterOpen(prevState => !prevState)}>
+                Filter
+               
+                    {filterOpen ? <Icons.up /> : <Icons.down />}
+            </SectionHeading>
+            <AnimatePresence>
+                {filterOpen && <ProjectFilter tags={allTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />}
+            </AnimatePresence>
             <div ref={parent} className='grid gap-5 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 min-w-full'>
                 {filteredData.map((project: Project, index: number) => (
                     <ProjectCard project={project} key={index} className='' />

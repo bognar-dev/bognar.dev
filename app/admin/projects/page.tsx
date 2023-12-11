@@ -1,8 +1,7 @@
-import Button from "@/components/button";
-import Card from "@/components/card";
+
 import ProjectPreview from "@/components/project-preview";
 import { Project, Projects } from "@/types/project";
-import { cookies } from "next/headers";
+
 
 
 

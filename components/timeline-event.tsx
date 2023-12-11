@@ -25,7 +25,7 @@ export default function TimelineEvent({
                 scale: scaleProgess,
                 opacity: opacityProgess,
             }}
-            className="group mb-3 sm:mb-8 last:mb-0"
+            className="group mb-3 sm:mb-8 last:mb-0 hover:cursor-pointer"
         >
             <section className="bg-primary-50 min-w-[20rem] sm:min-w-[40rem] max-w-[40rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-primary-200 transition sm:group-even:pl-8 ">
                 <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">

@@ -47,7 +47,7 @@ export default function ProjectCard({
 
 
                                 {project.data.tags.slice(0,3).map((tag, key) => (
-                                    <Tag key={key} tag={tag} colour={"secondary"} />
+                                    <Tag animate={false} index={key} key={key} tag={tag} colour={""} />
                                 ))}
 
 
@@ -95,7 +95,7 @@ export default function ProjectCard({
 
 
                         {project.data.tags.slice(0,3).map((tag, key) => (
-                                    <Tag key={key} tag={tag} colour={"secondary"} />
+                                    <Tag index={key} key={key} tag={tag} colour={"primary"} />
                                 ))}
 
 
