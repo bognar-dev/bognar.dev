@@ -13,6 +13,7 @@ import Title from '@/components/title'
 import About from '@/components/about'
 import LatestProjects from '@/components/latest-projects'
 import ScrollMotionDiv from '@/components/scroll-motion-div'
+import { Icons } from '@/components/icons'
 
 
 
@@ -21,7 +22,7 @@ export default function Home() {
     <main className="flex min-h-screen min-w-full flex-col justify-center items-center font-body  px-5 w-full gap-5">
       <BGBalls>
         <Title />
-        <Button className='shadow-none hover:scale-110 text-text-50 md:scale-125' href="/projects">See my projects</Button>
+        <Button className='shadow-none flex flex-row justify-items-center justify-center group text-text-50' href="/projects">See my projects  <Icons.arrowUpRight  className="w-4 h-4 ml-2 mt-0.5"/></Button>
         <div className='grid grid-cols-1 gap-5'>
           <div className='grid gap-5 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
      

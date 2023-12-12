@@ -25,10 +25,10 @@ export default function MainNav({ items }: MainNavProps) {
                     key={index}
                     href={item.href}
                     className=
-                    "flex items-center text-sm font-medium hover:translate-x-1 hover:bg-secondary-200 ease-out duration-100 rounded-md px-4 mt-1 py-1"
+                    "group flex items-center text-sm font-medium hover:translate-x-1 hover:bg-secondary-200 ease-out duration-100 rounded-md px-4 mt-1 py-1"
                   >
                     {item.title}
-                    <Icons.arrowUpRight  className="w-4 h-4 ml-2"/>
+                    <Icons.arrowUpRight  className="group-hover:-translate-y-0.5  ease-out duration-100 w-4 h-4 ml-2"/>
                   </Link>
                 )
             )}
