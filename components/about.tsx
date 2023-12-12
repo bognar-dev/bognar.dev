@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Button from '@/components/button'
-import profile from '@/public/profile.jpg'
+// @ts-ignore
+import profile from "@/public/profile.jpg"
 import SectionHeading from './section-header'
 
 const About = () => {

@@ -1,16 +1,11 @@
 
-import { Inter } from 'next/font/google'
 import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
 import MainNav from '@/components/main-nav';
 
 import { ThemeProvider } from '@/components/theme-provider';
-import ThemeToggle from '@/components/theme-toggle';
 import { Metadata, Viewport } from 'next';
-import BGBalls from '@/components/bg-balls';
-import Footer from '@/components/newsletter';
 import { Analytics } from '@vercel/analytics/react';
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {

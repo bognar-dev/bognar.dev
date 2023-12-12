@@ -1,18 +1,12 @@
-import Image from 'next/image'
 import BGBalls from '@/components/bg-balls'
 import Card from '@/components/card'
 import Timeline from '@/components/timeline'
 import Button from '@/components/button'
-import Link from 'next/link'
-import profile from '@/public/profile.jpg'
-import { Accordion, AccordionTitle, AccordionItem, AccordionItemTitle, AccordionItemBody, AccordionItemButton } from '@/components/accordion'
-import { siteConfig } from '@/config/site'
 import Socials from '@/components/socials'
 import TechStack from '@/components/techstack'
 import Title from '@/components/title'
 import About from '@/components/about'
 import LatestProjects from '@/components/latest-projects'
-import ScrollMotionDiv from '@/components/scroll-motion-div'
 import { Icons } from '@/components/icons'
 
 
