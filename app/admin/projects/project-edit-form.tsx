@@ -29,12 +29,12 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
         setLongDescription(e.target.value);
     };
 
-const mdText =  unified()
+const mdText = String(  unified()
 .use(remarkParse)
 .use(remarkGfm)
 .use(remarkRehype)
 .use(rehypeStringify)
-.process(longDescription)
+.process(longDescription))
 
 
     // @ts-expect-error
