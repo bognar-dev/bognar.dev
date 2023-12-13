@@ -8,11 +8,9 @@ import { sendEditedProject } from '@/app/actions';
 import { useState } from "react";
 import { useFormState } from "react-dom";
 import { SubmitButton } from "@/components/submit-button";
-import rehypeStringify from 'rehype-stringify'
-import remarkGfm from 'remark-gfm'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import {unified} from 'unified'
+
+import Markdown from "@/components/markdown";
+import { Textarea } from "@/components/textarea";
 const initialState = {
     message: null,
 }
@@ -24,17 +22,12 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setHeader(e.target.value);
     };
-    const handleDescriptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         console.log(e.target.value)
         setLongDescription(e.target.value);
     };
 
-const mdText = String(  unified()
-.use(remarkParse)
-.use(remarkGfm)
-.use(remarkRehype)
-.use(rehypeStringify)
-.process(longDescription))
+
 
 
     // @ts-expect-error
@@ -83,9 +76,9 @@ const mdText = String(  unified()
                 <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
                     <input name="url" defaultValue={project.data.url} placeholder={project.data.url} required />
                 </Button>
-                <div className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} >{longDescription} </div>
+                <Textarea className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} />
                 <p className='pt-10 self-center prose dark:prose-invert'>
-                {mdText}
+                <Markdown content={longDescription}/>
             </p>
                 <input value={longDescription} readOnly name="longDescription" hidden={true}></input>
                 <div>
