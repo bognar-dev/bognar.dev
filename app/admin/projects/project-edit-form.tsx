@@ -8,8 +8,11 @@ import { sendEditedProject } from '@/app/actions';
 import { useState } from "react";
 import { useFormState } from "react-dom";
 import { SubmitButton } from "@/components/submit-button";
-import MarkdownView from "react-showdown";
-
+import rehypeStringify from 'rehype-stringify'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import {unified} from 'unified'
 const initialState = {
     message: null,
 }
@@ -26,7 +29,12 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
         setLongDescription(e.target.value);
     };
 
-
+const mdText =  unified()
+.use(remarkParse)
+.use(remarkGfm)
+.use(remarkRehype)
+.use(rehypeStringify)
+.process(longDescription)
 
 
     // @ts-expect-error
@@ -77,10 +85,7 @@ function ProjectEditForm({ project, moreButton }: { project: Project, moreButton
                 </Button>
                 <div className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} >{longDescription} </div>
                 <p className='pt-10 self-center prose dark:prose-invert'>
-                <MarkdownView
-                    markdown={longDescription}
-                    options={{ tables: true, emoji: true,noHeaderId: true }}
-                />
+                {mdText}
             </p>
                 <input value={longDescription} readOnly name="longDescription" hidden={true}></input>
                 <div>
