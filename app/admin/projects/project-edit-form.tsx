@@ -60,6 +60,8 @@ const ProjectEditForm = ({ children, project, className }: { children: React.Rea
     )
 }
 
+ProjectEditForm.displayName = 'ProjectEditForm';
+
 export interface InputProps
     extends React.InputHTMLAttributes<HTMLInputElement> { }
 
@@ -79,6 +81,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     }
 )
 
+Input.displayName = 'Input';
+
 const InputHeader = React.forwardRef<HTMLInputElement, InputProps>(
     ({ className, type, ...props }, ref) => {
         const { header, handleHeaderChange } = useContext(ProjectEditFormContext);
@@ -88,6 +92,8 @@ const InputHeader = React.forwardRef<HTMLInputElement, InputProps>(
     }
 )
 
+
+InputHeader.displayName = 'InputHeader';
 
 
 interface ProjectTagProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -115,6 +121,8 @@ const ProjectEditTag = React.forwardRef<HTMLInputElement, ProjectTagProps>(
         )
     }
 )
+
+ProjectEditTag.displayName = 'ProjectEditTag';
 interface ProjectHeaderProps extends InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode
 }
@@ -148,6 +156,8 @@ const ProjectEditHeader = React.forwardRef<HTMLInputElement, ProjectHeaderProps>
 
     });
 
+ProjectEditHeader.displayName = 'ProjectEditHeader';
+
 interface ProjectTagProps extends InputHTMLAttributes<HTMLInputElement> { }
 
 const ProjectEditButton = React.forwardRef<HTMLInputElement, ProjectTagProps>(
@@ -161,6 +171,8 @@ const ProjectEditButton = React.forwardRef<HTMLInputElement, ProjectTagProps>(
     });
 
 
+ProjectEditButton.displayName = 'ProjectEditButton';
+
 const ProjectEditStatus = React.forwardRef<HTMLParagraphElement, ProjectTagProps>(
     ({ className, ...props }, ref) => {
         const { state } = useContext(ProjectEditFormContext);
@@ -171,6 +183,10 @@ const ProjectEditStatus = React.forwardRef<HTMLParagraphElement, ProjectTagProps
         )
     });
 
+
+
+
+ProjectEditStatus.displayName = 'ProjectEditStatus';
 
 
 interface ProjectTextProps extends InputHTMLAttributes<HTMLTextAreaElement> { }
@@ -185,6 +201,8 @@ const ProjectEditText = React.forwardRef<HTMLTextAreaElement, ProjectTextProps>(
     });
 
 
+ProjectEditText.displayName = 'ProjectEditText';
+
 
 const ProjectMarkdown = React.forwardRef<HTMLTextAreaElement, ProjectTextProps>(
     ({ className, ...props }, ref) => {
@@ -195,6 +213,9 @@ const ProjectMarkdown = React.forwardRef<HTMLTextAreaElement, ProjectTextProps>(
             </p>
         )
     });
+
+
+ProjectMarkdown.displayName = 'ProjectMarkdown';
 
 
 
@@ -215,5 +236,8 @@ const ProjectEditDate = React.forwardRef<HTMLInputElement, ProjectDateProps>(
             </div>
         )
     });
+
+
+ProjectEditDate.displayName = 'ProjectEditDate';
 
 export { ProjectEditForm, ProjectEditHeader, ProjectEditTag, ProjectEditButton, ProjectEditStatus, ProjectEditText, ProjectMarkdown, ProjectEditDate };
