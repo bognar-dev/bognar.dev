@@ -102,9 +102,7 @@ interface ProjectTagProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const ProjectEditTag = React.forwardRef<HTMLInputElement, ProjectTagProps>(
-    ({ className, type, tag, ...props }, ref) => {
-
-
+    ({ className, type, tag, children, dangerouslySetInnerHTML, ...props }, ref) => {
         return (
             <>
                 <Icons.tag />
@@ -121,7 +119,6 @@ const ProjectEditTag = React.forwardRef<HTMLInputElement, ProjectTagProps>(
         )
     }
 )
-
 ProjectEditTag.displayName = 'ProjectEditTag';
 interface ProjectHeaderProps extends InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode
