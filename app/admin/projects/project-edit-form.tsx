@@ -92,26 +92,34 @@ const InputHeader = React.forwardRef<HTMLInputElement, InputProps>(
 
 interface ProjectTagProps extends InputHTMLAttributes<HTMLInputElement> {
     tag: string
+    children?: React.ReactNode
 }
 
 const ProjectEditTag = React.forwardRef<HTMLInputElement, ProjectTagProps>(
     ({ className, type, tag, ...props }, ref) => {
 
 
-        return <input
-            className="w- flex items-center mb-3 text-sm font-bold text-primary-300"
-            placeholder={tag}
-            defaultValue={tag}
-            name={`tag`}
-            key={tag}
-            ref={ref}
-            required
-            {...props} />;
-
+        return (
+            <>
+                <Icons.tag />
+                <input
+                    className="w- flex items-center mb-3 text-sm font-bold text-primary-300"
+                    placeholder={tag}
+                    defaultValue={tag}
+                    name={`tag`}
+                    key={tag}
+                    ref={ref}
+                    required
+                    {...props} />
+            </>
+        )
     }
 )
-const ProjectEditHeader = React.forwardRef<HTMLInputElement, ProjectTagProps>(
-    ({ className, type, tag, ...props }, ref) => {
+interface ProjectHeaderProps extends InputHTMLAttributes<HTMLInputElement> {
+    children?: React.ReactNode
+}
+const ProjectEditHeader = React.forwardRef<HTMLInputElement, ProjectHeaderProps>(
+    ({ className, type, children, ...props }, ref) => {
         const { header, handleHeaderChange, project } = useContext(ProjectEditFormContext);
         return (
             <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})` }} >
@@ -129,8 +137,7 @@ const ProjectEditHeader = React.forwardRef<HTMLInputElement, ProjectTagProps>(
                     </div>
                 </div>
                 <div className="pt-12">
-                    <Icons.tag />
-
+                    {children}
 
                     <input className="" name="description" placeholder={project.data.description} required defaultValue={project.data.description} />
 
@@ -192,26 +199,21 @@ const ProjectMarkdown = React.forwardRef<HTMLTextAreaElement, ProjectTextProps>(
 
 
 
+interface ProjectDateProps extends InputHTMLAttributes<HTMLInputElement> {
+    children: React.ReactNode
+    className?: string
+}
 
+const ProjectEditDate = React.forwardRef<HTMLInputElement, ProjectDateProps>(
+    ({ className, children, ...props }, ref) => {
 
-    
+        const { project } = useContext(ProjectEditFormContext);
+        return (
+            <div className={className}>
+                <label>{children}</label>
+                <input ref={ref} type="date" defaultValue={project.data.endDate} required {...props} />
+            </div>
+        )
+    });
 
-        
-        
-        
-      /*   <div>
-            <label>Start Date</label>
-            <input name="startDate" type="date" defaultValue={project.data.startDate} required />
-        </div>
-        <div>
-            <label>End Date</label>
-            <input type="date" defaultValue={project.data.endDate} required />
-        </div>
-
-        <Button className='bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200'>
-            <input defaultValue={project.data.githubRepo} placeholder={project.data.githubRepo} required />
-        </Button> */
-
-
-
-export default ProjectEditForm;
+export { ProjectEditForm, ProjectEditHeader, ProjectEditTag, ProjectEditButton, ProjectEditStatus, ProjectEditText, ProjectMarkdown, ProjectEditDate };
