@@ -1,4 +1,5 @@
 
+import Button from "@/components/button";
 import ProjectPreview from "@/components/project-preview";
 import { Project, Projects } from "@/types/project";
 
@@ -17,7 +18,7 @@ export default async function Projects() {
           <ProjectPreview key={index} moreButton={true} project={project} admin={true}/>
         ))}
 
-
+      
       </div>
     </main>
   );
