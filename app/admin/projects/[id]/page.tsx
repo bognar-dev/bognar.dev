@@ -1,5 +1,5 @@
 import { Project } from "@/types/project";
-import { ProjectEditForm, ProjectEditHeader, ProjectEditTag } from "@/app/admin/projects/project-edit-form";
+import { ProjectEditDate, ProjectEditForm, ProjectEditHeader, ProjectEditTag, ProjectEditText, ProjectMarkdown } from "@/app/admin/projects/project-edit-form";
 
 export async function generateStaticParams() {
   const response = await fetch(`${process.env.BACKEND_URL}/api/projects`, { next: { revalidate: 3600 } })
@@ -17,13 +17,29 @@ export default async function ProjectPage({ params }: { params: { id: string } }
   console.log(response.json())
   return (
     <>
-      <ProjectEditForm project={project}>
-        <ProjectEditHeader >
-          {project.data.tags.map((tag) => (
-            <ProjectEditTag key={tag} tag={tag}>{tag}</ProjectEditTag>
+     
+      <ProjectEditForm className="" project={project}>
+        <ProjectEditHeader>
+
+          {project.data.tags.map((tag, index) => (
+            <div key={index} className='flex gap-2'>
+              <ProjectEditTag tag={tag}>{tag}</ProjectEditTag>
+
+            </div>
           ))}
+
+
         </ProjectEditHeader>
+        <ProjectEditDate>
+          Start Date
+        </ProjectEditDate>
+        <ProjectEditDate>
+          End Date
+        </ProjectEditDate>
+        <ProjectEditText />
+        <ProjectMarkdown></ProjectMarkdown>
       </ProjectEditForm>
+      
     </>
   );
 }

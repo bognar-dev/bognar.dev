@@ -1,19 +1,19 @@
 "use client"
-
 import Button from "@/components/button";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
 import { Project } from "@/types/project";
 import { sendEditedProject } from '@/app/actions';
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, Dispatch, SetStateAction } from "react";
 import { useFormState } from "react-dom";
 import { SubmitButton } from "@/components/submit-button";
 import Markdown from "@/components/markdown";
 import { Textarea } from "@/components/textarea";
 import { InputHTMLAttributes } from 'react';
 import { create } from "domain";
-import React from "react";
 import { twMerge } from "tailwind-merge";
+import sanitizeHtml from "sanitize-html"
+import ContentEditable from 'react-contenteditable';
 const initialState = {
     message: '',
 }
@@ -27,32 +27,30 @@ const ProjectEditFormContext = createContext({
     header: '',
     longDescription: '',
     handleHeaderChange: (e: React.ChangeEvent<HTMLInputElement>) => { },
-    handleDescriptionChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => { }
+    setLongDescription: (a:any)=> {},
 });
+    
 
 
 const ProjectEditForm = ({ children, project, className }: { children: React.ReactNode, project: Project, className?: string }) => {
 
     const [header, setHeader] = useState(project.data.name)
-    const [longDescription, setLongDescription] = useState(project.data.longDescription)
+    const [longDescription, setLongDescription] = useState<string>(project.data.longDescription)
 
     const handleHeaderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setHeader(e.target.value);
     };
-    const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        console.log(e.target.value)
-        setLongDescription(e.target.value);
-    };
+   
 
     const [state, formAction] = useFormState(sendEditedProject, initialState);
 
 
     return (
-        <ProjectEditFormContext.Provider value={{ project, formAction, state, header, longDescription, handleHeaderChange, handleDescriptionChange }}>
+        <ProjectEditFormContext.Provider value={{ project, formAction, state, header, longDescription, handleHeaderChange, setLongDescription }}>
             <form action={formAction}>
                 <input value={longDescription} readOnly name="longDescription" hidden={true}></input>
                 <input value={project.data.image} readOnly name="imageUrl" hidden={true}></input>
-                <div className={twMerge('grid gap-8 m-5 grid-flow-row justify-items-center justify-center', className)}>
+                <div className={twMerge('grid gap-8 m-5 grid-flow-row items-stretch', className)}>
                     {children}
                 </div>
             </form>
@@ -127,14 +125,14 @@ const ProjectEditHeader = React.forwardRef<HTMLInputElement, ProjectHeaderProps>
     ({ className, type, children, ...props }, ref) => {
         const { header, handleHeaderChange, project } = useContext(ProjectEditFormContext);
         return (
-            <header className='flex flex-col w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})` }} >
+            <header className='flex flex-col gap-10 min-w-full justify-between min-h-[400px] p-5 rounded-md bg-center shadow-sm bg-no-repeat bg-cover' style={{ backgroundImage: `url(${project.data.image})` }} >
                 <input
                     id="image"
                     className="block w-full border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                     type="file"
                     name="image"
                 />
-                <div className="flex justify-between pb-5">
+                <div className="flex min-w-full justify-between pb-5">
                     <input className="text-lg font-bold uppercase" value={header} name="projectName" onInput={handleHeaderChange} />
                     <div className="flex items-center text-sm">
                         <p><input className="inline-block pb-0" type="date" name="sinceData" placeholder={project.data.endDate} defaultValue={project.data.endDate} required /></p>
@@ -190,11 +188,23 @@ interface ProjectTextProps extends InputHTMLAttributes<HTMLTextAreaElement> { }
 
 const ProjectEditText = React.forwardRef<HTMLTextAreaElement, ProjectTextProps>(
     ({ className, ...props }, ref) => {
-        const { handleDescriptionChange, project } = useContext(ProjectEditFormContext);
-        return (
-            <Textarea ref={ref} {...props} className="" contentEditable={true} id="longDescription" onChange={handleDescriptionChange} defaultValue={project.data.longDescription} />
+        const { , longDescription,setLongDescription } = useContext(ProjectEditFormContext);
+        const onContentChange = React.useCallback((evt: { currentTarget: { innerHTML: any; }; }) => {
+            const sanitizeConf = {
+                allowedTags: ["b", "i", "a", "p"],
+                allowedAttributes: { a: ["href"] }
+            };
 
+            setLongDescription(sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf))
+        }, [])
+
+        return (
+            <ContentEditable
+                onChange={onContentChange}
+                onBlur={onContentChange}
+                html={longDescription} />
         )
+        
     });
 
 
