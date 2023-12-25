@@ -48,6 +48,7 @@ const ProjectEditForm = ({ children, project, className }: { children: React.Rea
     return (
         <ProjectEditFormContext.Provider value={{ project, formAction, state, header, longDescription, handleHeaderChange, setLongDescription }}>
             <form action={formAction}>
+                <input value={project.id} readOnly name="id" hidden={true}></input>
                 <input value={longDescription} readOnly name="longDescription" hidden={true}></input>
                 <input value={project.data.image} readOnly name="imageUrl" hidden={true}></input>
                 <div className={twMerge('grid gap-8 m-5 grid-flow-row items-stretch', className)}>
@@ -188,10 +189,10 @@ interface ProjectTextProps extends InputHTMLAttributes<HTMLTextAreaElement> { }
 
 const ProjectEditText = React.forwardRef<HTMLTextAreaElement, ProjectTextProps>(
     ({ className, ...props }, ref) => {
-        const { , longDescription,setLongDescription } = useContext(ProjectEditFormContext);
+        const { longDescription,setLongDescription } = useContext(ProjectEditFormContext);
         const onContentChange = React.useCallback((evt: { currentTarget: { innerHTML: any; }; }) => {
             const sanitizeConf = {
-                allowedTags: ["b", "i", "a", "p"],
+                allowedTags: ["b", "i", "a", "p","h"],
                 allowedAttributes: { a: ["href"] }
             };
 
@@ -202,7 +203,9 @@ const ProjectEditText = React.forwardRef<HTMLTextAreaElement, ProjectTextProps>(
             <ContentEditable
                 onChange={onContentChange}
                 onBlur={onContentChange}
-                html={longDescription} />
+                html={longDescription} >
+                    
+                </ContentEditable>
         )
         
     });

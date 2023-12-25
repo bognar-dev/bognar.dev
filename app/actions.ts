@@ -42,12 +42,10 @@ export const signIn = async (prevState: any, formData: FormData) => {
 
 
 export const sendEditedProject = async (prevState: any, formData: FormData) => {
-  console.log(formData)
+  
   if (formData === null) {
     return { message: 'updateProject failed' }
   }
-
-  
   const token = cookies().get('jwt')
   if (token === undefined || token.value === '') {
     return { message: "token not defined" }
@@ -55,10 +53,8 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
   const tags = formData.getAll('tag')
   formData.delete('tag')
   formData.set('tags',JSON.stringify(tags))
-  
-  console.log(formData.get('tags'));
-
-  const response : Response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
+  console.log(formData)
+    const response : Response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
     cache: 'no-store' as RequestCache,
     method: 'POST',
     headers: {
@@ -66,9 +62,7 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
     },
     body: formData
   })
-  const data = await response.json()
-  console.log(data)
-
+ 
   revalidatePath('/')
   return { message: 'success' }
 

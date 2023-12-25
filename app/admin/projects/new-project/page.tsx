@@ -9,7 +9,7 @@ import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 
 const Page: React.FC = () => {
-
+    
     const [parent] = useAutoAnimate();
     const [project,setProject] = useState( {
         id: 1,

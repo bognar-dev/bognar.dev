@@ -11,7 +11,7 @@ export default async function Dashboard() {
   
   
     return (
-      <main className="flex  flex-row  bg-background-100 px-5 md:px-20 w-full">
+      <main className="flex  flex-row px-5 md:px-20 w-full">
         <ProjectPreview></ProjectPreview>
       </main>
     )
