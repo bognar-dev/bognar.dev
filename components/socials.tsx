@@ -10,7 +10,7 @@ export default function Socials({ className, motion = false }: { className?: str
   if (motion) {
     return (
       <Accordion className={twMerge('w-full bg-primary-100 backdrop-blur-sm', className)}>
-        <SectionHeading>My biography</SectionHeading>
+        <SectionHeading>Contact me!</SectionHeading>
         <AccordionItem
           index={1}
           itemTitle={<AccordionItemTitle><Icons.gitHub className="w-5 h-5" /></AccordionItemTitle>}
