@@ -8,9 +8,9 @@ import SectionHeading from './section-header'
 const About = () => {
 
     return (
-        <div className='grid gap-2 items-stretch justify-center '>
+        <div className='grid gap-2 items-center justify-center '>
 
-            <div className='flex flex-col md:flex-row gap-3 items-center justify-center'>
+            <div className='flex flex-col md:flex-row gap-3 items-start justify-center'>
                 <Image className='rounded-xl w-20 h-20 md:w-40 md:h-40 self-end' src={profile} width={800} height={800} alt='profile-pic'></Image>
                 <div>
                 <SectionHeading>About me</SectionHeading>
