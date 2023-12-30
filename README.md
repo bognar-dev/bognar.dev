@@ -11,11 +11,7 @@ section {
 }
 </style>
 
-# Bognar.dev
-![bg left](public/profile.jpg)
-
-Where algorithm meets aestetics
-
+![bg contain](public/bognardev.png)
 
 ---
 
