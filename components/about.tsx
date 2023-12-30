@@ -11,7 +11,7 @@ const About = () => {
         <div className='grid gap-2 items-center justify-center '>
 
             <div className='flex flex-col md:flex-row gap-3 items-center justify-center'>
-                <Image className='rounded-xl w-20 h-20 md:w-40 md:h-40 self-end' src={profile} width={800} height={800} alt='profile-pic'></Image>
+                <Image className='rounded-xl w-20 h-20 md:w-40 md:h-40 self-center' src={profile} width={800} height={800} alt='profile-pic'></Image>
                 <div>
                 <SectionHeading>About me</SectionHeading>
                     <p className='break-words'>{`Hey there! I'm Niklas, a down-to-earth person with roots in Germany. I've got a passion for cooking - not the fancy, over-the-top kind, but the practical, everyday recipes that make life a bit tastier.
