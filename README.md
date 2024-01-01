@@ -236,40 +236,106 @@ The codebase is structured using a fairly standard Filesystem:
 ---
 
 ## Overview
-- Briefly introduce the purpose of the HCI investigation.
-- Emphasize the significance of Human-Computer Interaction (HCI) techniques in the overall project.
+- HCI investigation is important because it helps to design more intuitive, efficient, and user-friendly interfaces, enhancing user satisfaction and productivity.
+- As it is a personal portfolio HCI is of highest importance, useres should be able to navigate and interact with my site seamlessly to find all important information
+
 
 ---
 
-## Issues Identification
-- Discuss the issues identified during the HCI investigation.
-- Mention any show-stopping or major issues missed and the attempt at analysis.
+## User Study
+- I set up a google form to get valuable feedback on user experience and design
+This helped me identify Problems with my design which I had not realised before, especially for different ages and backgrounds
+
+
 ---
-## Technique Application
-- Discuss the techniques and heuristics used for identifying interface issues.
-- Emphasize if these are based on suitable sources like research papers or well-known HCI sources.
+## Results
 ---
-## Evaluation
-- Discuss the correct implementation of evaluation techniques.
-- Mention if changes were evaluated after implementation and if remaining issues were identified.
+#### Age of participants
+
+![Age Graph](./public/ageGraph.png)
 
 ---
 
-## Detail Level
-- Assess the level of detail in the HCI investigation.
-- Discuss the correct application of heuristics and the demonstration of technical ability.
+#### Gender of participants
+
+![gender Graph](./public/genderGraph.png)
 
 ---
 
-## Minor Issues
-- Identify and discuss any minor, non-critical issues present in the evaluation.
-- Emphasize that these issues are minimal and do not significantly impact the interface.
+### Positive Feedback
+
+- Users appreciated the clear design, ease of navigation, and overall interactivity.
+- The project descriptions and details were found helpful and clear.
+- The availability of both light and dark modes was well-received.
 
 ---
+
+### Design Feedback
+
+- Positive remarks about the design, color scheme, and icons.
+- Some users suggested adding more images for a visually appealing experience.
+- Recommendations for minor adjustments, like adding app names after icons.
+
+---
+#### Devices used to access the Website
+
+![devices Graph](./public/devicesGraph.png)
+
+
+
+
+
+---
+
+### Navigation Feedback
+
+- Generally positive feedback on navigation ease.
+- Some users suggested improving the navigation for specific elements, like "Visit project" and "Github repository."
+
+---
+
+### Content Suggestions
+
+- Requests for more personal information, background, and biography.
+- Suggestions for featuring different types of projects, including animated and interactive ones.
+
+---
+
+### Contact Ease
+
+- Positive feedback on ease of contacting through the portfolio website.
+- Some users suggested monitoring the desktop mode and improving the visibility of social media links.
+
+---
+
+### Mode Preferences
+
+- Preferences varied between light and dark modes, with no clear majority.
+![Theme Graph](./public/themeGraph.png)
+
+---
+
 ##  Implementation of Solutions
-- Introduce the section on the implementation of solutions.
-- Briefly discuss the importance of addressing the identified HCI issues.
+
 ---
+
+## Example 
+
+The comment that made me realise: 
+Create individual pages for different categories
+Younger people it was easy to navigate older people found it hard tonavigate and didnt even knoew how to use the links to different pages
+
+---
+
+### Before
+![Link before improvement w:200 h:100](./public/LinkBefore.png)
+
+---
+### After
+![After implementation w:200 h:100](./public/LinkAfter.png)
+
+---
+
 ## Key Approaches
 - Outline the key approaches used to address the HCI issues.
 - Discuss any innovative or interesting solutions implemented.
