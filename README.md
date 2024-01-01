@@ -336,6 +336,19 @@ Younger people it was easy to navigate older people found it hard tonavigate and
 
 ---
 
+## 2nd Fix
+User found that the navbar was too small
+
+---
+
+### Before
+![Small header](./public/smallHeader.png)
+---
+### After
+![Big header](./public/bigHeader.png)
+
+
+---
 ## Key Approaches
 - Outline the key approaches used to address the HCI issues.
 - Discuss any innovative or interesting solutions implemented.
