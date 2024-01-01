@@ -232,7 +232,49 @@ The codebase is structured using a fairly standard Filesystem:
 - Reflect on the achieved level of database functionality and the impact on the overall project.
 
 ---
-# Frontend (HCI-Investiagtion)
+# Frontend Technical Analysis
+
+---
+## Overview
+
+
+---
+
+## Architecture
+Describe the architecture of your frontend application. Discuss how the project is structured and why it's structured that way.
+
+---
+
+## Components
+Detail the key components of your frontend. This could include descriptions of important UI components, services, or libraries that you're using.
+
+---
+
+## Code Samples
+Provide some code samples from your project that illustrate important concepts or techniques.
+
+---
+
+## Challenges and Solutions
+Discuss any significant challenges you encountered during development and how you solved them.
+
+---
+
+## Future Improvements
+Discuss any planned improvements or features for the frontend.
+
+---
+
+## Conclusion
+Wrap up your documentation with a brief conclusion.
+
+---
+
+## References
+List any resources or references used during the development of the frontend.
+
+---
+# HCI-Investiagtion
 ---
 
 ## Overview
@@ -340,100 +382,22 @@ Younger people it was easy to navigate older people found it hard tonavigate and
 User found that the navbar was too small
 
 ---
-
-### Before
-![Small header](./public/smallHeader.png)
----
-### After
-![Big header](./public/bigHeader.png)
-
+![Small header bg contain](./public/smallHeader.png)
 
 ---
-## Key Approaches
-- Outline the key approaches used to address the HCI issues.
-- Discuss any innovative or interesting solutions implemented.
+
+![Big header bg contain](./public/bigHeader.png)
+
+
 ---
+
 ## Design Considerations
-- Discuss the design considerations taken into account during the implementation.
-- Explain how the solutions integrate into the overall structure of the front-end.
+- Desgining the website it was important for me to keep a cohearent look and fee to it, thats why I reached to Tailwind CSS and a modern colour pallet
+
+
 ---
-## Understanding of HCI Techniques
-- Demonstrate your understanding of HCI techniques in the context of your solutions.
-- Discuss how the implemented solutions align with HCI principles.
----
-## Code Quality
-- Evaluate the quality of your code, considering factors like comments and structure.
-- Discuss the level of commenting and the overall structure of your front-end code.
+- The Colours are easily adjustable via the ```globals.css``` file, it makes it extenable for futher adjustments if I don't feel like my Website needs a fresh colour sceme
 
 ---
 # Optimization Investigation
----
-
-## Overview
-- Briefly introduce the purpose of the optimization investigation.
-- Mention the significance of performance optimization in web development.
-
----
-
-## Profiling Tools Used
-- List and briefly explain the profiling tools used for the investigation.
-- Highlight the reasons for selecting these tools.
-
----
-
-## Issues Identified
-- Categorize and discuss the issues identified during the optimization investigation.
-- Emphasize any show-stopping bugs or major performance issues that were discovered.
-
----
-
-## Investigation Detail
-- Provide a detailed analysis of potential performance bottlenecks.
-- Discuss the results obtained from profiling tools and how they contributed to the investigation.
-
----
-
-## Technical Ability
-- Assess your technical ability in conducting the investigation.
-- Mention any challenges faced and overcome during the process.
-
----
-
-## Summary of Investigation
-- Summarize the key findings of the optimization investigation.
-- Provide an overview of the critical issues and improvements identified.
-
----
-
-# Optimization
-
----
-## Overview
-- Introduce the section on the implementation of solutions.
-- Briefly discuss the importance of addressing the identified issues.
-
----
-
-## Key Approaches
-- Outline the key approaches used to address the issues identified.
-- Discuss any innovative or interesting solutions implemented.
-
----
-
-## Design Considerations
-- Discuss the design considerations taken into account during the implementation.
-- Explain how the solutions integrate into the overall structure of your portfolio website.
-
----
-
-## Understanding of Performance
-- Demonstrate your understanding of engine/prototype performance in the context of your solutions.
-- Discuss any specific optimizations made to improve performance.
-
----
-
-## Code Quality
-- Evaluate the quality of your code, considering factors like comments and structure.
-- Discuss the level of commenting and the overall structure of your code.
-
 ---
