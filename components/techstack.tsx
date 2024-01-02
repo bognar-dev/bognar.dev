@@ -95,7 +95,7 @@ export default function TechStack() {
             className="text-center"
         >
             <h2 className="text-3xl mb-4">What I like to use:</h2>
-            <ul className="flex flex-wrap justify-center gap-2 text-lg p-5">
+            <ul className="flex flex-wrap justify-center  gap-2 text-lg p-5 m-5">
                 {technologies.map((tech, index) => (
                     <motion.li
                         className="flex flex-wrap justify-center items-center gap-3 bg-primary-100 border-primary-500 rounded-xl px-5 py-3 hover:rotate-3"

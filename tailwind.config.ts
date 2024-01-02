@@ -8,23 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
-        },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      },
+    
+
+    
       fontFamily: {
-       
-        brightMelody: ["var(--font-bright-melody)",...fontFamily.mono],
+
+        brightMelody: ["var(--font-bright-melody)", ...fontFamily.mono],
         sans: ["var(--font-inter)"],
         mono: ["var(--font-roboto-mono)"],
         beanco: ["var(--font-bean-co)"],
@@ -103,8 +92,42 @@ const config: Config = {
           950: 'var(--accent-950)',
         },
       },
+      animation: {
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'loop': 'loop 30s linear infinite ',
+        'loop-reverse': 'loop 30s linear infinite reverse',
+        
+      },
+      keyframes: {
+        loop: {
+          '0%': {
+            transform: 'translateX(0%)',
+          },
+          '100%': {
+            transform: 'translateX(-100%)',
+          },
+        },
+        'loop-reverse': {
+          '0%': {
+            transform: 'translateX(0%)',
+          },
+          '100%': {
+            transform: 'translateX(50%)',
+          },
+        },
+        fade: {
+          '0%, 100%': {
+            opacity: '1',
+          },
+          '50%': {
+            opacity: '0',
+          },
+        },
+      },
     },
+
   },
+
   plugins: [
     require('@tailwindcss/typography'),
     require('tailwindcss-animate')
