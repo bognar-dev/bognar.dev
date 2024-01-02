@@ -5,7 +5,7 @@ marp: true
 paginate: true
 ---
 
-<style>
+<style  style="visibility:hidden">
 section {
   background: #faf4eb;
 }
