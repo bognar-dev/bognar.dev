@@ -18,6 +18,7 @@ export default function ThemeToggle() {
             className="group rounded-lg p-2 hover:bg-primary-100 ease-in duration-100 ml-1 z-10"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             initial="initial"
+            name="Toggle Theme"
             animate="animate"
             exit="exit"
             variants={variants}

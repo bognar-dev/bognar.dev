@@ -98,9 +98,9 @@ function AccordionItem({ index,itemTitle, accordionItemContent, accordionItemBut
 function Accordion({ children,className }: { children: React.ReactNode ,className?:string}) {
     return (
         <AnimatePresence>
-        <div className={twMerge("w-max p-8 gap-4 items-center justify-center bg-primary-100 shadow-sm shadow-primary-400 rounded-lg ",className)}>
+        <ul className={twMerge("w-max p-8 gap-4 items-center justify-center bg-primary-100 shadow-sm shadow-primary-400 rounded-lg ",className)}>
            {children}
-        </div>
+        </ul>
         </AnimatePresence>
     );
 }
