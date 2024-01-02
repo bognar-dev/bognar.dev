@@ -19,6 +19,8 @@ export default function ThemeToggle() {
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             initial="initial"
             name="Toggle Theme"
+            aria-label="Toggle Theme"
+            title="Toggle Theme"
             animate="animate"
             exit="exit"
             variants={variants}
