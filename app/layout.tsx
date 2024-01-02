@@ -2,7 +2,8 @@
 import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
 import MainNav from '@/components/main-nav';
-
+import { cn } from "@udecode/cn";
+import fonts from '@/config/fonts';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/react';
@@ -37,7 +38,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning={true} className="">
         <head />
-        <body className='bg-background-50 text-text-900 no-scrollbar font-mono'>
+        <body className={cn('bg-background-50 text-text-900 no-scrollbar font-mono',fonts.madeTommyLight.className)}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MainNav items={siteConfig.mainNav} />
             

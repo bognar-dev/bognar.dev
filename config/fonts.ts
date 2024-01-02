@@ -1,4 +1,4 @@
-import { Inter, Arbutus } from 'next/font/google'
+import { Inter, Arbutus, Anonymous_Pro } from 'next/font/google'
 import localFont from 'next/font/local'
 const inter = Inter({
   subsets: ['latin'],
@@ -13,22 +13,60 @@ const roboto_mono = Arbutus({
   variable: '--font-roboto-mono',
 })
 
-export const beanCo = localFont({
+const beanCo = localFont({
   src: './Beanco-Font.otf',
   variable: '--font-bean-co',
   display: 'swap',
 })
 
-export const brightMelody = localFont({
+ const brightMelody = localFont({
   src: './Bright_Melody.otf',
   variable: '--font-bright-melody',
  display: 'swap',
 })
 
 
-export const think = localFont({
+const think = localFont({
   src: './Think.ttf',
   variable: '--font-think',
   display: 'swap',
   weight: '800',
 })
+
+
+const madeTommyBlackOutline = localFont({
+  src: './MadeTommy-BlackOutline.otf',
+  variable: '--font-made-tommy-black-outline',
+  display: 'swap',
+  weight: '800',
+})
+
+const madeTommyBlack = localFont({
+  src: './MadeTommy-Black.otf',
+  variable: '--font-made-tommy-black',
+  display: 'swap',
+  weight: '800',
+})
+
+
+const madeTommyLight = localFont({
+  src: './MadeTommy-Light.otf',
+  variable: '--font-made-tommy-light',
+  display: 'swap',
+  weight: '800',
+})
+const anonymousPro = Anonymous_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anonymous-pro',
+  weight: ['400','700']
+})
+
+const madeGentle = localFont({
+  src: './MadeGentle.otf',
+  variable: '--font-made-gentle',
+  display: 'swap',
+  weight: '900',
+})
+
+export default {inter, roboto_mono, beanCo, brightMelody, think, anonymousPro,madeTommyBlackOutline,madeGentle,madeTommyLight,madeTommyBlack}

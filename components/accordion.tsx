@@ -27,7 +27,7 @@ function AccordionDescription({ children,className }: { children: React.ReactNod
 }
 function AccordionItemBody({ children,className }: { children: React.ReactNode,className?:string }) {
     return (
-        <p className={twMerge("text-xs leading-relaxed my-5",className)}>{children}</p>
+        <p className={twMerge("text-sm leading-relaxed my-5",className)}>{children}</p>
     )
 }
 

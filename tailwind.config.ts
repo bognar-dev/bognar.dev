@@ -8,16 +8,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
       fontFamily: {
        
         brightMelody: ["var(--font-bright-melody)",...fontFamily.mono],
-        /* sans: var(--font-inter),
-        mono: var(--font-roboto-mono),
-        beanco: var(--font-bean-co),
-        brightMelody: var(--font-bright-melody),
-        think: var(--font-think), */
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-roboto-mono)"],
+        beanco: ["var(--font-bean-co)"],
+        think: ["var(--font-think)"],
+        anynomousPro: ["var(--font-anonymous-pro)"],
+        madeTommyOutline: ["var(----font-made-tommy-black-outline)"],
+        madeTommyBlack: ["var(--font-made-tommy-black)"],
+        madeGentle: ["var(--font-made-gentle)"],
+        madeTommyLight: ["var(--font-made-tommy-light)"],
       },
       colors: {
+
         'text': {
           50: 'var(--text-50)',
           100: 'var(--text-100)',
@@ -88,6 +107,7 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('tailwindcss-animate')
   ],
 
   darkMode: 'class',

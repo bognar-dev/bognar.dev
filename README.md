@@ -1,7 +1,7 @@
 ---
 theme: gaia
 class: lead
-marp: true
+marp: false
 paginate: true
 ---
 
@@ -249,17 +249,42 @@ The codebase is structured using a fairly standard Filesystem:
 
 ---
 ## Overview
-
-
----
-
-## Architecture
-Describe the architecture of your frontend application. Discuss how the project is structured and why it's structured that way.
+- I used Next.js for several reasons
+  - *Server-Side Rendering (SSR)*: Next.js provides out-of-the-box support for server-side rendering, which can improve the performance of your application and make it more SEO-friendly.
+  - *Static Site Generation (SSG)*: Next.js also supports static site generation. You can pre-render pages at build time and serve them as static files.
+  - *File-system Based Routing*: Next.js uses the file system to create routes. This means that every file inside the pages directory becomes a route automatically.
+  - *Development Experience*: Next.js offers features like hot code reloading, automatic routing, and universal rendering, which can enhance the development experience.
 
 ---
 
 ## Components
-Detail the key components of your frontend. This could include descriptions of important UI components, services, or libraries that you're using.
+- One of my main component is my Navbar which is displayed on all pages
+- I tried making all components as composable and reusable as possible so I could use them for as many use cases as possible
+ 
+---
+
+### Example
+```tsx
+import { twMerge } from "tailwind-merge"
+import ScrollMotionDiv from "./scroll-motion-div"
+
+export default function Card({ className, children, motion = false }: { className?: string, children: React.ReactNode, motion?: boolean }) {
+    if (motion) {
+        return (
+            <ScrollMotionDiv className={twMerge(className, 'pt-3 w-full text-card-foreground grid bg-background-50 backdrop-blur-sm shadow-sm shadow-primary-400 rounded-lg ')}>
+                {children}
+            </ScrollMotionDiv>
+        )
+    }
+    return (
+        <div className={twMerge(className, 'pt-3 w-full text-card-foreground grid bg-background-50 backdrop-blur-sm shadow-sm shadow-primary-400 rounded-lg ')}>
+            {children}
+        </div>
+    )
+}
+```
+
+It is possible to reuse my cards all over the project as I can specify if I want it to have animation/motion can add Tailwind style classes to customize it in any place. I can also pass any kind of components as children so I can render anything inside a card
 
 ---
 
@@ -503,52 +528,4 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
 ## Profiling Tools
 - Utilized profiling tools such as Chrome Developer Tools and other performance monitoring tools.
 - Applied these tools to identify and analyze performance bottlenecks and areas for improvement.
-
----
-
-# Implementation of Solutions
-
----
-
-## Initial Solutions
-- Initiated efforts to address identified issues, focusing on improving layout shifts and resource loading.
-- Encountered challenges in finding optimal solutions without compromising other aspects of the project.
-
----
-
-## Iterative Improvements
-- Implemented iterative improvements based on feedback and ongoing testing.
-- Prioritized user feedback to refine solutions and enhance the overall user experience.
-
----
-
-## Final Solutions
-- Presented the final set of solutions implemented, which effectively addressed the identified issues.
-- Highlighted how these solutions positively impacted Lighthouse scores.
-
----
-
-## Code Structure
-- Discussed the importance of maintaining a high-quality code structure.
-- Emphasized the significance of well-commented and readable code for long-term maintainability.
-
----
-
-## Innovative Approaches
-- Showcased innovative approaches employed during the optimization process.
-- Examples include implementing lazy loading for images and using modern web development techniques to enhance performance.
-
----
-
-## Results and Impact
-- Summarized the overall impact of the optimization efforts.
-- Compared Lighthouse scores before and after implementation to showcase the tangible improvements achieved.
-
----
-
-## Conclusion
-- Recapitulated the key aspects of the optimization journey.
-- Shared key takeaways and lessons learned during the process.
-
----
 
