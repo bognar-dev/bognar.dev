@@ -472,8 +472,9 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
 - Introduced Lighthouse, a performance measurement tool provided by Google, to assess various aspects of the project's performance.
 - Lighthouse scores provide insights into key metrics, including performance, accessibility, and adherence to best practices.
 
----
 
+
+---
 
 
 ## Lighthouse Analysis
@@ -482,6 +483,12 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
   - **Performance:** Measures aspects like first contentful paint and speed index.
   - **Accessibility:** Examines the project's accessibility for all users.
   - **Best Practices:** Evaluates adherence to web development best practices.
+
+---
+
+
+
+![bg contain](./public/LighthouseScore.png)
 
 ---
 
