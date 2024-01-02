@@ -11,7 +11,20 @@ section {
 }
 </style>
 
+
 ![bg contain](public/bognardev.png)
+
+---
+
+![w:900 h:600](public/Mock1.jpeg)
+
+---
+
+![w:900 h:600](public/desktopMock.jpeg)
+
+---
+
+![](public/mobileMock.jpeg)
 
 ---
 
@@ -460,6 +473,8 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
 - Lighthouse scores provide insights into key metrics, including performance, accessibility, and adherence to best practices.
 
 ---
+
+
 
 ## Lighthouse Analysis
 - Conducted a detailed analysis of Lighthouse scores for the project.
