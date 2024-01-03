@@ -18,7 +18,7 @@ export default function Home() {
       <BGBalls>
         <Title />
         <Button className='shadow-none flex flex-row justify-items-center justify-center group text-text-50 hover:animate-wiggle ' href="/projects">See my projects  <Icons.arrowUpRight  className="w-4 h-4 ml-2 mt-0.5"/></Button>
-        <div className='grid grid-cols-1 gap-5'>
+        <div className='grid grid-cols-1 gap-5 mt-8'>
           <div className='grid gap-5 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
      
             <Card motion={false} className='p-5 md:col-span-3'>
