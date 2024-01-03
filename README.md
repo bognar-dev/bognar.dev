@@ -28,6 +28,19 @@ section {
 
 ---
 
+
+![w:900 h:600](public/appleMock.jpeg)
+
+---
+
+![w:900 h:600](public/chromeDark.jpeg)
+
+---
+
+![](public/mobileMockDark.jpeg)
+
+---
+
 # Introduction 
 ---
 
@@ -39,23 +52,22 @@ section {
 
 ---
 
-### Objective:
-The primary objective of this project was to seamlessly integrate the power of Next.js for a robust and responsive front-end, Tailwind CSS for efficient styling, and Framer Motion for adding delightful motion effects. On the server side, I used the speed and efficiency of the Go programming language, while Supabase served as my dynamic and scalable database and file storage solution.
-
----
 ### Key Features:
 
-- Sleek, modern and accessible (WAGAG) design thanks to [RealtimeColours](https://www.realtimecolors.com/?colors=e1eae7-000000-bdd0c9-080c0a-b1c8bf&fonts=Poppins-Poppins)
+- Sleek, modern and accessible (WACAG) design thanks to [RealtimeColours](https://www.realtimecolors.com/?colors=e1eae7-000000-bdd0c9-080c0a-b1c8bf&fonts=Poppins-Poppins)
+
 
 
 ---
-![Infrastructure bg contain](./public/infra.png)
+
+### Infrastructure
+![Infrastructure w:900](./public/infra.png)
 
 ---
 # Backend
 ---
 ## Overview
-The backend was programmed using Go and the Gin framework as it uses simple syntax and easy to learn primitives, coming from a express.js background.
+The backend was programmed using Go using the Gin web server, because go is an easy and fast language.
 
 It serves the purpose of a "basic" CRUD-API Layer to the database, it does not serve the html and frontend by itself. 
 
@@ -64,6 +76,16 @@ It serves the purpose of a "basic" CRUD-API Layer to the database, it does not s
 My backend had the task of being there for all the Project operations and handling authorization of the user, so that only authorized user (The admin) can alter project data.
 
 ---
+
+The codebase is structured using a fairly standard Filesystem:
+
+- models: Definition of data and its behavior
+- controllers: handling the requests (separated in ```projects.go``` and ```auth.go```)
+- database: establishing Database connections and a Supabase storage connection
+- and ```main.go``` defining all the routes and the corresponding controllers
+
+---
+
 #### Auth-Controller
 ```go
 func Login(c *gin.Context)
@@ -123,6 +145,7 @@ private.Use(middlewares.JwtAuthMiddleware()) //Private routes protected by middl
 ---
 ## Functionality Level
 Because the API is not consumable publicly the error handling is being handled internally and a user-friendly error handling is done on the frontend.
+
 In a real life scenario I would ditch splitting database, in favor of a full-stack solution that Next.js offers.
 
 The database uses sqlx for type-safe SQL query to the database.
@@ -131,120 +154,55 @@ The database uses sqlx for type-safe SQL query to the database.
 ---
 ## Issues
 
-Using file storage and database from Supabase requires connecting to the DB and the Storage separately, because I wanted to use SQL strings for the Database.
+Using file storage and database from Supabase requires connecting to the DB and the Storage separately, because I wanted to use SQLx strings for the Database.
 
-
-Before using the backend a user needs to be created in the Supabase Dashboard
-
----
-
-## Complexity
-
-<!-- - Discuss the complexity of Back-end functionality implemented.
-- Evaluate if the Back-end features demonstrate sophistication. -->
-The main complexity comes from the authorization layer it needs to be secure and not exploitable.
+Before using the Admin dashboard the admin needs to be crated by another authorized admin
 
 ---
 
 ## Design Considerations
 
-<!-- - Describe the design considerations taken into account during the Back-end implementation.
-- Discuss how the components show a good understanding of networking concepts. -->
-
 I chose to use raw SQL to query the data, which helps me being future proof in case I want to migrate the service to a different stack. 
 
 The Backend layer is protected by middleware and uses JWT token instead of cookie storage to authorize users.
-
-
-
----
-## Innovative Approaches
-
-Due to go's concurrency it is modern and my portfolio website will be able to handle a lot of requests.
 
 ---
 
 ## Code Quality
 My code follows best practices such as using structures to Marshal and unMarshal JSON data from requests, I can be confident using the Project structure because go handles filling it for me ad will error when a field is missing.
 
----
-The codebase is structured using a fairly standard Filesystem:
 
-- models: Definition of data and its behavior
-- controllers: handling the requests (separated in ```projects.go``` and ```auth.go```)
-- database: establishing Database connections and a Supabase storage connection
-- and ```main.go``` defining all the routes and the corresponding controllers
   
 ---
 # Database Implementation
 ---
 ## Overview
-- Briefly introduce the purpose of the database implementation.
-- Emphasize the significance of the database component in the overall project.
+- I opted for supabase as a Database provider which uses postgres. 
+- Supabase also handles file storage 
 ---
 
 ## Core Features Implementation
-- Discuss the implementation of core features of the database component.
-- Highlight that there are no show-stopping bugs in these core features.
+- The database has two Tables and one storage bucket
+
+![DB w:900 h:200](./public/dbTables.png)
 
 ---
+#### The project JSON structure
 
-## Functionality Level
-- Assess the overall functionality level of the database demonstration.
-- Discuss how the implemented features demonstrate a good level of technical ability.
-
----
-
-## Issues
-- Identify and discuss any minor, non-critical issues present in the database demonstration.
-- Emphasize that these issues do not impede the functioning of the demonstration.
-
----
-
-## Database Functionality Complexity
-- Discuss the complexity of the database functionality implemented.
-- Evaluate if the database features demonstrate sophistication.
+![Jsonblob](./public/jsonBlob.png)
 
 ---
 
 ## Design Considerations
-- Describe the design considerations taken into account during the database implementation.
-- Discuss how the component shows a good understanding of database concepts.
+- I used Json as my storage type for the projects as it is Flexible and doesn't need table altering in the future if more fields are required
 
 ---
 
 ## Innovative Approaches
-- Discuss any interesting or innovative approaches used in the database implementation.
-- Evaluate how the database component implements a very good set of features.
+- Supabase is perfect for local development as you can duplicate the database, which helps keeping integrity at production level  
 
 ---
 
-## Database Code Quality
-- Evaluate the quality of the code in terms of comments and structure.
-- Discuss the level of commenting and the overall structure of the database code.
-
----
-
-# Database Industry Standards
-
----
-## Database Implementation Standards
-- Discuss whether the database implementation adheres to industry standards.
-- Evaluate the use of either SQL or NoSQL and the reasoning behind the choice.
-
----
-
-## Demonstration Functionality
-- Discuss the level of functionality in the demonstration.
-- Emphasize that there are no issues, if any, in the demonstration.
-
----
-
-# Conclusion
-- Summarize the database implementation, sophistication, maintainability, and adherence to industry standards.
-- Reflect on the achieved level of database functionality and the impact on the overall project.
-
----
 # Frontend Technical Analysis
 
 ---
@@ -288,31 +246,52 @@ It is possible to reuse my cards all over the project as I can specify if I want
 
 ---
 
-## Code Samples
-Provide some code samples from your project that illustrate important concepts or techniques.
+```tsx
+export default async function ProjectPage({ params }: { params: { id: string } }) {
+  const response = await fetch(`${process.env.BACKEND_URL}/api/projects/${params.id}`, { next: { revalidate: 3600 } })
+  const project = await (response.json()) as Project;
+  
+  return (
+    <>
+
+      <ProjectEditForm className="" project={project}>
+        <ProjectEditHeader>
+
+          {project.data.tags.map((tag, index) => (
+            <div key={index} className='flex gap-2'>
+              <ProjectEditTag tag={tag}>{tag}</ProjectEditTag>
+              <Icons.circleMinus className="w-1 h-1"  />
+            </div>
+          ))}
+
+          <Icons.circlePlus className='m-3 self-center' />
+        </ProjectEditHeader>
+        <ProjectEditDate>
+          Start Date
+        </ProjectEditDate>
+        <ProjectEditDate>
+          End Date
+        </ProjectEditDate>
+        <ProjectEditText />
+        <ProjectMarkdown></ProjectMarkdown>
+        <SubmitButton>Save</SubmitButton>
+      </ProjectEditForm>
+
+    </>
+  );
+}
+```
+
 
 ---
 
 ## Challenges and Solutions
-Discuss any significant challenges you encountered during development and how you solved them.
+- My biggest challenge was building the dashboard where I can edit the projects as I needed to render the Markdown in realtime for editing
 
 ---
 
-## Future Improvements
-Discuss any planned improvements or features for the frontend.
-
----
-
-## Conclusion
-Wrap up your documentation with a brief conclusion.
-
----
-
-## References
-List any resources or references used during the development of the frontend.
-
----
 # HCI-Investigation
+
 ---
 
 ## Overview
@@ -421,18 +400,19 @@ User found that the navbar was too small
 
 ---
 
-![Big header bg contain](./public/bigHeader.png)
+![Big header bg contain](./public/biggerHeader.png)
 
 
 ---
 
 ## Design Considerations
-- Designing the website it was important for me to keep a coherent look and fee to it, thats why I reached to Tailwind CSS and a modern colour pallet
+- Designing the website it was important for me to keep a coherent look and feel to it, thats why I reached to Tailwind CSS and a modern colour pallet
 
 
 ---
 - The Colours are easily adjustable via the ```globals.css``` file, it makes it extendable for further adjustments if I don't feel like my Website needs a fresh colour scheme
 ---
+
 ## Frontend DevOps and Hosting
 - I decided to use Vercel for hosting my frontend as it is the proprietary hosting service for Next.js and is highly designed about continuos integration. It produces a preview for each commit and allows me to look at older versions of my website to see if I actually improved my site.
 - Vercel uses Serverless infrastructure which means it can scale in case a lot of traffic is generated, for now I will not reach the limits of the generous free tier
@@ -482,7 +462,6 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
 ---
 
 ## Introduction
-- The project underwent a comprehensive optimization investigation to enhance its overall performance.
 - Performance optimization is crucial for providing users with a seamless and efficient experience, impacting factors such as page load times and user engagement.
 
 ---
@@ -492,15 +471,6 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
 - Due to Next.js being a highly optimized framework performance was good out of the box, the defaults enforced by it help to get performance right first time.
 - Server side rendering is generating static pages at build time which is faster then building them at run time to send them especially when the server is performing a cold start, which is important if there is low traffic
 ---
-
-## Lighthouse Scores
-- Introduced Lighthouse, a performance measurement tool provided by Google, to assess various aspects of the project's performance.
-- Lighthouse scores provide insights into key metrics, including performance, accessibility, and adherence to best practices.
-
-
-
----
-
 
 ## Lighthouse Analysis
 - Conducted a detailed analysis of Lighthouse scores for the project.
@@ -525,7 +495,5 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
 
 ---
 
-## Profiling Tools
-- Utilized profiling tools such as Chrome Developer Tools and other performance monitoring tools.
-- Applied these tools to identify and analyze performance bottlenecks and areas for improvement.
+
 
