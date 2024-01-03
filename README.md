@@ -1,7 +1,7 @@
 ---
 theme: gaia
 class: lead
-marp: false
+marp: true
 paginate: true
 ---
 
