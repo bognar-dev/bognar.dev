@@ -15,31 +15,31 @@ export default function Socials({ className, motion = false }: { className?: str
           index={1}
           itemTitle={<AccordionItemTitle><Icons.gitHub className="w-5 h-5" /></AccordionItemTitle>}
           accordionItemContent={<AccordionItemBody>Link to my GitHub</AccordionItemBody>}
-          accordionItemButton={<AccordionItemButton href={siteConfig.links.github}>GitHub</AccordionItemButton>}
+          accordionItemButton={<AccordionItemButton href={siteConfig.links.github.url}>GitHub</AccordionItemButton>}
         />
         <AccordionItem
           index={2}
           itemTitle={<AccordionItemTitle><Icons.mail className="w-5 h-5" /></AccordionItemTitle>}
           accordionItemContent={<AccordionItemBody>niklas@bognar.dev</AccordionItemBody>}
-          accordionItemButton={<AccordionItemButton href={siteConfig.links.email}>Email Me!</AccordionItemButton>}
+          accordionItemButton={<AccordionItemButton href={siteConfig.links.email.url}>Email Me!</AccordionItemButton>}
         />
         <AccordionItem
           index={3}
           itemTitle={<AccordionItemTitle><Icons.discord className="w-5 h-5" /></AccordionItemTitle>}
           accordionItemContent={<AccordionItemBody>Ask me anything on Discord</AccordionItemBody>}
-          accordionItemButton={<AccordionItemButton href={siteConfig.links.discord}>Follow me</AccordionItemButton>}
+          accordionItemButton={<AccordionItemButton href={siteConfig.links.discord.url}>Follow me</AccordionItemButton>}
         />
         <AccordionItem
           index={4}
           itemTitle={<AccordionItemTitle><Icons.linkedIn className="w-5 h-5" /></AccordionItemTitle>}
           accordionItemContent={<AccordionItemBody>See my linkedIn profile</AccordionItemBody>}
-          accordionItemButton={<AccordionItemButton href={siteConfig.links.linkedin}>Follow me</AccordionItemButton>}
+          accordionItemButton={<AccordionItemButton href={siteConfig.links.linkedin.url}>Follow me</AccordionItemButton>}
         />
         <AccordionItem
           index={5}
           itemTitle={<AccordionItemTitle><Icons.instagram className="w-5 h-5" /></AccordionItemTitle>}
           accordionItemContent={<AccordionItemBody>Visit me!</AccordionItemBody>}
-          accordionItemButton={<AccordionItemButton href={siteConfig.links.instagram}>Follow me</AccordionItemButton>}
+          accordionItemButton={<AccordionItemButton href={siteConfig.links.instagram.url}>Follow me</AccordionItemButton>}
         />
       </Accordion>
 
@@ -52,31 +52,31 @@ export default function Socials({ className, motion = false }: { className?: str
         index={0}
         itemTitle={<AccordionItemTitle><Icons.gitHub className="w-5 h-5" /></AccordionItemTitle>}
         accordionItemContent={<AccordionItemBody>Link to my GitHub</AccordionItemBody>}
-        accordionItemButton={<AccordionItemButton href={siteConfig.links.github}>GitHub</AccordionItemButton>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.github.url}>GitHub</AccordionItemButton>}
       />
       <AccordionItem
         index={1}
         itemTitle={<AccordionItemTitle><Icons.mail className="w-5 h-5" /></AccordionItemTitle>}
         accordionItemContent={<AccordionItemBody>niklas@bognar.dev</AccordionItemBody>}
-        accordionItemButton={<AccordionItemButton href={siteConfig.links.email}>Email Me!</AccordionItemButton>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.email.url}>Email Me!</AccordionItemButton>}
       />
       <AccordionItem
         index={2}
         itemTitle={<AccordionItemTitle><Icons.discord className="w-5 h-5" /></AccordionItemTitle>}
         accordionItemContent={<AccordionItemBody>Ask me anything on Discord</AccordionItemBody>}
-        accordionItemButton={<AccordionItemButton href={siteConfig.links.discord}>Follow me</AccordionItemButton>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.discord.url}>Follow me</AccordionItemButton>}
       />
       <AccordionItem
         index={3}
         itemTitle={<AccordionItemTitle><Icons.linkedIn className="w-5 h-5" /></AccordionItemTitle>}
         accordionItemContent={<AccordionItemBody>See my linkedIn profile</AccordionItemBody>}
-        accordionItemButton={<AccordionItemButton href={siteConfig.links.linkedin}>Follow me</AccordionItemButton>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.linkedin.url}>Follow me</AccordionItemButton>}
       />
       <AccordionItem
         index={4}
         itemTitle={<AccordionItemTitle><Icons.instagram className="w-5 h-5" /></AccordionItemTitle>}
         accordionItemContent={<AccordionItemBody>Visit me!</AccordionItemBody>}
-        accordionItemButton={<AccordionItemButton href={siteConfig.links.instagram}>Follow me</AccordionItemButton>}
+        accordionItemButton={<AccordionItemButton href={siteConfig.links.instagram.url}>Follow me</AccordionItemButton>}
       />
     </Accordion>
   )

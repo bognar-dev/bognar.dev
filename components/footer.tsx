@@ -13,9 +13,9 @@ export default function Component() {
                 </div>
                 <div className="flex space-x-4">
 
-                    {Object.entries(siteConfig.links).map(([key, value]) => (
-                        <Link key={key} className="text-gray-300 hover:text-white" href={value}>
-                           <Icons.gitHub className="h-6 w-6" />
+                    {Object.entries(siteConfig.links).map(([key, { url, icon: Icon }]) => (
+                        <Link key={key} className="text-text-700 hover:text-text-500 hover:animate-hover-icons" href={url}>
+                            <Icon className="h-6 w-6" />
                         </Link>
                     ))}
                 </div>

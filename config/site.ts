@@ -1,3 +1,5 @@
+import { Icons } from "@/components/icons"
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
@@ -41,11 +43,26 @@ export const siteConfig = {
         },
     ],
     links: {
-        github: "https://github.com/bognar-dev",
-        email: "mailto:niklas@bognar.dev",
-        discord: "https://discordapp.com/users/691677819947843644",
-        linkedin: "https://www.linkedin.com/in/niklas-bogn%C3%A1r-503987243/",
-        instagram: "https://www.instagram.com/nikibgnr/?hl=en",
+        github: {
+            url: "https://github.com/bognar-dev",
+            icon: Icons.gitHub, // Replace with your actual Github icon component
+        },
+        email: {
+            url: "mailto:niklas@bognar.dev",
+            icon: Icons.mail, // Replace with your actual Email icon component
+        },
+        discord: {
+            url: "https://discordapp.com/users/691677819947843644",
+            icon: Icons.discord, // Replace with your actual Discord icon component
+        },
+        linkedin: {
+            url: "https://www.linkedin.com/in/niklas-bogn%C3%A1r-503987243/",
+            icon: Icons.linkedIn, // Replace with your actual Linkedin icon component
+        },
+        instagram: {
+            url: "https://www.instagram.com/nikibgnr/?hl=en",
+            icon: Icons.instagram, // Replace with your actual Instagram icon component
+        },
     },
 
 

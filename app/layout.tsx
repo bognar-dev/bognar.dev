@@ -7,6 +7,7 @@ import fonts from '@/config/fonts';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
   title: {
@@ -48,6 +49,7 @@ export default function RootLayout({
             
 
             </div>
+            <Footer/>
           </ThemeProvider>
           <Analytics/>
         </body>

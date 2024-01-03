@@ -87,7 +87,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     }, []);
     return (
         <div className="container min-h-100% min-w-full justify-center items-center relative mb-12">
-            <div className="flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto min-w-full  justify-center items-center -z-10">
+            <div className="absolute flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto min-w-full top-1  justify-center items-center -z-10">
                 
                 {isMobile?Array.from({ length: 100 }, (_, i) => (
                     <Dot reactive={true} key={i} mousePos={mousePos}></Dot>
@@ -96,7 +96,7 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
                         <Dot reactive={false }key={i} mousePos={mousePos}></Dot>
                     )) }
             </div>
-            <div className="absolute top-16 gap-5 flex flex-col justify-items-center w-full items-center">
+            <div className=" gap-5 flex flex-col justify-items-center w-full items-center">
                 {children}
             </div>
         </div>

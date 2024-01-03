@@ -96,7 +96,7 @@ const config: Config = {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
         'loop': 'loop 30s linear infinite ',
         'loop-reverse': 'loop 30s linear infinite reverse',
-        
+        'hover-icons': 'hover-icons 2s linear both',
       },
       keyframes: {
         loop: {
@@ -122,6 +122,10 @@ const config: Config = {
           '50%': {
             opacity: '0',
           },
+        },
+        'hover-icons': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-100%)' },
         },
       },
     },
