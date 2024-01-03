@@ -96,7 +96,8 @@ const config: Config = {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
         'loop': 'loop 30s linear infinite ',
         'loop-reverse': 'loop 30s linear infinite reverse',
-        'hover-icons': 'hover-icons 2s linear both',
+        'hover-icons': 'hover-icons 2s ease-in',
+        'wiggle': 'wiggle 0.5s ease-in-out infinite'
       },
       keyframes: {
         loop: {
@@ -123,9 +124,23 @@ const config: Config = {
             opacity: '0',
           },
         },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
         'hover-icons': {
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-100%)' },
+          '0%': { 
+            transform: 'translateY(0) scale(1)', 
+            strokeWidth: '1' 
+          },
+          '50%': { 
+            transform: 'translateY(-50%) scale(1.5)', 
+            strokeWidth: '2' 
+          },
+          '100%': { 
+            transform: 'translateY(-100%) scale(1)', 
+            strokeWidth: '1' 
+          },
         },
       },
     },

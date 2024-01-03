@@ -78,7 +78,7 @@ const InfiniteLoopSlider = ({ children, duration, reverse = false }: { children:
     return (
       <div className='overflow-hidden relative'>
         <div
-          className={`flex space-x-4 w-full ${reverse ? 'animate-loop-reverse' : 'animate-loop'} repeat-infinite fill-mode-both`}
+          className={` motion-reduce:transition-none flex space-x-4 w-full ${reverse ? 'animate-loop-reverse' : 'animate-loop'} repeat-infinite fill-mode-both`}
         >
           {children}
           {children}

@@ -24,7 +24,7 @@ const About = () => {
                     </p>
                 </div>
             </div>
-            <Button className='' href={'/biography'}>See my CV</Button>
+            <Button className='hover:animate-wiggle' href={'/biography'}>See my CV</Button>
         </div>
     )
 }

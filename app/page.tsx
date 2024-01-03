@@ -17,7 +17,7 @@ export default function Home() {
     <main className="flex flex-grow relative min-h-screen min-w-full flex-col justify-start items-start font-body  px-5 w-full gap-5">
       <BGBalls>
         <Title />
-        <Button className='shadow-none flex flex-row justify-items-center justify-center group text-text-50 ' href="/projects">See my projects  <Icons.arrowUpRight  className="w-4 h-4 ml-2 mt-0.5"/></Button>
+        <Button className='shadow-none flex flex-row justify-items-center justify-center group text-text-50 hover:animate-wiggle ' href="/projects">See my projects  <Icons.arrowUpRight  className="w-4 h-4 ml-2 mt-0.5"/></Button>
         <div className='grid grid-cols-1 gap-5'>
           <div className='grid gap-5 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
      
