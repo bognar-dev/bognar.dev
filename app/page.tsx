@@ -9,15 +9,17 @@ import About from '@/components/about'
 import LatestProjects from '@/components/latest-projects'
 import { Icons } from '@/components/icons'
 import InfiniteScroll from '@/components/infinitescroll'
+import { PageWrapper } from '@/components/page-wrapper'
 
 
 
 export default function Home() {
   return (
+    <PageWrapper>
     <main className="flex flex-grow relative min-h-screen min-w-full flex-col justify-start items-start px-5 w-full gap-5">
       <BGBalls>
         <Title />
-        <Button className='shadow-none flex flex-row justify-items-center justify-center group text-text-50 hover:animate-wiggle ' href="/projects">See my projects  <Icons.arrowUpRight  className="w-4 h-4 ml-2 mt-0.5"/></Button>
+        
         <div className='grid grid-cols-1 gap-5 mt-8'>
           <div className='grid gap-5 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
      
@@ -48,5 +50,6 @@ export default function Home() {
         </div> */}
       </BGBalls>
     </main>
+    </PageWrapper>
   )
 }

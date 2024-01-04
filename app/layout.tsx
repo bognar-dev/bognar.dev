@@ -1,4 +1,5 @@
 
+
 import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
 import MainNav from '@/components/main-nav';
@@ -8,6 +9,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import Footer from '@/components/footer';
+import { MotionConfig } from 'framer-motion';
+import MotionConfigWrapper from '@/components/motion-config-wrapper';
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  
+
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
 }
 
 
-export const viewport:Viewport={
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
@@ -39,21 +42,26 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning={true} className="">
         <head />
-        <body className={cn('bg-background-50 text-text-900 no-scrollbar font-mono',fonts.madeTommyLight.className)}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <MainNav items={siteConfig.mainNav} />
-            
-            <div className='md:p-5 '>
-            
-            {children}
-            
+        <body className={cn('bg-background-50 text-text-900 no-scrollbar font-mono', fonts.madeTommyLight.className)}>
 
-            </div>
-            <Footer/>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+           <MotionConfigWrapper>
+              <MainNav items={siteConfig.mainNav} />
+
+              <div className='md:p-5 '>
+
+                {children}
+
+
+              </div>
+              <Footer />
+              </MotionConfigWrapper>
           </ThemeProvider>
-          <Analytics/>
+
+          <Analytics />
+
         </body>
-      </html>
+      </html >
     </>
   )
 }
