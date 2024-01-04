@@ -13,7 +13,7 @@ export default function Component() {
                 </div>
                 <div className="flex space-x-4">
                     {Object.entries(siteConfig.links).map(([key, { url, icon: Icon }]) => (
-                        <Link key={key} className="text-text-700 hover:text-text-500 hover:animate-wiggle" href={url}>
+                        <Link key={key} className="text-text-800 hover:text-text-500 hover:animate-wiggle" href={url}>
                             <Icon className="h-6 w-6" />
                         </Link>
                     ))}
