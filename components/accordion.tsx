@@ -72,7 +72,7 @@ function AccordionItem({ index,itemTitle, accordionItemContent, accordionItemBut
 
     return (
         
-        <motion.li className={` text-text-900 main-1 pt-4 sm:pt-6  mb-5 px-4 rounded-lg flex flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-primary-200 pb-8' : 'border-primary-300'}`}
+        <motion.li className={` text-text-900 main-1 pt-2 sm:pt-6  mb-1 px-4 rounded-lg flex flex-row items-start gap-4 transition-all duration-500 border-b ${isExpanded ? 'bg-primary-200 pb-8' : 'border-primary-300'}`}
                 variants={fadeInAnimationVariants}
                 initial="initial"
                 whileInView="animate"
