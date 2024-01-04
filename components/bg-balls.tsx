@@ -31,7 +31,7 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
             ([entry]) => {
                 setIsVisible(entry.isIntersecting);
             },
-            { rootMargin: '0px', threshold: 0.5 } // You can adjust the threshold as needed
+            { rootMargin: '0px', threshold: 0.5 } 
         );
 
         if (dotRef.current) {
@@ -50,7 +50,7 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
                 {isVisible && (
 
                     <MotionDiv
-                        className="bg-accent-600 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
+                        className="bg-primary-300 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
                         style={{ width: SMALL_SIZE, height: SMALL_SIZE }}
                     ></MotionDiv>
                 )}
@@ -62,7 +62,7 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
             {isVisible && (
 
                 <MotionDiv
-                    className="bg-accent-600 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
+                    className="bg-primary-300 rounded-full absolute -translate-x-1/2 -translate-y-1/2"
                     style={{ width: size, height: size }}
                 ></MotionDiv>
             )}

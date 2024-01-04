@@ -26,7 +26,7 @@ export default function ThemeToggle() {
             variants={variants}
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
         >
-            {theme === "light" ? <Icons.sun className=" group-hover:scale-75 ease-in duration-200" /> : <Icons.moon className=" ease-in  duration-200 group-hover:scale-75" />}
+            <Icons.lightbulbToggle onclick={theme === "light"}/>
         </motion.button>
     );
 }

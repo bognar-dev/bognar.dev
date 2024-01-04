@@ -9,8 +9,11 @@ import {
   Instagram,
   ChevronDown,
   ChevronUp,
-  ArrowUpRight
+  ArrowUpRight,
+  Lightbulb,
+  LightbulbOff
 } from "lucide-react"
+import SVGMorph from "./svg-morph"
 
 
 export const Icons = {
@@ -37,7 +40,7 @@ export const Icons = {
   down: ChevronDown,
   up: ChevronUp,
   linkedIn: (props: LucideProps) => (
-    <svg {...props} strokeDasharray="0 1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" ><path fill="currentColor" d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2ZM8.09 18.74h-3v-9h3ZM6.59 8.48a1.56 1.56 0 1 1 0-3.12 1.57 1.57 0 1 1 0 3.12Zm12.32 10.26h-3v-4.83c0-1.21-.43-2-1.52-2A1.65 1.65 0 0 0 12.85 13a2 2 0 0 0-.1.73v5h-3v-9h3V11a3 3 0 0 1 2.71-1.5c2 0 3.45 1.29 3.45 4.06Z"/></svg>
+    <svg {...props} strokeDasharray="0 1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" ><path fill="currentColor" d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2ZM8.09 18.74h-3v-9h3ZM6.59 8.48a1.56 1.56 0 1 1 0-3.12 1.57 1.57 0 1 1 0 3.12Zm12.32 10.26h-3v-4.83c0-1.21-.43-2-1.52-2A1.65 1.65 0 0 0 12.85 13a2 2 0 0 0-.1.73v5h-3v-9h3V11a3 3 0 0 1 2.71-1.5c2 0 3.45 1.29 3.45 4.06Z" /></svg>
   ),
   circlePlus: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" {...props} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={`w-5 h-5 cursor-pointer btn btn-plus-1 bg-primary-300 rounded-full text-text-900`}>
@@ -110,7 +113,29 @@ export const Icons = {
   moon: MoonIcon,
   mail: Mail,
   arrowUpRight: ArrowUpRight,
+  lightbulb: Lightbulb,
+  lightbulbOff: LightbulbOff,
+  lightbulbToggle: ({props,onclick}:{props?: LucideProps, onclick:boolean}) => (
+
+    <svg xmlns="http://www.w3.org/2000/svg"{...props} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+      <SVGMorph paths={[whole_bulb, off_right, whole_bulb]} onclick={onclick} />
+      <SVGMorph paths={[first_dash, crossthrough, first_dash]} onclick={onclick} />
+      <SVGMorph paths={[seccond_dash,off_left,seccond_dash]} onclick={onclick} />
+      <SVGMorph paths={[seccond_dash]} onclick={onclick} />
+      <SVGMorph paths={[first_dash]} onclick={onclick} />
+
+    </svg>
+  )
 }
+
+
+const whole_bulb = "M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"
+const first_dash = "M9 18h6" //first dash
+const seccond_dash = "M10 22h4" //second dash
+
+const off_right = "M16.8 11.2c.8-.9 1.2-2 1.2-3.2a6 6 0 0 0-9.3-5"
+const crossthrough = "m2 2 20 20" //cross
+const off_left = "M6.3 6.3a4.67 4.67 0 0 0 1.2 5.2c.7.7 1.3 1.5 1.5 2.5"
 
 
 
