@@ -97,9 +97,21 @@ const config: Config = {
         'loop': 'loop 30s linear infinite ',
         'loop-reverse': 'loop 30s linear infinite reverse',
         'hover-icons': 'hover-icons 2s ease-in',
-        'wiggle': 'wiggle 0.5s ease-in-out infinite'
+        'wiggle': 'wiggle 0.5s ease-in-out infinite',
+        'rotate': 'rotate 20s linear infinite',
       },
       keyframes: {
+        'rotate': {
+          'from': {
+              rotate: '0deg',
+          },
+          '50%': {
+              scale: '1 1.5',
+          },
+          'to': {
+              rotate: '360deg',
+          },
+        },
         loop: {
           '0%': {
             transform: 'translateX(0%)',

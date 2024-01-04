@@ -23,7 +23,7 @@ export default function Home() {
         <div className='grid grid-cols-1 gap-5 mt-8'>
           <div className='grid gap-5 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
      
-            <Card motion={false} className='p-5 md:col-span-3'>
+            <Card blob={true} motion={false} className='p-5 md:col-span-3'>
               <About />
             </Card>
             
