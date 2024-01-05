@@ -23,7 +23,6 @@ export default function Timeline() {
   allTags.sort();
   
   React.useEffect(() => {
-    console.log(selectedTag);
     if(selectedTag === "all") {
       setFilteredEvents(timeLineData);
       return;

@@ -16,7 +16,6 @@ type FilterProps = {
 const ProjectFilter = ({ tags, className, selectedTags, setSelectedTags }: FilterProps) => {
 
     const handleTagClick = (tag: string) => {
-        console.log(selectedTags);
         if (selectedTags.includes(tag)) {
             setSelectedTags(selectedTags.filter(selectedTag => selectedTag !== tag));
 
