@@ -144,11 +144,11 @@ private.Use(middlewares.JwtAuthMiddleware()) //Private routes protected by middl
 
 ---
 ## Functionality Level
-Because the API is not consumable publicly the error handling is being handled internally and a user-friendly error handling is done on the frontend.
+Because the API is not consumable publicly the error handling is being handled internally and a user-friendly error handling is done on the frontend following [this](https://boldist.co/usability/user-friendly-error-messages/) guide
 
 In a real life scenario I would ditch splitting database, in favor of a full-stack solution that Next.js offers.
 
-The database uses sqlx for type-safe SQL query to the database.
+The database uses [sqlx](https://jmoiron.github.io/sqlx/) for type-safe SQL query to the database.
 
 
 ---
@@ -169,8 +169,9 @@ The Backend layer is protected by middleware and uses JWT token instead of cooki
 ---
 
 ## Code Quality
-My code follows best practices such as using structures to Marshal and unMarshal JSON data from requests, I can be confident using the Project structure because go handles filling it for me ad will error when a field is missing.
+My code follows best practices such as using structures to Marshal and unMarshal JSON data from requests with go's ```encoding``` package, I can be confident using the Project structure because go handles filling it for me ad will error when a field is missing.
 
+[Encoding Package Go](https://pkg.go.dev/encoding/json)
 
   
 ---
@@ -200,14 +201,14 @@ My code follows best practices such as using structures to Marshal and unMarshal
 
 ## Innovative Approaches
 - Supabase is perfect for local development as you can duplicate the database, which helps keeping integrity at production level  
-
+[How to develop locally with supabase](https://supabase.com/docs/guides/cli/local-development)
 ---
 
 # Frontend Technical Analysis
 
 ---
 ## Overview
-- I used Next.js for several reasons
+- I used [Next.js](https://nextjs.org/) for several reasons
   - *Server-Side Rendering (SSR)*: Next.js provides out-of-the-box support for server-side rendering, which can improve the performance of your application and make it more SEO-friendly.
   - *Static Site Generation (SSG)*: Next.js also supports static site generation. You can pre-render pages at build time and serve them as static files.
   - *File-system Based Routing*: Next.js uses the file system to create routes. This means that every file inside the pages directory becomes a route automatically.
@@ -242,7 +243,9 @@ export default function Card({ className, children, motion = false }: { classNam
 }
 ```
 
-It is possible to reuse my cards all over the project as I can specify if I want it to have animation/motion can add Tailwind style classes to customize it in any place. I can also pass any kind of components as children so I can render anything inside a card
+It is possible to reuse my cards all over the project as I can specify if I want it to have animation/motion can add Tailwind style classes to customize it in any place. I can also pass any kind of components as children so I can render anything inside a card.
+
+[Formidable Blog article](https://formidable.com/blog/2021/react-composition/)
 
 ---
 
@@ -288,6 +291,8 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 ## Challenges and Solutions
 - My biggest challenge was building the dashboard where I can edit the projects as I needed to render the Markdown in realtime for editing
 
+[How to safely render markdown in react](https://blog.logrocket.com/how-to-safely-render-markdown-using-react-markdown/)
+
 ---
 
 # HCI-Investigation
@@ -297,6 +302,10 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 ## Overview
 - HCI investigation is important because it helps to design more intuitive, efficient, and user-friendly interfaces, enhancing user satisfaction and productivity.
 - As it is a personal portfolio HCI is of highest importance, users should be able to navigate and interact with my site seamlessly to find all important information
+
+[Importance of HCI](https://www.indeed.com/career-advice/career-development/what-is-human-computer-interaction)
+
+
 
 
 ---
@@ -478,7 +487,7 @@ start cmd /k "cd C:\Users\Niklas\Documents\Uni23_24\WEB\bognar.dev-portfolio && 
   - **Performance:** Measures aspects like first contentful paint and speed index.
   - **Accessibility:** Examines the project's accessibility for all users.
   - **Best Practices:** Evaluates adherence to web development best practices.
-
+[Importance of Lighthouse scores](https://mcdsystems.co.uk/lighthouse-scores-what-are-they-and-why-are-they-important/)
 ---
 
 
