@@ -1,4 +1,4 @@
-import React, { HtmlHTMLAttributes, MouseEvent } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 interface SectionHeadingProps extends React.ButtonHTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;

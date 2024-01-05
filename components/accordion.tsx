@@ -1,13 +1,11 @@
 "use client"
 
 
-import { siteConfig } from '@/config/site';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { Icons } from './icons';
 import { twMerge } from 'tailwind-merge';
-import { AnimatePresence , motion } from 'framer-motion';
-import { MotionDiv } from './motion-div';
+import { Icons } from './icons';
 
 function AccordionItemTitle({ children,className }: { children: React.ReactNode,className?:string }){
     return(
@@ -106,4 +104,4 @@ function Accordion({ children,className }: { children: React.ReactNode ,classNam
 }
 
 
-export { Accordion, AccordionItem, AccordionTitle, AccordionItemBody,AccordionDescription,AccordionItemTitle, AccordionItemContent ,AccordionItemButton}
+export { Accordion, AccordionDescription, AccordionItem, AccordionItemBody, AccordionItemButton, AccordionItemContent, AccordionItemTitle, AccordionTitle };

@@ -1,16 +1,13 @@
-
-
-import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
-import MainNav from '@/components/main-nav';
-import { cn } from "@udecode/cn";
-import fonts from '@/config/fonts';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Metadata, Viewport } from 'next';
-import { Analytics } from '@vercel/analytics/react';
 import Footer from '@/components/footer';
-import { MotionConfig } from 'framer-motion';
+import MainNav from '@/components/main-nav';
 import MotionConfigWrapper from '@/components/motion-config-wrapper';
+import { ThemeProvider } from '@/components/theme-provider';
+import fonts from '@/config/fonts';
+import { siteConfig } from '@/config/site';
+import { cn } from "@udecode/cn";
+import { Analytics } from '@vercel/analytics/react';
+import { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: {
@@ -45,7 +42,7 @@ export default function RootLayout({
         <body className={cn('bg-background-50 text-text-900 no-scrollbar font-mono', fonts.madeTommyLight.className)}>
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-           <MotionConfigWrapper>
+            <MotionConfigWrapper>
               <MainNav items={siteConfig.mainNav} />
 
               <div className='md:p-5 '>
@@ -55,7 +52,7 @@ export default function RootLayout({
 
               </div>
               <Footer />
-              </MotionConfigWrapper>
+            </MotionConfigWrapper>
           </ThemeProvider>
 
           <Analytics />

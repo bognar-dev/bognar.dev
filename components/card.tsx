@@ -1,10 +1,10 @@
 "use client"
 
-import { twMerge } from "tailwind-merge"
-import ScrollMotionDiv from "./scroll-motion-div"
-import { Blob } from "./blob"
+import useMousePosition from "@/hooks/useMousePosition";
 import { useRef } from "react";
-import useMousePosition from "@/hooks/useMousePosition"
+import { twMerge } from "tailwind-merge";
+import { Blob } from "./blob";
+import ScrollMotionDiv from "./scroll-motion-div";
 
 export default function Card({ className, children, motion = false, blob = false }: { className?: string, children: React.ReactNode, motion?: boolean, blob?: boolean }) {
     const blobRef = useRef<HTMLDivElement>(null);
@@ -27,7 +27,7 @@ export default function Card({ className, children, motion = false, blob = false
             },
             { duration: 100, fill: "forwards" }
         );
-        
+
 
 
     };

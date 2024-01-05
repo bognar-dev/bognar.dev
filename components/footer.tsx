@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { Icons } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 
 export default function Component() {

@@ -1,74 +1,73 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import { Icons } from './icons';
 
 
 
 
-const technologies : {name:string,svg:JSX.Element}[] = [
-    
+const technologies: { name: string, svg: JSX.Element }[] = [
+
     {
         name: "React",
-        svg: <Icons.React width={20} height={20}/>
+        svg: <Icons.React width={20} height={20} />
     },
     {
         name: "Tailwind",
-        svg: <Icons.Tailwind width={20} height={20}/>
+        svg: <Icons.Tailwind width={20} height={20} />
     },
     {
         name: "Framer Motion",
-        svg: <Icons.framerMotion width={20} height={20}/>
+        svg: <Icons.framerMotion width={20} height={20} />
     },
     {
         name: "SolidJs",
-        svg: <Icons.SolidJS width={20} height={20}/>
+        svg: <Icons.SolidJS width={20} height={20} />
     },
     {
         name: "Next",
-        svg: <Icons.Next width={20} height={20}/>
+        svg: <Icons.Next width={20} height={20} />
     },
-    
+
     {
         name: "Golang",
-        svg: <Icons.Go width={20} height={20}/> 
+        svg: <Icons.Go width={20} height={20} />
     },
     {
         name: "Gin",
-        svg: <Icons.Gin width={20} height={20}/> 
+        svg: <Icons.Gin width={20} height={20} />
     },
     {
         name: "Java ",
-        svg: <Icons.Java width={20} height={20}/>
+        svg: <Icons.Java width={20} height={20} />
     },
     {
         name: "Python",
-        svg: <Icons.Python width={20} height={20}/>
+        svg: <Icons.Python width={20} height={20} />
     },
     {
         name: "Assembly",
-        svg: <Icons.Assembly width={20} height={20}/>
+        svg: <Icons.Assembly width={20} height={20} />
     },
     {
         name: "VHDL",
-        svg: <Icons.VHDL width={20} height={20}/>
+        svg: <Icons.VHDL width={20} height={20} />
     },
     {
         name: "C",
-        svg: <Icons.C width={20} height={20}/>
+        svg: <Icons.C width={20} height={20} />
     },
     {
         name: "C++",
-        svg: <Icons.CPP width={20} height={20}/>
+        svg: <Icons.CPP width={20} height={20} />
     },
     {
         name: "Qt",
-        svg: <Icons.Qt width={20} height={20}/>
+        svg: <Icons.Qt width={20} height={20} />
     },
     {
         name: "SDL",
-        svg: <Icons.SDL width={20} height={20}/>
+        svg: <Icons.SDL width={20} height={20} />
     }
 ]
 
@@ -104,7 +103,7 @@ export default function TechStack() {
                         initial="initial"
                         whileInView="animate"
                         viewport={{
-                            once:true
+                            once: true
                         }}
                         custom={index}
                     >

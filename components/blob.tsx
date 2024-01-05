@@ -2,11 +2,11 @@
 
 export const Blob = ({ blobRef }: { blobRef?: React.Ref<any> }) => {
     return (
-        
-            <div
-                ref={blobRef}
-                id="blob"
-                className="w-40 h-40 
+
+        <div
+            ref={blobRef}
+            id="blob"
+            className="w-40 h-40 
                 bg-gradient-to-r
                 from-primary-300 to-primary-400
                 absolute 
@@ -21,7 +21,7 @@ export const Blob = ({ blobRef }: { blobRef?: React.Ref<any> }) => {
                 -z-20
                 blur-3xl
                 "
-            />
-        
+        />
+
     );
 };

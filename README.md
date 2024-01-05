@@ -46,10 +46,25 @@ section {
 
 ### Tech Stack:
 
-- Front-end: Next.js, Tailwind CSS, Framer Motion, tailwind-prose
+- Front-end: Next.js, Tailwind CSS, Framer Motion,flubber.js, tailwind-prose
 - Back-end: Go (Golang)
 - Database: Supabase
 
+---
+- [@types/node](https://www.npmjs.com/package/@types/node)
+- [@types/react](https://www.npmjs.com/package/@types/react)
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom)
+- [@types/sanitize-html](https://www.npmjs.com/package/@types/sanitize-html)
+- [@types/showdown](https://www.npmjs.com/package/@types/showdown)
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer)
+- [eslint](https://www.npmjs.com/package/eslint)
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next)
+- [postcss](https://www.npmjs.com/package/postcss)
+- [prettier](https://www.npmjs.com/package/prettier)
+- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss)
+- [supabase](https://www.npmjs.com/package/supabase)
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss)
+- [typescript](https://www.npmjs.com/package/typescript)
 ---
 
 ### Key Features:

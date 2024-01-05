@@ -1,10 +1,9 @@
 'use client'
-import { useState } from "react";
 //@ts-ignore
-import {useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { twMerge } from "tailwind-merge";
-export function SubmitButton({ children,className }: { children: React.ReactNode, className?:string }) {
-    
+export function SubmitButton({ children, className }: { children: React.ReactNode, className?: string }) {
+
     const { pending } = useFormStatus()
 
     return (

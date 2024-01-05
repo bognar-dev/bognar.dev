@@ -1,17 +1,17 @@
 import {
   ArrowRight,
-  LucideProps,
-  SunIcon,
-  MoonIcon,
-  Mail,
-  Clock9,
-  TagsIcon,
-  Instagram,
+  ArrowUpRight,
   ChevronDown,
   ChevronUp,
-  ArrowUpRight,
+  Clock9,
+  Instagram,
   Lightbulb,
-  LightbulbOff
+  LightbulbOff,
+  LucideProps,
+  Mail,
+  MoonIcon,
+  SunIcon,
+  TagsIcon
 } from "lucide-react"
 import SVGMorph from "./svg-morph"
 
@@ -115,12 +115,12 @@ export const Icons = {
   arrowUpRight: ArrowUpRight,
   lightbulb: Lightbulb,
   lightbulbOff: LightbulbOff,
-  lightbulbToggle: ({props,onclick}:{props?: LucideProps, onclick:boolean}) => (
+  lightbulbToggle: ({ props, onclick }: { props?: LucideProps, onclick: boolean }) => (
 
     <svg xmlns="http://www.w3.org/2000/svg"{...props} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
       <SVGMorph paths={[whole_bulb, off_right, whole_bulb]} onclick={onclick} />
       <SVGMorph paths={[first_dash, crossthrough, first_dash]} onclick={onclick} />
-      <SVGMorph paths={[seccond_dash,off_left,seccond_dash]} onclick={onclick} />
+      <SVGMorph paths={[seccond_dash, off_left, seccond_dash]} onclick={onclick} />
       <SVGMorph paths={[seccond_dash]} onclick={onclick} />
       <SVGMorph paths={[first_dash]} onclick={onclick} />
 

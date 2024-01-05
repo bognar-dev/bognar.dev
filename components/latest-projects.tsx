@@ -1,14 +1,8 @@
-
-
 import { Project } from '@/types/project';
-import React from 'react';
-import ProjectPreview from './project-preview';
-import Card from './card';
 import { twMerge } from 'tailwind-merge';
-import SectionHeading from './section-header';
-import ProjectCard from './project-card';
-import { AnimatePresence,motion } from 'framer-motion';
+import Card from './card';
 import LatestProjectAnimation from './latest-project-animation';
+import SectionHeading from './section-header';
 
 
 export default async function LatestProjects({ amount = 2, className }: { amount?: number, className?: string }) {
@@ -21,7 +15,7 @@ export default async function LatestProjects({ amount = 2, className }: { amount
     return (
         <Card className={twMerge(className, 'p-5 ')}>
             <SectionHeading>Recent Projects:</SectionHeading>
-            <LatestProjectAnimation data={data}/>
+            <LatestProjectAnimation data={data} />
         </Card>
     );
 };

@@ -1,7 +1,6 @@
 import { Project } from "@/types/project";
 import Button from "./button";
 import Card from "./card";
-import Link from "next/link";
 
 
 

@@ -1,10 +1,8 @@
 import { siteConfig } from "@/config/site";
-import { Accordion, AccordionTitle, AccordionItem, AccordionItemTitle, AccordionItemBody, AccordionItemButton } from "./accordion";
-import { Icons } from "./icons";
 import { twMerge } from "tailwind-merge";
-import ScrollMotionDiv from "./scroll-motion-div";
+import { Accordion, AccordionItem, AccordionItemBody, AccordionItemButton, AccordionItemTitle, AccordionTitle } from "./accordion";
+import { Icons } from "./icons";
 import SectionHeading from "./section-header";
-import { AnimatePresence } from "framer-motion";
 
 export default function Socials({ className, motion = false }: { className?: string, motion?: boolean }) {
   if (motion) {

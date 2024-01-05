@@ -1,16 +1,16 @@
 'use client'
 
+import { useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { motion, useSpring } from "framer-motion";
-import { MotionDiv } from "./motion-div";
 import { useMediaQuery } from "react-responsive";
+import { MotionDiv } from "./motion-div";
 
 
 const BIG_SIZE = 50;
 const SMALL_SIZE = 3;
 const PER_PX = 0.3;
 
-function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y: number } }) {
+function Dot({ reactive, mousePos }: { reactive: boolean, mousePos: { x: number; y: number } }) {
     const size = useSpring(SMALL_SIZE, { damping: 30, stiffness: 200 });
     const [isVisible, setIsVisible] = useState(false);
     const dotRef = useRef<HTMLDivElement>(null);
@@ -31,7 +31,7 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
             ([entry]) => {
                 setIsVisible(entry.isIntersecting);
             },
-            { rootMargin: '0px', threshold: 0.5 } 
+            { rootMargin: '0px', threshold: 0.5 }
         );
 
         if (dotRef.current) {
@@ -44,7 +44,7 @@ function Dot({ reactive, mousePos }: { reactive:boolean,mousePos: { x: number; y
             }
         };
     }, []);
-    if( reactive === false){
+    if (reactive === false) {
         return (
             <div ref={dotRef}>
                 {isVisible && (
@@ -88,13 +88,13 @@ export default function BGBalls({ children }: { children: React.ReactNode }) {
     return (
         <div className="container min-h-100% min-w-full justify-center items-center relative mb-12">
             <div className="absolute flex flex-grow flex-wrap gap-12 md:gap-24 mx-auto min-w-full top-1  justify-center items-center -z-10">
-                
-                {isMobile?Array.from({ length: 100 }, (_, i) => (
+
+                {isMobile ? Array.from({ length: 100 }, (_, i) => (
                     <Dot reactive={true} key={i} mousePos={mousePos}></Dot>
-                )):
+                )) :
                     Array.from({ length: 100 }, (_, i) => (
-                        <Dot reactive={false }key={i} mousePos={mousePos}></Dot>
-                    )) }
+                        <Dot reactive={false} key={i} mousePos={mousePos}></Dot>
+                    ))}
             </div>
             <div className=" gap-5 flex flex-col justify-items-center w-full items-center">
                 {children}

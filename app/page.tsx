@@ -1,15 +1,12 @@
+import About from '@/components/about'
 import BGBalls from '@/components/bg-balls'
 import Card from '@/components/card'
-import Timeline from '@/components/timeline'
-import Button from '@/components/button'
-import Socials from '@/components/socials'
-import TechStack from '@/components/techstack'
-import Title from '@/components/title'
-import About from '@/components/about'
-import LatestProjects from '@/components/latest-projects'
-import { Icons } from '@/components/icons'
 import InfiniteScroll from '@/components/infinitescroll'
+import LatestProjects from '@/components/latest-projects'
 import { PageWrapper } from '@/components/page-wrapper'
+import Socials from '@/components/socials'
+import Timeline from '@/components/timeline'
+import Title from '@/components/title'
 
 
 
