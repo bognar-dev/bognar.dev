@@ -32,7 +32,7 @@ const LatestProjectAnimation = ({ data }: { data: Projects }) => {
                         exit="exit"
                         custom={key}
                     >
-                        <ProjectCard animate={false} project={project} key={key} className='' />
+                        <ProjectCard animate={false} meta={project} key={key} className='' />
                     </motion.div>
                 ))}
             </div>
