@@ -8,7 +8,7 @@ const HorizontalScrollCarouselProjects = async () => {
         <HorizontalScrollCarousel projects={data} />
 
     );
-};
+}
 
 
 export default HorizontalScrollCarouselProjects

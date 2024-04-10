@@ -3,19 +3,18 @@ import { twMerge } from 'tailwind-merge';
 import Card from './card';
 import LatestProjectAnimation from './latest-project-animation';
 import SectionHeading from './section-header';
+import { getProjects } from '../projects/utils';
 
 
 export default async function LatestProjects({ amount = 2, className }: { amount?: number, className?: string }) {
 
-    const response = await fetch(`${process.env.BACKEND_URL}/api/projects`, { next: { revalidate: 3600 } })
-    const data = await (response.json()) as Project[];
-    data.sort((a, b) => new Date(b.data.endDate).getTime() - new Date(a.data.endDate).getTime()).splice(amount)
-
+    const projects = getProjects();
+    console.log(projects)   
 
     return (
         <Card className={twMerge(className, 'p-5 ')}>
             <SectionHeading>Recent Projects:</SectionHeading>
-            <LatestProjectAnimation data={data} />
+            <LatestProjectAnimation projects={projects} />
         </Card>
     );
 };

@@ -1,8 +1,8 @@
 import '@/app/globals.css';
-import Footer from '@/components/footer';
-import MainNav from '@/components/main-nav';
-import MotionConfigWrapper from '@/components/motion-config-wrapper';
-import { ThemeProvider } from '@/components/theme-provider';
+import Footer from '@/app/(components)/footer';
+import MainNav from '@/app/(components)/main-nav';
+import MotionConfigWrapper from '@/app/(components)/motion-config-wrapper';
+import { ThemeProvider } from '@/app/(components)/theme-provider';
 import fonts from '@/config/fonts';
 import { siteConfig } from '@/config/site';
 import { cn } from "@udecode/cn";

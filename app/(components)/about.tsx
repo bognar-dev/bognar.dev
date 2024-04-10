@@ -1,4 +1,4 @@
-import Button from '@/components/button'
+import Button from '@/app/(components)/button'
 import Image from 'next/image'
 // @ts-ignore
 import profile from "@/public/profile.jpg"
