@@ -27,7 +27,7 @@ export default function ProjectCard({
     const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
     if (animate) {
         return (
-            <Link href={`/projects/${project.metadata.title}`}>
+            <Link href={`/projects/${project.slug}`}>
                 <motion.div
                     ref={ref}
                     style={{
@@ -39,10 +39,10 @@ export default function ProjectCard({
                     <section className={twMerge(`bg-primary-50 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-primary-200 transition `, className)}>
                         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] grid grid-flow-row h-full sm">
                             <h3 className="text-2xl font-semibold">{project.metadata.title}</h3>
-                            <p className="my-2 leading-relaxed truncate text-gray-700 dark:text-white/70">
+                            <p className="my-2 leading-relaxed text-gray-700 dark:text-white/70">
                                 {project.metadata.summary}
                             </p>
-                            <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
+                            <ul className="flex flex-grow justify-items-start mt-2 gap-1 sm:mt-auto">
 
 
                                 {project.metadata.tags.split(',').slice(0,3).map((tag, key) => (
@@ -55,7 +55,7 @@ export default function ProjectCard({
                         </div>
 
                         <Image
-                            src={'https://yvlgmxrunsfqgobqceqr.supabase.co/storage/v1/object/public/images/vvs-guessing-game.vercel.app_.png'}
+                            src={project.metadata.image!}
                             width={400}
                             height={400}
                             alt={project.metadata.title}

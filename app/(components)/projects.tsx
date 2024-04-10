@@ -1,4 +1,4 @@
-
+"use client"
 import { Project, getProjects } from '@/app/projects/utils';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { AnimatePresence } from 'framer-motion';

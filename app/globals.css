@@ -4,6 +4,18 @@
 
 @layer base {
   :root {
+
+    --sh-class: #2d5e9d;
+    --sh-identifier: #b3becc;
+    --sh-sign: #c3dbf3;
+    --sh-property: #0550ae;
+    --sh-entity: #249a97;
+    --sh-jsxliterals: #6266d1;
+    --sh-string: #00a99a;
+    --sh-keyword: #f47067;
+    --sh-comment: #a89494;
+
+    
     --text-50: #f3f4f1;
     --text-100: #e8e8e3;
     --text-200: #d0d1c7;
@@ -145,3 +157,4 @@
     /* Firefox */
   }
 }
+

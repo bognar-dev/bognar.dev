@@ -1,6 +1,6 @@
 import { formatDate, getProjects } from "@/app/projects/utils";
 import { baseUrl } from "@/app/sitemap";
-import { CustomMDX } from "@/components/mdx";
+import { CustomMDX } from "@/app/(components)/mdx";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -87,7 +87,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           {formatDate(project.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose">
+      <article className="prose dark:prose-invert">
         <CustomMDX source={project.content} />
       </article>
     </section>

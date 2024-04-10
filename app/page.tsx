@@ -1,12 +1,12 @@
-import About from '@/components/about'
-import BGBalls from '@/components/bg-balls'
-import Card from '@/components/card'
-import InfiniteScroll from '@/components/infinitescroll'
-import LatestProjects from '@/components/latest-projects'
-import { PageWrapper } from '@/components/page-wrapper'
-import Socials from '@/components/socials'
-import Timeline from '@/components/timeline'
-import Title from '@/components/title'
+import About from '@/app/(components)/about'
+import BGBalls from '@/app/(components)/bg-balls'
+import Card from '@/app/(components)/card'
+import InfiniteScroll from '@/app/(components)/infinitescroll'
+import LatestProjects from '@/app/(components)/latest-projects'
+import { PageWrapper } from '@/app/(components)/page-wrapper'
+import Socials from '@/app/(components)/socials'
+import Timeline from '@/app/(components)/timeline'
+import Title from '@/app/(components)/title'
 
 
 

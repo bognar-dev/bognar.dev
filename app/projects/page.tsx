@@ -1,6 +1,6 @@
 import {  getProjects  } from "@/app/projects/utils";
-import Projects from '@/components/projects';
-import { PageWrapper } from '@/components/page-wrapper';
+import Projects from '@/app/(components)/projects';
+import { PageWrapper } from '@/app/(components)/page-wrapper';
 
 export default async function ProjectsPage() {
 

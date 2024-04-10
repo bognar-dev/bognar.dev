@@ -1,7 +1,8 @@
 "use client"
-import { Project, Projects } from '@/types/project';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
+import { Project } from '../projects/utils';
 import ProjectCard from './project-card';
+import { MotionDiv } from './motion-div';
 const fadeInAnimationVariants = {
     initial: {
         opacity: 0.1,
@@ -18,12 +19,12 @@ const fadeInAnimationVariants = {
     }),
 };
 
-const LatestProjectAnimation = ({ data }: { data: Projects }) => {
+const LatestProjectAnimation = ({ projects }: { projects: Project[] }) => {
     return (
         <AnimatePresence>
             <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-3  '>
-                {data.map((project: Project, key: number) => (
-                    < motion.div
+                {projects.map((project: Project, key: number) => (
+                    < MotionDiv
 
                         key={key}
                         variants={fadeInAnimationVariants}
@@ -32,8 +33,8 @@ const LatestProjectAnimation = ({ data }: { data: Projects }) => {
                         exit="exit"
                         custom={key}
                     >
-                        <ProjectCard animate={false} meta={project} key={key} className='' />
-                    </motion.div>
+                        <ProjectCard animate={false} project={project} key={key} className='' />
+                    </MotionDiv>
                 ))}
             </div>
         </AnimatePresence>
