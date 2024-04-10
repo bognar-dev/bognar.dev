@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     notFound()
   }
   return (
-    <section>
+    <section className="flex flex-col items-center justify-center mb-20">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -71,10 +71,10 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             image: project.metadata.image
               ? `${baseUrl}${project.metadata.image}`
               : `/og?title=${encodeURIComponent(project.metadata.title)}`,
-            url: `${baseUrl}/blog/${project.slug}`,
+            url: `${baseUrl}/project/${project.slug}`,
             author: {
               '@type': 'Person',
-              name: 'My Portfolio',
+              name: 'Bognar-dev',
             },
           }),
         }}

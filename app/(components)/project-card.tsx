@@ -42,7 +42,7 @@ export default function ProjectCard({
                             <p className="my-2 leading-relaxed text-gray-700 dark:text-white/70">
                                 {project.metadata.summary}
                             </p>
-                            <ul className="flex flex-grow justify-items-start mt-2 gap-1 sm:mt-auto">
+                            <ul className="flex flex-row md:gap-4 justify-items-start mt-2 gap-1">
 
 
                                 {project.metadata.tags.split(',').slice(0,3).map((tag, key) => (
@@ -52,9 +52,7 @@ export default function ProjectCard({
 
                             </ul>
 
-                        </div>
-
-                        <Image
+                            <Image
                             src={project.metadata.image!}
                             width={400}
                             height={400}
@@ -62,8 +60,9 @@ export default function ProjectCard({
                             quality={95}
                             className="absolute
                     shadow-2xl rounded-lg
-                    md:rounded-t-lg md:block md:top-8 md:-right-60 md:w-[28.25rem]
-                    top-28 -right-10 w-[10.25rem]
+                    hidden  
+                    md:rounded-t-lg sm:block md:top-8 md:-right-60 md:w-[27.25rem] sm:w-[20.25rem] xs:w-[15.25rem]
+                    top-28 -right-10 w-[8.25rem]
                     transition 
                     group-hover:scale-[1.04]
                     group-hover:-translate-x-3
@@ -71,6 +70,9 @@ export default function ProjectCard({
                     group-hover:-rotate-2
                 "
                         />
+                        </div>
+
+                        
                     </section>
 
                 </motion.div>
@@ -109,15 +111,16 @@ export default function ProjectCard({
                         alt={project.metadata.title}
                         quality={95}
                         className="absolute
-                                        shadow-2xl rounded-lg
-                                        md:rounded-t-lg md:block md:top-8 md:-right-60 md:w-[28.25rem]
-                                        top-28 -right-10 w-[10.25rem]
-                                        transition 
-                                        group-hover:scale-[1.04]
-                                        group-hover:-translate-x-3
-                                        group-hover:translate-y-3
-                                        group-hover:-rotate-2
-                                    "
+                        shadow-2xl rounded-lg
+                        hidden  
+                        md:rounded-t-lg sm:block md:top-8 md:-right-60 md:w-[27.25rem] sm:w-[20.25rem] xs:w-[15.25rem]
+                        top-28 -right-10 w-[8.25rem]
+                        transition 
+                        group-hover:scale-[1.04]
+                        group-hover:-translate-x-3
+                        group-hover:translate-y-3
+                        group-hover:-rotate-2
+                    "
                     />
                 </section>
 
