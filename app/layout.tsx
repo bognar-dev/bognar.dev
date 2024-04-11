@@ -45,12 +45,9 @@ export default function RootLayout({
             <MotionConfigWrapper>
               <MainNav items={siteConfig.mainNav} />
 
-              <div className='md:p-5 '>
+            
 
                 {children}
-
-
-              </div>
               <Footer />
             </MotionConfigWrapper>
           </ThemeProvider>
