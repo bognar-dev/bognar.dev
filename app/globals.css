@@ -181,6 +181,8 @@
   .parallax span {
     display: block;
     margin-right: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   
   .step {
