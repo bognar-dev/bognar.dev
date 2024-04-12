@@ -11,6 +11,7 @@ import Title from '@/app/(components)/title'
 
 
 export default function Home() {
+  console.log('Home')
   return (
     <PageWrapper>
     <main className="flex flex-grow relative min-h-screen min-w-full flex-col justify-start items-start px-5 w-full gap-5">
