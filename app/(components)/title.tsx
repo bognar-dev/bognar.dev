@@ -11,7 +11,7 @@ export default function Title() {
 
 
   return (
-    <div className="">
+    <div className={fonts.madeTommyBlack.className}>
       <ParallaxText baseVelocity={1} childCount={10} >Bognar.dev</ParallaxText>
       <ParallaxText baseVelocity={-1} childCount={10} >Bognar.dev</ParallaxText>
       
