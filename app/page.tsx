@@ -19,7 +19,7 @@ export default function Home() {
         <Title />
       </BGBalls>
 
-      <main className="flex flex-grow relative min-h-screen min-w-full flex-col justify-start items-start px-5 w-full gap-5">
+      <main className="flex flex-grow relative min-h-screen min-w-full flex-col justify-start justify-items-center items-center px-5 w-full gap-5">
           <Button className='shadow-none flex flex-row justify-items-center justify-center group text-text-50 hover:animate-wiggle flex-shrink ' href="/projects">See my projects  <Icons.arrowUpRight className="w-4 h-4 ml-2 mt-0.5" /></Button>
 
 
