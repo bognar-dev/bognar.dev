@@ -81,7 +81,7 @@ export default function ProjectCard({
     }
 
     return (
-        <Link href={`/projects/${project.metadata.title}`}>
+        <Link href={`/projects/${project.slug}`}>
             <div
                 ref={ref}
                 className="group mb-3 sm:mb-8 last:mb-0"

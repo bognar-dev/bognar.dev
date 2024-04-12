@@ -94,8 +94,8 @@ const config: Config = {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
-        'loop': 'loop 30s linear infinite ',
-        'loop-reverse': 'loop 30s linear infinite reverse',
+        'loop': 'loop 20s linear infinite ',
+        'loop-reverse': 'loop 20s linear infinite reverse',
         'hover-icons': 'hover-icons 2s ease-in',
         'wiggle': 'wiggle 0.5s ease-in-out infinite',
         'rotate': 'rotate 20s linear infinite',
@@ -117,7 +117,7 @@ const config: Config = {
             transform: 'translateX(0%)',
           },
           '100%': {
-            transform: 'translateX(-100%)',
+            transform: 'translateX(-75%)',
           },
         },
         'loop-reverse': {
@@ -125,7 +125,7 @@ const config: Config = {
             transform: 'translateX(0%)',
           },
           '100%': {
-            transform: 'translateX(50%)',
+            transform: 'translateX(75%)',
           },
         },
         fade: {

@@ -34,8 +34,8 @@ export default function Home() {
 
 
             </div>
-            <div className='grid gap-5 grid-cols-1 xl:grid-cols-4 xl:grid-rows-1 xl:grid-flow-row w-full '>
-              <Card motion={false} className='xl:row-span-1 flex justify-center justify-items-center'>
+            <div className='grid gap-5 grid-cols-1 xl:grid-cols-4 xl:grid-rows-1 xl:grid-flow-row w-full'>
+              <Card motion={false} className='xl:row-span-1 flex justify-center justify-items-center px-0'>
                 <InfiniteScroll />
               </Card>
               <LatestProjects className='xl:row-span-1 xl:col-span-3 ' amount={2} />
