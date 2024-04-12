@@ -12,8 +12,8 @@ export default function Title() {
 
   return (
     <div className="">
-      <ParallaxText baseVelocity={2} childCount={10} >Bognar.dev</ParallaxText>
-      <ParallaxText baseVelocity={-2} childCount={10} >Bognar.dev</ParallaxText>
+      <ParallaxText baseVelocity={1} childCount={10} >Bognar.dev</ParallaxText>
+      <ParallaxText baseVelocity={-1} childCount={10} >Bognar.dev</ParallaxText>
       
     </div>
     
