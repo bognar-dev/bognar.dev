@@ -11,7 +11,7 @@ export default function Title() {
 
 
   return (
-    <div className={fonts.madeTommyBlack.className}>
+    <div className={cn(fonts.madeTommyBlack.className,'w-full overflow-hidden')}>
       <ParallaxText baseVelocity={1} childCount={10} >Bognar.dev</ParallaxText>
       <ParallaxText baseVelocity={-1} childCount={10} >Bognar.dev</ParallaxText>
       
