@@ -22,7 +22,7 @@ const fadeInAnimationVariants = {
 const LatestProjectAnimation = ({ projects }: { projects: Project[] }) => {
     return (
         <AnimatePresence>
-            <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-3  '>
+            <div className='grid lg:grid-cols-2 lg:grid-rows-1 gap-1 w-full '>
                 {projects.map((project: Project, key: number) => (
                     < MotionDiv
 
