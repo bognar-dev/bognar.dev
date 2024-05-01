@@ -37,9 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning={true} className="">
+      <html lang="en" suppressHydrationWarning={true} className="no-scrollbar ">
         <head />
-        <body className={cn('bg-background-50 text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
+        <body className={cn('bg-background-50 text-text-900 ', fonts.madeTommyLight.className)}>
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
