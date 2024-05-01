@@ -46,8 +46,8 @@ function CustomLink(props:any) {
 }
 
 function RoundedImage(props:any) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
-}
+    return <Image alt={props.alt} className="rounded-lg" {...props} />
+  }
 
 function Code({ children, ...props }:any) {
   let codeHTML = highlight(children)

@@ -34,7 +34,7 @@ export default function ProjectCard({
                         scale: scaleProgess,
                         opacity: opacityProgess,
                     }}
-                    className="group mb-3 sm:mb-8 last:mb-0"
+                    className="group mb-3 sm:mb-8 last:mb-0 "
                 >
                     <section className={twMerge(`bg-primary-50 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-primary-200 transition `, className)}>
                         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] grid grid-flow-row h-full sm">
@@ -81,7 +81,7 @@ export default function ProjectCard({
     }
 
     return (
-        <Link href={`/projects/${project.metadata.title}`}>
+        <Link href={`/projects/${project.slug}`}>
             <div
                 ref={ref}
                 className="group mb-3 sm:mb-8 last:mb-0"

@@ -39,18 +39,15 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning={true} className="">
         <head />
-        <body className={cn('bg-background-50 text-text-900 no-scrollbar font-mono', fonts.madeTommyLight.className)}>
+        <body className={cn('bg-background-50 text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
               <MainNav items={siteConfig.mainNav} />
 
-              <div className='md:p-5 '>
+            
 
                 {children}
-
-
-              </div>
               <Footer />
             </MotionConfigWrapper>
           </ThemeProvider>

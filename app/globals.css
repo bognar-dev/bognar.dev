@@ -6,16 +6,16 @@
   :root {
 
     --sh-class: #2d5e9d;
-    --sh-identifier: #b3becc;
-    --sh-sign: #c3dbf3;
-    --sh-property: #0550ae;
-    --sh-entity: #249a97;
+    --sh-identifier: #354150;
+    --sh-sign: #2c4257;
+    --sh-string: #007f7a;
+    --sh-keyword: #e02518;
+    --sh-comment: #a19595;
     --sh-jsxliterals: #6266d1;
-    --sh-string: #00a99a;
-    --sh-keyword: #f47067;
-    --sh-comment: #a89494;
+    --sh-property: #e25a1c;
+    --sh-entity: #e25a1c;
 
-    
+
     --text-50: #f3f4f1;
     --text-100: #e8e8e3;
     --text-200: #d0d1c7;
@@ -79,6 +79,14 @@
   }
 
   .dark {
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-keyword: #f47067;
+    --sh-string: #0fa295;
+
+
+
+
     --text-50: #111009;
     --text-100: #212012;
     --text-200: #424024;
@@ -91,8 +99,8 @@
     --text-900: #edecde;
     --text-950: #f6f6ee;
 
-    --background-50: #081012;
-    --background-100: #101f23;
+    --background-50: #181818;
+    --background-100: #252525;
     --background-200: #1f3e47;
     --background-300: #2f5d6a;
     --background-400: #3e7d8e;
@@ -156,5 +164,174 @@
     scrollbar-width: none;
     /* Firefox */
   }
+
+
+  .parallax {
+    overflow: hidden;
+    letter-spacing: -2px;
+    line-height: 0.9;
+    margin: 0;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .parallax .scroller {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 100px;
+    display: flex;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .parallax span {
+    display: block;
+    margin-right: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+
+
 }
 
+
+
+html {
+  min-width: 360px;
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover>.anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose p {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose ul {
+  @apply list-disc pl-6;
+}
+
+.prose ol {
+  @apply list-decimal pl-6;
+}
+
+.prose> :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  text-wrap: balance;
+}
+
+
+pre {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.title {
+  text-wrap: balance;
+}

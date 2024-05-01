@@ -1,6 +1,5 @@
 import { Icons } from "./icons";
 
-const COLORS = ['#bbf7d0', '#99f6e4', '#bfdbfe', '#ddd6fe', '#f5d0fe', '#fed7aa', '#fee2e2'];
 
 const DURATION = 15000;
 const ROWS = 5;
@@ -78,7 +77,7 @@ const InfiniteLoopSlider = ({ children, duration, reverse = false }: { children:
   return (
     <div className='overflow-hidden relative'>
       <div
-        className={` motion-reduce:transition-none flex space-x-4 w-full ${reverse ? 'animate-loop-reverse' : 'animate-loop'} repeat-infinite fill-mode-both`}
+        className={` selection:motion-reduce:transition-none flex flex-grow justify-between space-x-4 ${reverse ? 'animate-loop' : 'animate-loop-reverse'} repeat-infinite fill-mode-both`}
       >
         {children}
         {children}
@@ -87,25 +86,26 @@ const InfiniteLoopSlider = ({ children, duration, reverse = false }: { children:
   );
 };
 
-const Tag = ({ tag }: { tag: { name: string, svg: JSX.Element } }) => (
-  <div className='tag flex items-center space-x-1 text-text-100 text-sm bg-primary-600 rounded-md mr-1 px-4 py-2 shadow-md'>
+const Tag = ({ tag ,reverse}: { tag: { name: string, svg: JSX.Element }, reverse:boolean }) => (
+  <div className={`tag flex items-center space-x-1 text-text-100 text-sm bg-primary-600 rounded-md mr-1 px-4 py-2 shadow-md`}>
     <span className='text-text-200 text-lg mr-2'>{tag.svg}</span>
     {tag.name}
   </div>
 );
 
 const InfiniteScroll = () => (
-
-  <div className='w-full flex flex-col justify-items-center justify-center gap-4 py-2 overflow-hidden'>
-    <h2 className="text-3xl mb-4 text-center">What I like to use:</h2>
+  <>
+<h2 className="text-3xl mb-4 text-center">What I like to use:</h2>
+  <div className='w-full flex flex-col justify-between gap-4 py-2 overflow-hidden'>
+    
     {[...new Array(ROWS)].map((_, i) => (
       <InfiniteLoopSlider
         key={i}
         duration={random(DURATION - 5000, DURATION + 5000)}
         reverse={i % 2 === 0}
       >
-        {shuffle(technologies).slice(0, TAGS_PER_ROW).map((tag, index) => (
-          <Tag key={index} tag={tag} />
+        {shuffle(technologies).slice(0, TAGS_PER_ROW * 2).map((tag, index) => (
+          <Tag key={index} tag={tag} reverse={i % 2 === 0} />
         ))}
       </InfiniteLoopSlider>
     ))}
@@ -113,6 +113,7 @@ const InfiniteScroll = () => (
        dark:from-background-50 dark:via-transparent dark:to-background-50
        from-white/30 via-transparent to-white/30 '></div>
   </div>
+  </>
 );
 
 export default InfiniteScroll

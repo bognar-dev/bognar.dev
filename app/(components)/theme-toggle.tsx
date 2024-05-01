@@ -3,6 +3,7 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
 import { Icons } from "./icons"
+import { cn } from "@udecode/cn"
 
 const variants = {
     initial: { opacity: 0, scale: 0.5, x: 0, rotate: -90 },
@@ -10,12 +11,12 @@ const variants = {
     exit: { opacity: 0, scale: 0.5, x: 0, rotate: 90 }
 };
 
-export default function ThemeToggle() {
+export default function ThemeToggle({className}:{className?:string}) {
     const { theme, setTheme } = useTheme();
 
     return (
         <motion.button
-            className="group rounded-lg p-2 hover:bg-primary-100 ease-in duration-100 ml-1 z-10"
+            className={cn("group rounded-lghover:bg-primary-100 ease-in duration-100 z-10",className)}
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             initial="initial"
             name="Toggle Theme"

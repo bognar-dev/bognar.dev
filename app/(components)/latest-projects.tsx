@@ -8,10 +8,8 @@ import { getProjects } from '../projects/utils';
 
 export default async function LatestProjects({ amount = 2, className }: { amount?: number, className?: string }) {
 
-    const projects = getProjects().slice(0, amount);
-    console.log(amount)
-    console.log(projects)  
-
+    const projects = getProjects().slice(0, amount);   
+  
     return (
         <Card className={twMerge(className, 'p-5 ')}>
             <SectionHeading>Recent Projects:</SectionHeading>
