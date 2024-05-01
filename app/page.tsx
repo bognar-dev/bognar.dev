@@ -13,6 +13,7 @@ import { Icons } from './(components)/icons'
 
 
 export default function Home() {
+  console.log('Home')
   return (
     <>
       <BGBalls>
