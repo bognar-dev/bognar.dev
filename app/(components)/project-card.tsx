@@ -7,7 +7,8 @@ import { twMerge } from "tailwind-merge";
 import Tag from "./tag";
 import Button from "./button";
 import Link from "next/link";
-import { Project} from "@/app/projects/utils";
+import { Project } from "@/app/projects/utils";
+import { Icons } from "./icons";
 type ProjectProps = {
     project: Project,
     className?: string,
@@ -45,20 +46,25 @@ export default function ProjectCard({
                             <ul className="flex flex-row md:gap-4 justify-items-start mt-2 gap-1">
 
 
-                                {project.metadata.tags.split(',').slice(0,3).map((tag, key) => (
+                                {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
                                     <Tag animate={false} index={key} key={key} tag={tag} colour={""} />
                                 ))}
 
 
                             </ul>
+                            {project.metadata.websiteLink && <Link href={project.metadata.websiteLink} className="flex items-center gap-1 text-sm hover:bg-primary-300 ease-in rounded-md px-2 max-w-fit">
+                                Look at it!
+                                <Icons.arrowUpRight className="w-3 h-3" />
+                            </Link>
+                            }
 
                             <Image
-                            src={project.metadata.image!}
-                            width={400}
-                            height={400}
-                            alt={project.metadata.title}
-                            quality={95}
-                            className="absolute
+                                src={project.metadata.image!}
+                                width={400}
+                                height={400}
+                                alt={project.metadata.title}
+                                quality={95}
+                                className="absolute
                     shadow-2xl rounded-lg
                     hidden  
                     md:rounded-t-lg sm:block md:top-8 md:-right-60 md:w-[27.25rem] sm:w-[20.25rem] xs:w-[15.25rem]
@@ -69,10 +75,10 @@ export default function ProjectCard({
                     group-hover:translate-y-3
                     group-hover:-rotate-2
                 "
-                        />
+                            />
                         </div>
 
-                        
+
                     </section>
 
                 </motion.div>
@@ -95,12 +101,17 @@ export default function ProjectCard({
                         <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
 
 
-                        {project.metadata.tags.split(',').slice(0,3).map((tag, key) => (
-                                    <Tag index={key} key={key} tag={tag} colour={"primary"} />
-                                ))}
+                            {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
+                                <Tag index={key} key={key} tag={tag} colour={"primary"} />
+                            ))}
 
 
                         </ul>
+                        {project.metadata.websiteLink && <Link href={project.metadata.websiteLink} className="flex items-center gap-1 text-sm hover:bg-primary-300 ease-in rounded-md px-2 max-w-fit">
+                            Look at it!
+                            <Icons.arrowUpRight className="w-3 h-3" />
+                        </Link>
+                        }
 
                     </div>
 
