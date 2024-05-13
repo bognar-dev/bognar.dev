@@ -16,6 +16,6 @@
         "John Doe",
         "Jane Smith"
     ],
-    "githubRepo": "https://github.com/example/project1",
+    "sourceLink": "https://github.com/example/project1",
     "image": "https://source.unsplash.com/random/200x200"
 }
