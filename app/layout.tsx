@@ -44,9 +44,6 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
               <MainNav items={siteConfig.mainNav} />
-
-            
-
                 {children}
               <Footer />
             </MotionConfigWrapper>

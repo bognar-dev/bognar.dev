@@ -7,6 +7,8 @@ export type Metadata = {
     summary: string
     tags: string
     image?: string
+    websiteLink?: string
+    sourceLink?: string 
 }
 
 export type Project = {
