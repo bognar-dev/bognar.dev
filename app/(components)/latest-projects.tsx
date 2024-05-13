@@ -8,7 +8,7 @@ import { getProjects } from '../projects/utils';
 
 export default async function LatestProjects({ amount = 2, className }: { amount?: number, className?: string }) {
 
-    const projects = getProjects().slice(0, amount);   
+    const projects = getProjects().filter(project => project.metadata.featured);
   
     return (
         <Card className={twMerge(className, 'p-5 ')}>

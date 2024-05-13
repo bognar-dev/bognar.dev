@@ -116,7 +116,7 @@ export default function ProjectCard({
                     </div>
 
                     <Image
-                        src={'https://yvlgmxrunsfqgobqceqr.supabase.co/storage/v1/object/public/images/vvs-guessing-game.vercel.app_.png'}
+                        src={project.metadata.image!}
                         width={400}
                         height={400}
                         alt={project.metadata.title}

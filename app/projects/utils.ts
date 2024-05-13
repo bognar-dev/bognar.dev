@@ -9,6 +9,7 @@ export type Metadata = {
     image?: string
     websiteLink?: string
     sourceLink?: string 
+    featured?: string
 }
 
 export type Project = {
