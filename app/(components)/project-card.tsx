@@ -98,21 +98,22 @@ export default function ProjectCard({
                         <p className="my-2 leading-relaxed text-gray-700 dark:text-white/70">
                             {project.metadata.summary}
                         </p>
-                        <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
+                        <div className="flex items-center">
+                            <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
 
 
-                            {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
-                                <Tag index={key} key={key} tag={tag} colour={"primary"} />
-                            ))}
+                                {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
+                                    <Tag index={key} key={key} tag={tag} colour={"primary"} />
+                                ))}
 
 
-                        </ul>
-                        {project.metadata.websiteLink && <Link href={project.metadata.websiteLink} className="flex items-center gap-1 text-sm hover:bg-primary-300 ease-in rounded-md px-2 max-w-fit">
-                            Look at it!
-                            <Icons.arrowUpRight className="w-3 h-3" />
-                        </Link>
-                        }
-
+                            </ul>
+                            {project.metadata.websiteLink && <Link href={project.metadata.websiteLink} className="flex items-center gap-1 text-sm hover:bg-primary-300 ease-in rounded-md px-2 max-w-fit">
+                                Look at it!
+                                <Icons.arrowUpRight className="w-3 h-3" />
+                            </Link>
+                            }
+                        </div>
                     </div>
 
                     <Image
