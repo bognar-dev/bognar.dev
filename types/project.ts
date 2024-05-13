@@ -10,13 +10,13 @@ export interface ProjectData {
     endDate: string,
     status: string,
     teamMembers: string[],
-    githubRepo: string,
+    sourceLink: string,
     image: string,
 }
 
 
-export interface Project{
-    id : number,
+export interface Project {
+    id: number,
     createdAt: string
     updatedAt: string
     data: ProjectData

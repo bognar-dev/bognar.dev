@@ -16,7 +16,7 @@ function ProjectView({ project }: { project: ProjectData }) {
                 Visit Project
             </Button>
             <p className='pt-10 self-center prose dark:prose-invert '>
-            <Markdown remarkPlugins={[remarkGfm]}>{project.longDescription}</Markdown>
+                <Markdown remarkPlugins={[remarkGfm]}>{project.longDescription}</Markdown>
             </p>
 
             <blockquote className="py-5">
@@ -30,7 +30,7 @@ function ProjectView({ project }: { project: ProjectData }) {
 
 
             <Button className="py-2 px-4 rounded"
-                href={project.githubRepo} >
+                href={project.sourceLink} >
                 GitHub Repository
             </Button>
 
