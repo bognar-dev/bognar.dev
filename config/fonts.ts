@@ -69,4 +69,26 @@ const madeGentle = localFont({
   weight: '900',
 })
 
-export default {inter, roboto_mono, beanCo, brightMelody, think, anonymousPro,madeTommyBlackOutline,madeGentle,madeTommyLight,madeTommyBlack}
+
+const neueMachina = localFont({
+  src: './NeueMachina-Regular.otf',
+  variable: '--font-neue-machina',
+  display: 'swap',
+  weight: '600',
+})
+
+const neueMachinaBold = localFont({
+  src: './NeueMachina-Ultrabold.otf',
+  variable: '--font-neue-machina-bold',
+  display: 'swap',
+  weight: '900',
+})
+
+const neueMachinaLight = localFont({
+  src: './NeueMachina-Light.otf',
+  variable: '--font-neue-machina-light',
+  display: 'swap',
+  weight: '400',
+})
+
+export default {inter, roboto_mono, beanCo, brightMelody, think, anonymousPro,madeTommyBlackOutline,madeGentle,madeTommyLight,madeTommyBlack,neueMachina,neueMachinaBold,neueMachinaLight}
