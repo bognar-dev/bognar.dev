@@ -91,4 +91,5 @@ const neueMachinaLight = localFont({
   weight: '400',
 })
 
-export default {inter, roboto_mono, beanCo, brightMelody, think, anonymousPro,madeTommyBlackOutline,madeGentle,madeTommyLight,madeTommyBlack,neueMachina,neueMachinaBold,neueMachinaLight}
+const fonts = {inter, roboto_mono, beanCo, brightMelody, think, anonymousPro,madeTommyBlackOutline,madeGentle,madeTommyLight,madeTommyBlack,neueMachina,neueMachinaBold,neueMachinaLight};
+export default fonts;
