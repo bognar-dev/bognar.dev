@@ -17,7 +17,9 @@ export default function MainNav({ items }: MainNavProps) {
     <div className=" sticky top-0 z-40 w-full bg-white/10 backdrop-blur-sm rounded-b-sm max-h-40">
       <div className="sticky top-0 z-50 flex flex-col gap-2 min-w-screen items-center justify-between divide-y-2 hover:divide-primary-300 divide-primary-100 pb-3 rounded-xl">
         <div className="flex flex-row justify-center items-center justify-items-center mt-2">
-          <Link href="/" className={cn("font-head text-4xl flex items-center justify-items-center justify-center font-medium bg-opacity-10 hover:translate-x-1 hover:bg-secondary-200  ease-out duration-100 rounded-md px-4 ", fonts.madeGentle.className)}>Bognar.dev</Link>
+          <Link href="/" className={cn("font-head text-4xl flex items-center justify-items-center justify-center font-medium bg-opacity-10 hover:translate-x-1 hover:bg-secondary-200  ease-out duration-100 rounded-md px-4 ", fonts.madeGentle.className)}>
+            Bognar.dev
+          </Link>
           <ThemeToggle className='' />
         </div>
 
