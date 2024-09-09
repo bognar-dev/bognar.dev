@@ -32,10 +32,10 @@ export default function Home() {
         <div className='grid grid-cols-1 gap-1 mt-8'>
           <div className='grid gap-1 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
 
-            <Card blob={true} motion={false} className='p-5 md:col-span-3'>
+            <Card blob={true} motion={false} className='p-5 md:col-span-4'>
               <About />
             </Card>
-            <Socials motion={true} className='md:col-span-1' />
+            
 
 
           </div>

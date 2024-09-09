@@ -28,7 +28,7 @@ export default function Component() {
                             </Link>
                         ))}
                     </div>
-                    <p className={cn("text-8xl",fonts.madeTommyBlackOutline.className)}>© {new Date().getFullYear()} Bognar.dev</p>
+                    <p className={cn("text-3xl md:text-8xl",fonts.madeTommyBlackOutline.className)}>© {new Date().getFullYear()} Bognar.dev</p>
                 </div>
 
             </div>
