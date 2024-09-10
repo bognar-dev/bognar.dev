@@ -21,12 +21,12 @@ export default function Home() {
         transition={{ type: "tween", ease: "backOut", duration:0.5}}
       >
           <p onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
-            A visual designer - with skills that haven't been replaced by A.I (yet) - making good shit only if the paycheck is equally good.
+          A web developer with a passion for crafting dynamic websites and animations—where creativity meets code. Pushing boundaries while learning, working, and always aiming for innovative solutions.
           </p>
       </motion.div>
 
       <div className={styles.body}>
-        <p>I'm a <span>selectively skilled</span> product designer with strong focus on producing high quality & impactful digital experience.</p>
+      <p>I&apos;m a <span>multi-skilled</span> Computer Science student, combining embedded systems knowledge with front-end magic to deliver powerful, responsive, and engaging digital experiences.</p>
       </div>
 
     </main>

@@ -25,7 +25,7 @@ export default function Home() {
             onMouseEnter={() => {setIsHovered(true)}} 
             onMouseLeave={() => {setIsHovered(false)}}
           >
-            A visual designer - with skills that haven't been replaced by A.I (yet) - making good shit only if the paycheck is equally good.
+            A web developer with a passion for crafting dynamic websites and animations—where creativity meets code. Pushing boundaries while learning, working, and always aiming for innovative solutions.
           </p>
       </motion.div>
 
