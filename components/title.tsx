@@ -7,7 +7,7 @@ export default function Home() {
 
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 400 : 40;
+  const size = isHovered ? 600 : 40;
 
   return (
     <main className="h-screen relative">
