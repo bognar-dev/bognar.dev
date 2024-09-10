@@ -1,4 +1,4 @@
-import Button from '@/app/(components)/button'
+import { Button } from './ui/button'
 import Image from 'next/image'
 // @ts-ignore
 import profile from "@/public/profile.jpg"
@@ -23,7 +23,7 @@ const About = () => {
                     </p>
                 </div>
             </div>
-            <Button className='hover:animate-wiggle' href={'/biography'}>See my CV</Button>
+            <Button className='hover:animate-wiggle' >See my CV</Button>
         </div>
     )
 }
