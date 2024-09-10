@@ -9,7 +9,7 @@ import useWindow from '@/hooks/useWindow';
 
 export default function Navbar() {
 
-    const getResponsiveMenu = () => {
+    const useResponsiveMenu = () => {
 
         const { dimension} = useWindow();
        const isSmallScreen = dimension.width <= 768; // Example breakpoint for small screens
@@ -40,8 +40,8 @@ export default function Navbar() {
    };
    
    // Usage
-   const menu = getResponsiveMenu();
-   
+   const menu = useResponsiveMenu();
+
     const [isActive, setIsActive] = useState(false);
 
     return (
