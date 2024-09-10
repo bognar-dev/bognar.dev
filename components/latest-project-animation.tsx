@@ -1,8 +1,8 @@
 "use client"
 import { AnimatePresence } from 'framer-motion';
-import { Project } from '../projects/utils';
-import ProjectCard from './project-card';
+import { Project } from '../app/projects/utils';
 import { MotionDiv } from './motion-div';
+import ProjectCard from './project-card';
 const fadeInAnimationVariants = {
     initial: {
         opacity: 0.1,

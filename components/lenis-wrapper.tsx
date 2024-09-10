@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 
-export default function LenisWrapper({ children }: { children: React.ReactNode }) {
+export default function LenisWrapper({ children ,className }: { children: React.ReactNode, className?: string }) {
     useEffect(() => {
 
         const lenis = new Lenis()
@@ -25,8 +25,8 @@ export default function LenisWrapper({ children }: { children: React.ReactNode }
     }, [])
 
     return (
-        <>
+        <div className={className}>
             {children}
-        </>
+        </div>
     );
 }

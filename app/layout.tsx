@@ -1,8 +1,8 @@
 import '@/app/globals.css';
-import Footer from '@/app/(components)/footer';
-import MainNav from '@/app/(components)/main-nav';
-import MotionConfigWrapper from '@/app/(components)/motion-config-wrapper';
-import { ThemeProvider } from '@/app/(components)/theme-provider';
+import Footer from '@/components/footer';
+import Navbar from '@/components/Navbar/navbar';
+import MotionConfigWrapper from '@/components/motion-config-wrapper';
+import { ThemeProvider } from '@/components/theme-provider';
 import fonts from '@/config/fonts';
 import { siteConfig } from '@/config/site';
 import { cn } from "@udecode/cn";
@@ -43,9 +43,11 @@ export default function RootLayout({
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
-              <MainNav items={siteConfig.mainNav} />
+              <div className="absolute inset-0 -z-10 min-h-full min-w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+                <Navbar/>
                 {children}
-              <Footer />
+                <Footer />
+              </div>
             </MotionConfigWrapper>
           </ThemeProvider>
 

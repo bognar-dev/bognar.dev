@@ -1,11 +1,9 @@
 "use client";
 import { useRef } from "react";
-import { timeLineData } from "@/public/data/timeline";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import Tag from "./tag";
-import Button from "./button";
 import Link from "next/link";
 import { Project } from "@/app/projects/utils";
 import { Icons } from "./icons";

@@ -1,5 +1,5 @@
-import { PageWrapper } from '@/app/(components)/page-wrapper'
-import Socials from '@/app/(components)/socials'
+import { PageWrapper } from '@/components/page-wrapper'
+import Socials from '@/components/socials'
 export default function Home() {
   return (
     <PageWrapper>

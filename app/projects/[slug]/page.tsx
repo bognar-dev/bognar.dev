@@ -1,10 +1,10 @@
+import { Button } from "@/components/ui/button";
 import { formatDate, getProjects } from "@/app/projects/utils";
 import { baseUrl } from "@/app/sitemap";
-import { CustomMDX } from "@/app/(components)/mdx";
+import { Icons } from "@/components/icons";
+import { CustomMDX } from "@/components/mdx";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Button from "@/app/(components)/button";
-import { Icons } from "@/app/(components)/icons";
 
 export async function generateStaticParams() {
   let projects = getProjects()
@@ -89,10 +89,15 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(project.metadata.publishedAt)}
         </p>
-        
-      </div>
-      {project.metadata.websiteLink && <Button href={project.metadata.websiteLink}>Link to Website</Button>}
-      {project.metadata.sourceLink && <Button href={project.metadata.sourceLink}><Icons.gitHub className="w-4 h-4"/></Button>}
+
+        </div>
+        {project.metadata.sourceLink && (
+          <Button asChild>
+        <Link href={project.metadata.sourceLink} passHref>
+          <Icons.gitHub className="w-4 h-4" />
+        </Link>
+          </Button>
+        )}
       <article className="prose dark:prose-invert">
         <CustomMDX source={project.content} />
       </article>

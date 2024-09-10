@@ -39,15 +39,10 @@ const Projects = ({projects}:{projects:Project[]}) => {
 
     return (
         <div>
-            <SectionHeading className='flex flex-wrap items-center justify-center mb-3 gap-2 cursor-pointer' onClick={() => setFilterOpen(prevState => !prevState)}>
-                Filter
-
-                {filterOpen ? <Icons.up /> : <Icons.down />}
-            </SectionHeading>
             <AnimatePresence>
-                {filterOpen && <ProjectFilter tags={allTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />}
+              <ProjectFilter tags={allTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             </AnimatePresence>
-            <div ref={parent} className='grid gap-5 grid-cols-1 lg:grid-cols-2 min-w-full'>
+            <div ref={parent} className='grid gap-3 grid-cols-1 lg:grid-cols-2'>
                 {filteredProjects.map((project, index: number) => (
                     <ProjectCard project={project} key={index} className='' />
                 ))}

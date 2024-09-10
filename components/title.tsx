@@ -2,16 +2,13 @@
 
 import fonts from "@/config/fonts"
 import { cn } from "@udecode/cn"
-import { motion } from "framer-motion"
-import Button from "./button"
-import { Icons } from "./icons"
 import { ParallaxText } from "./parralax-scroll"
 
-export default function Title() {
+export default function Title({ className }: { className?: string }) {
 
 
   return (
-    <div className={cn(fonts.madeTommyBlack.className,'w-full overflow-hidden')}>
+    <div className={cn(fonts.madeTommyBlack.className,'w-full overflow-hidden flex flex-col justify-center items-center',className)}>
       <ParallaxText baseVelocity={1} childCount={10} >Bognar.dev</ParallaxText>
       <ParallaxText baseVelocity={-1} childCount={10} >Bognar.dev</ParallaxText>
       

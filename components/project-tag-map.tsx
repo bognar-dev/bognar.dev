@@ -13,10 +13,10 @@ const TagMap = ({ tags, handleTagClick, selectedTags }: TagProps) => {
 
     return (
      
-        <ul className='flex flex-wrap justify-center gap-2 text-lg p-5'>
+        <ul className='flex flex-wrap justify-center items-center gap-2 text-lg'>
             {sortedTags.map((tag: string, index: number) => (
                 <Tag index={index}animate={true} key={index} tag={tag} onClick={() => handleTagClick(tag)}
-                    className={`font-thin shadow-primary-50 shadow-sm select-none ${selectedTags.includes(tag) ? 'bg-primary-300 hover:bg-primary-400' : 'bg-primary-50 hover:bg-primary-100'
+                    className={`h-10 px-2 py-1 shadow-primary-50 shadow-sm select-none ${selectedTags.includes(tag) ? 'bg-primary-300 hover:bg-primary-400' : 'bg-primary-50 hover:bg-primary-100'
                         }`} colour='' />
             ))}
         </ul>

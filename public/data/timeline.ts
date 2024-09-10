@@ -2,6 +2,18 @@ import { TimeLine } from "@/types/timeline";
 
 export const timeLineData:TimeLine[] = [
     {
+        "title": "Biggs&Bognar",
+        "text":"Free time website building collective",
+        "date": "2024-now",
+        
+        "tag": "work",
+        "link": {
+            url: "",
+            text: "Visit our website"
+        },
+        "image": "/Biggs&Bognar.svg"
+    },
+    {
         "title": "Falmouth University",
         "text":"Bsc Computer Science",
         "date": "2023-2025",

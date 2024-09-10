@@ -1,18 +1,12 @@
 
 
-import About from '@/app/(components)/about'
-import BGBalls from '@/app/(components)/bg-balls'
-import Card from '@/app/(components)/card'
-import InfiniteScroll from '@/app/(components)/infinitescroll'
-import LatestProjects from '@/app/(components)/latest-projects'
-import { PageWrapper } from '@/app/(components)/page-wrapper'
-import Socials from '@/app/(components)/socials'
-import Timeline from '@/app/(components)/timeline'
-import Title from '@/app/(components)/title'
-import Button from './(components)/button'
-import { Icons } from './(components)/icons'
-import { useEffect } from 'react'
-import LenisWrapper from './(components)/lenis-wrapper'
+import LatestProjects from '@/components/latest-projects'
+import Timeline from '@/components/timeline'
+import Title from '@/components/title'
+import { Button } from '@/components/ui/button'
+import { Link } from 'lucide-react'
+import { Icons } from '@/components/icons'
+import LenisWrapper from '@/components/lenis-wrapper'
 
 
 
@@ -20,42 +14,27 @@ export default function Home() {
 
 
   return (
-    <LenisWrapper>
-      
-        <Title />
+    <LenisWrapper className='flex flex-col justify-items-center justify-center min-h-screen '>
+        <Title className='h-screen'/>
+
+    
+        <Button asChild variant={'default'} className='bg-primary-300'>
+          <Link href="/projects">
+            See my projects
+            <Icons.arrowUpRight className="w-4 h-4 ml-2 mt-0.5" />
+          </Link>
+        </Button>
 
 
-      <main className="flex flex-grow relative min-h-screen min-w-full flex-col justify-start justify-items-center items-center px-1 w-full gap-5">
-        <Button className='shadow-none flex flex-row justify-items-center justify-center group text-text-50 hover:animate-wiggle flex-shrink ' href="/projects">See my projects  <Icons.arrowUpRight className="w-4 h-4 ml-2 mt-0.5" /></Button>
 
 
-        <div className='grid grid-cols-1 gap-1 mt-8'>
-          <div className='grid gap-1 grid-rows-1 md:grid-cols-4 md:grid-flow-row w-full'>
 
-            <Card blob={true} motion={false} className='p-5 md:col-span-4'>
-              <About />
-            </Card>
-            
+        <LatestProjects className='' amount={2} />
 
 
-          </div>
-          <div className='grid gap-1 grid-cols-1 xl:grid-cols-4 xl:grid-rows-1 xl:grid-flow-row w-full'>
-           
-            <LatestProjects className='xl:row-span-1 xl:col-span-3 ' amount={2} />
-          </div>
-
-        </div>
         <Timeline />
 
-
-        {/* <div className='flex gap-5 flex-col lg:flex-row w-full'>
-          <Card className='h-[300px]'>
-            Recent projects
-          </Card>
-
-        </div> */}
-
-      </main>
+      
     </LenisWrapper>
   )
 }

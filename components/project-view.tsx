@@ -1,9 +1,10 @@
 import { ProjectData } from '@/types/project';
 import React from 'react';
-import Button from './button';
 import Tag from './tag';
+import { Button } from './ui/button';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
+import Link from 'next/link';
 
 function ProjectView({ project }: { project: ProjectData }) {
     return (
@@ -11,10 +12,12 @@ function ProjectView({ project }: { project: ProjectData }) {
             <div className=" self-center min-w-fit my-10 before:block before:absolute before:-inset-3 before:-skew-y-3 before:bg-gradient-to-r from-accent-200 to-primary-200 relative inline-block">
                 <span className=" font-semibold text-4xl relative text-accent-900">{project.name}</span>
             </div>
-            <Button className="self-center m-10 bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200 text-white py-2 px-4 rounded"
-                href={project.url} >
-                Visit Project
+            <Button className="self-center m-10 bg-secondary-200 shadow-secondary-200 hover:shadow-secondary-200 text-white py-2 px-4 rounded">
+                <Link href={project.url} >
+                    Visit Project
+                </Link>
             </Button>
+
             <p className='pt-10 self-center prose dark:prose-invert '>
                 <Markdown remarkPlugins={[remarkGfm]}>{project.longDescription}</Markdown>
             </p>
@@ -29,9 +32,10 @@ function ProjectView({ project }: { project: ProjectData }) {
                 </blockquote>}
 
 
-            <Button className="py-2 px-4 rounded"
-                href={project.sourceLink} >
-                GitHub Repository
+            <Button className="py-2 px-4 rounded">
+                <Link href={project.sourceLink} >
+                    GitHub Repository
+                </Link>
             </Button>
 
             <div className='flex flex-wrap items-center justify-center md:items-start md:justify-start gap-4 m-3'>
@@ -39,7 +43,7 @@ function ProjectView({ project }: { project: ProjectData }) {
                     <Tag index={index} key={index} tag={tag} colour={"secondary"} />
                 ))}
             </div>
-        </article>
+        </article >
     );
 }
 
