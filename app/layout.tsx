@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from "@udecode/cn";
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata, Viewport } from 'next';
+import ThemeToggle from '@/components/theme-toggle';
 
 export const metadata: Metadata = {
   title: {
@@ -43,8 +44,9 @@ export default function RootLayout({
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
-              <div className="absolute inset-0 -z-10 min-h-full min-w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
-                <Navbar/>
+                <div className="min-h-full min-w-full bg-background-100 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1f3e47_1px,#1f3e47)] [background-size:16px_16px] ">
+                  <Navbar />
+                  <ThemeToggle className='' />
                 {children}
                 <Footer />
               </div>
