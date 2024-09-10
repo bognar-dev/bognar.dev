@@ -9,7 +9,7 @@ interface MainNavProps {
 
 export default function Navbar({ items, footerLinks }: MainNavProps) {
   return (
-    <div className="flex flex-col justify-between p-[100px_40px_50px_40px] h-full box-border">
+    <div className="flex flex-col justify-between px-10 pb-5 pt-20 h-full box-border">
        <div className="flex flex-col gap-2.5">
         {
             items.map((link, i) => {
@@ -23,7 +23,7 @@ export default function Navbar({ items, footerLinks }: MainNavProps) {
                           animate="enter"
                           exit="exit"
                         >
-                            <a href={href} className="no-underline text-black text-[46px]">
+                            <a href={href} className="no-underline text-black text-3xl">
                                 {title}
                             </a>
                         </motion.div>
@@ -45,7 +45,7 @@ export default function Navbar({ items, footerLinks }: MainNavProps) {
                             exit="exit"
                             key={`f_${i}`}
                             href={url}
-                            className="w-1/2 mt-1.25"
+                            className="w-1/2 mt-1.25 text-md"
                         >
                             {title}
                         </motion.a>

@@ -40,16 +40,14 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning={true} className="">
         <head />
-        <body className={cn('bg-background-50 text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
+        <body className={cn(' text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
-                <div className="min-h-full min-w-full bg-background-100 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1f3e47_1px,#1f3e47)] [background-size:16px_16px] ">
-                  <Navbar />
-                  <ThemeToggle className='' />
-                {children}
-                <Footer />
-              </div>
+              <ThemeToggle className='' />
+              <Navbar />
+              {children}
+              <Footer />
             </MotionConfigWrapper>
           </ThemeProvider>
 

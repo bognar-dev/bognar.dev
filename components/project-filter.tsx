@@ -35,7 +35,7 @@ const ProjectFilter = ({ tags, className, selectedTags, setSelectedTags }: Filte
     };
 
     return (
-        <div className='flex flex-wrap justify-center items-center gap-2 text-lg'>
+        <div className=''>
             <TagMap tags={tags} handleTagClick={handleTagClick} selectedTags={selectedTags} />
         </div>
     );

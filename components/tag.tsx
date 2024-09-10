@@ -39,7 +39,7 @@ const Tag = ({ tag, colour, className, onClick, animate = false,index }: TagProp
     animate ? (
         < motion.li
             onClick={onClick}
-            className={twMerge(` cursor-pointer flex items-center flex-auto flex-shrink justify-start mb-3 text-sm bg-${colour}-300 rounded-sm px-2 gap-1`, className)}
+            className={twMerge(` cursor-pointer flex items-center flex-auto flex-shrink justify-center mb-3 text-sm bg-${colour}-300 rounded-sm px-2 gap-1`, className)}
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -51,7 +51,7 @@ const Tag = ({ tag, colour, className, onClick, animate = false,index }: TagProp
             <span>{tag}</span>
         </motion.li >
     ) : (
-        <li onClick={onClick} className={twMerge(`flex items-center flex-auto flex-shrink justify-start mb-3 text-sm bg-${colour}-300 rounded-sm px-2 gap-1`, className)}>
+        <li onClick={onClick} className={twMerge(`flex items-center flex-auto flex-shrink justify-center mb-3 text-sm bg-${colour}-300 rounded-sm px-2 gap-1`, className)}>
             <Icons.tag className="shrink-0"/>
             <span>{tag}</span>
         </li>

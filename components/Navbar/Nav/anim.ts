@@ -39,6 +39,6 @@ export const slideIn = {
     }),
     exit: {
         opacity: 0,
-        transition: { duration: 0.5, type: "tween", ease: "easeInOut"}
+        transition: { duration: 0.3, type: "tween", ease: "easeInOut"}
     }
 }
