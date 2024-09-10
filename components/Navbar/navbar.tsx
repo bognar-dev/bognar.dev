@@ -4,38 +4,44 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import Button from './Button/Button';
 import Nav from './Nav/nav';
+import useWindow from '@/hooks/useWindow';
 
-const getResponsiveMenu = () => {
-    const isSmallScreen = window.innerWidth <= 768; // Example breakpoint for small screens
 
-    return {
-        open: {
-            width: isSmallScreen ? "200px" : "480px",
-            height: isSmallScreen ? "500px" : "650px",
-            top: isSmallScreen ? "-15px" : "-25px",
-            right: isSmallScreen ? "-15px" : "-25px",
-            transition: {
-                duration: 0.6,
-                type: "spring",
-                stiffness: 150,
-                damping: 10,
-                mass: 0.5,
-                ease: [0.76, 0, 0.24, 1]
-            }
-        },
-        closed: {
-            width: isSmallScreen ? "80px" : "96px",
-            height: isSmallScreen ? "35px" : "40px",
-            top: "0px",
-            right: "0px",
-            transition: { duration: 0.5, delay: 0.1, type: "linear", ease: [0.76, 0, 0.24, 1] }
-        }
-    };
-};
-
-// Usage
-const menu = getResponsiveMenu();
 export default function Navbar() {
+
+    const getResponsiveMenu = () => {
+
+        const { dimension} = useWindow();
+       const isSmallScreen = dimension.width <= 768; // Example breakpoint for small screens
+   
+       return {
+           open: {
+               width: isSmallScreen ? "200px" : "480px",
+               height: isSmallScreen ? "500px" : "650px",
+               top: isSmallScreen ? "-15px" : "-25px",
+               right: isSmallScreen ? "-15px" : "-25px",
+               transition: {
+                   duration: 0.6,
+                   type: "spring",
+                   stiffness: 150,
+                   damping: 10,
+                   mass: 0.5,
+                   ease: [0.76, 0, 0.24, 1]
+               }
+           },
+           closed: {
+               width: isSmallScreen ? "80px" : "96px",
+               height: isSmallScreen ? "35px" : "40px",
+               top: "0px",
+               right: "0px",
+               transition: { duration: 0.5, delay: 0.1, type: "linear", ease: [0.76, 0, 0.24, 1] }
+           }
+       };
+   };
+   
+   // Usage
+   const menu = getResponsiveMenu();
+   
     const [isActive, setIsActive] = useState(false);
 
     return (
