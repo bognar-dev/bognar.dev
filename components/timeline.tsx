@@ -34,7 +34,7 @@ export default function Timeline() {
   }, [selectedTag, timeLineData]);
 
   return (
-    <section className=" mb-28 md:mx-4">
+    <section className=" mb-28 md:mx-4 flex flex-col justify-center items-center">
       <TimeLineFilter tags={allTags} selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
       <SectionHeading>My biography</SectionHeading>
       <div ref={parent}>
