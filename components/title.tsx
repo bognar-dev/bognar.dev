@@ -30,7 +30,7 @@ export default function Home() {
       </motion.div>
 
       <div className="w-full h-full flex items-center justify-center text-[#afa18f] text-4xl leading-[66px] cursor-default">
-        <p>I'm a <span className="text-[#ec4e39]">selectively skilled</span> product designer with strong focus on producing high quality & impactful digital experience.</p>
+        <p>I&apos;m a <span className="text-[#ec4e39]">selectively skilled</span> product designer with strong focus on producing high quality & impactful digital experience.</p>
       </div>
 
     </main>
