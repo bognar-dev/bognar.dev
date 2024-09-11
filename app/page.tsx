@@ -1,30 +1,27 @@
 
-
 import LatestProjects from '@/components/latest-projects'
 import Timeline from '@/components/timeline'
-import Title from '@/components/title'
 import { Button } from '@/components/ui/button'
-
-import { Icons } from '@/components/icons'
 import LenisWrapper from '@/components/lenis-wrapper'
-import Link from 'next/link'
 import CursorHoverMask from '@/components/CursorHoverMask/page'
+import { ChevronDown } from 'lucide-react'
 
 
+    export default function Home() {
 
-export default function Home() {
+      return (
+        <LenisWrapper className=''>
+          <CursorHoverMask />
+          <div className="flex justify-center">
+            <Button variant={'ghost'} className='text-text-600 w-auto'>
+              See my projects
+              <ChevronDown />
+            </Button>
+          </div>
 
-
-  return (
-    <LenisWrapper className='flex flex-col justify-items-center justify-center min-h-screen  gap-10'>
-      <CursorHoverMask />
-
-   
-
-      <LatestProjects className='' amount={2} />
-      <Timeline />
-
-
-    </LenisWrapper>
-  )
-}
+          
+            <LatestProjects className='' amount={2} />
+          <Timeline />
+        </LenisWrapper>
+      );
+    }

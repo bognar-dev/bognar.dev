@@ -45,7 +45,7 @@ export default function Navbar() {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <div className="fixed right-12 top-12 z-20">
+        <div className="fixed top-6 right-6 md:right-12 md:top-12 z-20">
             <motion.div
                 className="relative w-24 h-10 bg-primary-300 rounded-md"
                 variants={menu}

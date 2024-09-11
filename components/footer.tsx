@@ -37,7 +37,7 @@ const Nav = () => {
                 {siteConfig.mainNav.map((link, i) => {
                     const { title, href } = link;
                     return (
-                        <Link href={href} key={`nav_${i}`} className='no-underline text-text-50 text-3xl'>
+                        <Link href={href} key={`nav_${i}`} className='no-underline text-text-50  md:text-3xl'>
                             {title}
                         </Link>
                     )
@@ -48,7 +48,7 @@ const Nav = () => {
                 {siteConfig.socialLinks.map((link, i) => {
                     const { title, url } = link;
                     return (
-                        <Link href={url} key={`social_${i}`} className='no-underline text-text-50 text-3xl'>
+                        <Link href={url} key={`social_${i}`} className='no-underline text-text-50 md:text-3xl'>
                             {title}
                         </Link>
                     )

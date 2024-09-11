@@ -46,8 +46,8 @@ export default function RootLayout({
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
-              <Magnetic className='z-10 absolute top-12 left-12'>
-              <ThemeToggle className='w-20 h-20' />
+              <Magnetic className='z-10 absolute top-4 left-4 md:top-12 md:left-12'>
+              <ThemeToggle className='w-20 h-20 ' />
               </Magnetic>
               <Navbar />
               {children}

@@ -36,7 +36,7 @@ const ProjectFilter = ({ tags, className, selectedTags, setSelectedTags }: Filte
 
     return (
         <div className=''>
-            <TagMap tags={tags} handleTagClick={handleTagClick} selectedTags={selectedTags} />
+           
         </div>
     );
 };

@@ -54,6 +54,10 @@ function Code({ children, ...props }:any) {
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
+function createParagraph(props:any) {
+  return <p className="text-text-700">{props.children}</p>
+}
+
 function slugify(str:string) {
   return str
     .toString()

@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     notFound()
   }
   return (
-    <section className="flex flex-col items-center justify-center mb-20">
+    <section className="flex flex-col items-center justify-center my-20">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -98,8 +98,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         </Link>
           </Button>
         )}
-      <article className="prose dark:prose-invert">
+      <article className="w-full prose prose-pink p-5 max-w-4xl mx-auto ">
         <CustomMDX source={project.content} />
+
       </article>
     </section>
   )

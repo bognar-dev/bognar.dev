@@ -7,7 +7,7 @@ export default async function ProjectsPage() {
   let projects = getProjects()
   return (
     <PageWrapper>
-      <main className="flex flex-row justify-items-center justify-center min-h-screen md:pt-20 sm:p-5">
+      <main className="flex flex-row justify-items-center justify-center min-h-screen pt-20 p-5">
         <Projects projects={projects} />
       </main>
     </PageWrapper>

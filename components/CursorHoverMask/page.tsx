@@ -1,6 +1,6 @@
 'use client'
 import styles from './page.module.scss'
-import { useState } from 'react';  
+import { ReactNode, useState } from 'react';  
 import { motion } from 'framer-motion';
 import useMousePosition from '@/hooks/useMousePosition';
 
