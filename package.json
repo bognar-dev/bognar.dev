@@ -32,6 +32,7 @@
     "@udecode/plate-resizable": "^29.0.1",
     "@upstash/ratelimit": "^2.0.2",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/blob": "^0.23.4",
     "@vercel/kv": "^2.0.0",
     "canvas": "^2.11.2",
     "class-variance-authority": "^0.7.0",

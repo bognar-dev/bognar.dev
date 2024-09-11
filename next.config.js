@@ -19,27 +19,32 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname:'www.gymnasium-feuerbach.de',
+                hostname: 'www.gymnasium-feuerbach.de',
                 port: '',
             },
             {
                 protocol: 'https',
-                hostname:'upload.wikimedia.org',
+                hostname: 'upload.wikimedia.org',
                 port: '',
             },
             {
                 protocol: 'https',
-                hostname:'tonimarino.co.uk',
+                hostname: 'tonimarino.co.uk',
                 port: '',
             },
             {
                 protocol: 'https',
-                hostname:'yvlgmxrunsfqgobqceqr.supabase.co',
+                hostname: 'yvlgmxrunsfqgobqceqr.supabase.co',
                 port: '',
             },
             {
                 protocol: 'https',
-                hostname:'yvlgmxrunsfqgobqceqr.supabase.co',
+                hostname: 'yvlgmxrunsfqgobqceqr.supabase.co',
+                port: '',
+            },
+            {
+                protocol: 'https',
+                hostname: 'kgdrkbjwy8qctruc.public.blob.vercel-storage.com',
                 port: '',
             },
         ],

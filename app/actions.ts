@@ -10,6 +10,8 @@ import path from 'path';
 import { getIp } from '@/lib/getIp';
 import { Ratelimit } from '@upstash/ratelimit';
 import { kv } from '@vercel/kv';
+import { put } from "@vercel/blob";
+
 
 const FormSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -63,11 +65,10 @@ export async function submitForm(prevState: FormState, formData: FormData): Prom
   if (signature) {
     const buffer = Buffer.from(signature, 'base64')
     const fileName = `signature_${Date.now()}.png`
-    const filePath = path.join(process.cwd(), 'public', 'signatures', fileName)
+    const filePath = path.join( 'public', 'signatures', fileName)
 
     try {
-      await fs.mkdir(path.dirname(filePath), { recursive: true })
-      await fs.writeFile(filePath, buffer)
+      const { url } = await put(filePath, buffer,{access: 'public'})
       console.log(`Signature saved: ${fileName}`)
     } catch (error) {
       console.error('Error saving signature:', error)
@@ -97,10 +98,9 @@ export async function saveSignature(signatureData: string) {
     const base64Data = signatureData.replace(/^data:image\/png;base64,/, '')
     const buffer = Buffer.from(base64Data, 'base64')
     const fileName = `signature_${Date.now()}.png`
-    const filePath = path.join(process.cwd(), 'public', 'signatures', fileName)
+    const filePath = path.join( 'public', 'signatures', fileName)
 
-    await fs.mkdir(path.dirname(filePath), { recursive: true })
-    await fs.writeFile(filePath, buffer)
+    const { url } = await put(filePath, buffer,{access: 'public'})
 
     return { success: true, message: 'Signature saved successfully!' }
   } catch (error) {
