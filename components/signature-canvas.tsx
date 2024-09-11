@@ -89,7 +89,7 @@ const SignatureCanvas: React.FC<SignatureCanvasProps> = ({ onSignatureChange }) 
     return (
 
         <div>
-                  <label className="block text-text-700 font-bold mb-2">Signature is optional</label>
+                  <label className="block text-text-700 font-bold mb-2">Sign here</label>
                   <div className="relative w-full">
                     <canvas
                       ref={canvasRef}
