@@ -35,7 +35,7 @@ export default async function SignatureGallery() {
           ))}
         </div>
       )}
-      <p>If you want to approve this project, please click <Link className='underline' href='/contact'>here</Link></p>
+      <p className=' text-lg text-center'>If you want to approve this project, please click <Link className='underline' href='/contact'>here</Link></p>
     </div>
   )
 }

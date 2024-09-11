@@ -30,7 +30,7 @@ export default function SVGMorph({paths,onclick}: {paths: string[], onclick: boo
         }
       })
       return () => {animation.stop()}
-    }, [onclick, pathIndex, paths.length, progress])
+    }, [onclick])
   
     return (
       <motion.path fill="white" d={path}/>
