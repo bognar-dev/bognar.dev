@@ -8,7 +8,7 @@ export default function CursorHoverMask() {
 
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 400 : 40;
+  const size = isHovered ? 1000 : 50;
 
   return (
     <main className={styles.main}>
@@ -21,7 +21,7 @@ export default function CursorHoverMask() {
         transition={{ type: "tween", ease: "backOut", duration:0.5}}
       >
           <p onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
-          A web developer with a passion for crafting dynamic websites and animations—where creativity meets code. Pushing boundaries while learning, working, and always aiming for innovative solutions.
+          A <span>web developer</span> with a passion for crafting dynamic websites and animations—where creativity meets code. Pushing boundaries while learning, working, and always aiming for innovative solutions.
           </p>
       </motion.div>
 

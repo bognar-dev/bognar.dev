@@ -24,6 +24,10 @@
     }
   }
 
+  .mask span {
+    color: #afa18f;
+  }
+
   .mask {
     mask-image: url('../../public/mask.svg');
     mask-repeat: no-repeat;
