@@ -118,7 +118,7 @@ const PlayfulContactForm: React.FC = () => {
           <div className="md:flex">
             <div className="md:w-1/2 bg-primary-600 p-8 text-text-50">
               <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-              <p className="mb-4">We'd love to hear from you. Send us a message and we'll get back to you as soon as possible.</p>
+              <p className="mb-4">I&apos;d love to hear from you. Send us a message and I&apos;ll get back to you as soon as possible.</p>
             </div>
             <div className="md:w-1/2 p-8">
               <form action={handleSubmit} className="space-y-4">
