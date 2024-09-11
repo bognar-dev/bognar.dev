@@ -8,23 +8,27 @@ import { ChevronDown } from 'lucide-react'
 import SignatureGallery from '@/components/signature-gallery'
 
 
-    export default function Home() {
 
-      return (
-        <LenisWrapper className=''>
-          <CursorHoverMask />
-          <div className="flex justify-center">
-            <Button variant={'ghost'} className='text-text-600 w-auto text-3xl'>
-              See my projects
-              <ChevronDown />
-            </Button>
-          </div>
-          <SignatureGallery />
-          
-          
-          
-            <LatestProjects className='' amount={2} />
-          <Timeline />
-        </LenisWrapper>
-      );
-    }
+export default function Home() {
+  
+  return (
+    <LenisWrapper className=''>
+      <CursorHoverMask />
+      <div className="flex justify-center">
+        <Button variant={'ghost'}  className='text-text-600 w-auto text-3xl'>
+          See my projects
+          <ChevronDown />
+        </Button>
+      </div>
+
+      <SignatureGallery />
+      <div className='mt-20 flex justify-center'>
+        <LatestProjects className='' amount={2} />
+      </div>
+
+      <div className='mt-20'>
+        <Timeline />
+      </div>
+    </LenisWrapper>
+  );
+}
