@@ -6,6 +6,7 @@ import LenisWrapper from '@/components/lenis-wrapper'
 import CursorHoverMask from '@/components/CursorHoverMask/page'
 import { ChevronDown } from 'lucide-react'
 import SignatureGallery from '@/components/signature-gallery'
+import SeeMyProjects from '@/components/see-my-projects'
 
 
 
@@ -14,16 +15,11 @@ export default function Home() {
   return (
     <LenisWrapper className=''>
       <CursorHoverMask />
-      <div className="flex justify-center">
-        <Button variant={'ghost'}  className='text-text-600 w-auto text-3xl'>
-          See my projects
-          <ChevronDown />
-        </Button>
-      </div>
+      <SeeMyProjects />
 
       <SignatureGallery />
-      <div className='mt-20 flex justify-center'>
-        <LatestProjects className='' amount={2} />
+      <div className='mt-20 '>
+        <LatestProjects className='' amount={3} />
       </div>
 
       <div className='mt-20'>

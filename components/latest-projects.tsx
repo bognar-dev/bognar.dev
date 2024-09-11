@@ -10,9 +10,9 @@ export default async function LatestProjects({ amount = 2, className }: { amount
     const projects = getProjects().filter(project => project.metadata.featured);
 
     return (
-        <Card className={twMerge(className, 'p-5 ')}>
+        <div id='projects'>
             <SectionHeading>Recent Projects:</SectionHeading>
             <LatestProjectAnimation projects={projects} />
-        </Card>
+        </div>
     );
 };
