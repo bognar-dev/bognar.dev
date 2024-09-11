@@ -7,6 +7,9 @@ import { revalidatePath } from 'next/cache';
 import { z } from 'zod'
 import fs from 'fs/promises';
 import path from 'path';
+import { getIp } from '@/lib/getIp';
+import { Ratelimit } from '@upstash/ratelimit';
+import { kv } from '@vercel/kv';
 
 const FormSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -24,8 +27,23 @@ export type FormState = {
   };
   message?: string;
 }
+const ratelimit = new Ratelimit({
+  redis: kv,
+  // 5 requests from the same IP in 10 seconds
+  limiter: Ratelimit.slidingWindow(1, '180 s'),
+});
+
+
 
 export async function submitForm(prevState: FormState, formData: FormData): Promise<FormState> {
+  const ip = getIp();
+  const { success, pending, limit, reset, remaining } = await ratelimit.limit(
+    ip
+  );
+  if (!success) {
+    console.log("rate limit")
+    return { message: 'You can only submit one form every 3 minutes :)' }
+  }
   const validatedFields = FormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
@@ -67,6 +85,14 @@ export async function submitForm(prevState: FormState, formData: FormData): Prom
 }
 
 export async function saveSignature(signatureData: string) {
+  const ip = getIp();
+  const { success, pending, limit, reset, remaining } = await ratelimit.limit(
+    ip
+  );
+  if (!success) {
+    console.log("rate limit")
+    return { message: 'You can only leave your signature once :)' }
+  }
   try {
     const base64Data = signatureData.replace(/^data:image\/png;base64,/, '')
     const buffer = Buffer.from(base64Data, 'base64')
@@ -105,7 +131,7 @@ export const signIn = async (prevState: any, formData: FormData) => {
   cookies().delete('jwt')
   cookies().set('jwt', data.token)
 
-  if (data.status === "success"||data.status==='Successfully authenticated user'||data.status==='new token generated'||(data.token !== undefined||null)) {
+  if (data.status === "success" || data.status === 'Successfully authenticated user' || data.status === 'new token generated' || (data.token !== undefined || null)) {
     console.log("success")
     redirect('/admin/dashboard')
 
@@ -120,7 +146,7 @@ export const signIn = async (prevState: any, formData: FormData) => {
 
 
 export const sendEditedProject = async (prevState: any, formData: FormData) => {
-  
+
   if (formData === null) {
     return { message: 'updateProject failed' }
   }
@@ -130,9 +156,9 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
   }
   const tags = formData.getAll('tag')
   formData.delete('tag')
-  formData.set('tags',JSON.stringify(tags))
+  formData.set('tags', JSON.stringify(tags))
   console.log(formData)
-    const response : Response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
+  const response: Response = await fetch(`${process.env.BACKEND_URL}/private/updateProject`, {
     cache: 'no-store' as RequestCache,
     method: 'POST',
     headers: {
@@ -140,7 +166,7 @@ export const sendEditedProject = async (prevState: any, formData: FormData) => {
     },
     body: formData
   })
- 
+
   revalidatePath('/')
   return { message: 'success' }
 
