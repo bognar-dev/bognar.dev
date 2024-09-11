@@ -1,13 +1,16 @@
 import '@/app/globals.css';
-import Footer from '@/app/(components)/footer';
-import MainNav from '@/app/(components)/main-nav';
-import MotionConfigWrapper from '@/app/(components)/motion-config-wrapper';
-import { ThemeProvider } from '@/app/(components)/theme-provider';
+import Footer from '@/components/footer';
+import Navbar from '@/components/Navbar/navbar';
+import MotionConfigWrapper from '@/components/motion-config-wrapper';
+import { ThemeProvider } from '@/components/theme-provider';
 import fonts from '@/config/fonts';
 import { siteConfig } from '@/config/site';
 import { cn } from "@udecode/cn";
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata, Viewport } from 'next';
+import ThemeToggle from '@/components/theme-toggle';
+import Magnetic from '@/components/Magnetic';
+
 
 export const metadata: Metadata = {
   title: {
@@ -37,14 +40,17 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning={true} className="no-scrollbar ">
+      <html lang="en" suppressHydrationWarning={true} className="">
         <head />
-        <body className={cn('bg-background-50 text-text-900 ', fonts.neueMachina.className)}>
+        <body className={cn(' text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <MotionConfigWrapper>
-              <MainNav items={siteConfig.mainNav} />
-                {children}
+              <Magnetic className='z-10 absolute top-4 left-4 md:top-12 md:left-12'>
+              <ThemeToggle className='w-20 h-20 ' />
+              </Magnetic>
+              <Navbar />
+              {children}
               <Footer />
             </MotionConfigWrapper>
           </ThemeProvider>

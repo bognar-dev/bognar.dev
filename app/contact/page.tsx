@@ -1,11 +1,14 @@
-import { PageWrapper } from '@/app/(components)/page-wrapper'
-import Socials from '@/app/(components)/socials'
+import ContactForm from '@/components/contactform'
+import { PageWrapper } from '@/components/page-wrapper'
+import SignatureForm from '@/components/signature-form'
+import SignatureGallery from '@/components/signature-gallery'
+import Socials from '@/components/socials'
 export default function Home() {
   return (
     <PageWrapper>
-      <main className="flex min-h-screen min-w-full flex-col px-5 md:px-20 w-full">
-        <Socials className='min-w-full' />
-
+      <main className=" min-h-screen flex flex-col justify-center items-center gap-8 pt-20">
+        <ContactForm/>
+        <SignatureForm />
       </main>
     </PageWrapper>
   )

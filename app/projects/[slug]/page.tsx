@@ -1,10 +1,11 @@
+import { Button } from "@/components/ui/button";
 import { formatDate, getProjects } from "@/app/projects/utils";
 import { baseUrl } from "@/app/sitemap";
-import { CustomMDX } from "@/app/(components)/mdx";
+import { Icons } from "@/components/icons";
+import { CustomMDX } from "@/components/mdx";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Button from "@/app/(components)/button";
-import { Icons } from "@/app/(components)/icons";
+import { ArrowLeft } from "lucide-react";
 
 export async function generateStaticParams() {
   let projects = getProjects()
@@ -59,44 +60,61 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     notFound()
   }
   return (
-    <section className="flex flex-col items-center justify-center mb-20">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Project',
-            headline: project.metadata.title,
-            datePublished: project.metadata.publishedAt,
-            dateModified: project.metadata.publishedAt,
-            description: project.metadata.summary,
-            image: project.metadata.image
-              ? `${baseUrl}${project.metadata.image}`
-              : `/og?title=${encodeURIComponent(project.metadata.title)}`,
-            url: `${baseUrl}/project/${project.slug}`,
-            author: {
-              '@type': 'Person',
-              name: 'Bognar-dev',
-            },
-          }),
-        }}
-      />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {project.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(project.metadata.publishedAt)}
-        </p>
-        
+    <>
+      <div className="mb-4 flex justify-center items-center pt-20 xl:absolute xl:top-52 xl:left-12">
+        <Button asChild className="bg-primary-400 text-text-700">
+          <Link href="/projects">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Go Back
+          </Link>
+        </Button>
       </div>
-      {project.metadata.websiteLink && <Button href={project.metadata.websiteLink}>Link to Website</Button>}
-      {project.metadata.sourceLink && <Button href={project.metadata.sourceLink}><Icons.gitHub className="w-4 h-4"/></Button>}
-      <article className="prose dark:prose-invert">
-        <CustomMDX source={project.content} />
-      </article>
-    </section>
+      <section className="flex flex-col items-center justify-center my-20">
+
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Project',
+              headline: project.metadata.title,
+              datePublished: project.metadata.publishedAt,
+              dateModified: project.metadata.publishedAt,
+              description: project.metadata.summary,
+              image: project.metadata.image
+                ? `${baseUrl}${project.metadata.image}`
+                : `/og?title=${encodeURIComponent(project.metadata.title)}`,
+              url: `${baseUrl}/project/${project.slug}`,
+              author: {
+                '@type': 'Person',
+                name: 'Bognar-dev',
+              },
+            }),
+          }}
+        />
+        <h1 className="title font-semibold text-2xl tracking-tighter">
+          {project.metadata.title}
+        </h1>
+        <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            {formatDate(project.metadata.publishedAt)}
+          </p>
+
+        </div>
+        {project.metadata.sourceLink && (
+          <Button asChild className="bg-primary-400 text-text-700">
+            <Link href={project.metadata.sourceLink} passHref>
+              <Icons.gitHub className="w-4 h-4" />
+            </Link>
+          </Button>
+        )}
+        <article className="w-full prose prose-pink p-5 max-w-4xl mx-auto ">
+          <CustomMDX source={project.content} />
+
+        </article>
+      </section>
+    </>
   )
 
 }
