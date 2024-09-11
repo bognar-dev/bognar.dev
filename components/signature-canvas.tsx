@@ -89,13 +89,27 @@ const SignatureCanvas: React.FC<SignatureCanvasProps> = ({ onSignatureChange }) 
     return (
 
         <div>
-            <label className="block text-text-700 font-bold mb-2">Sign Here</label>
-            <div className="relative w-full">
-                <canvas className="border border-primary-300 rounded-lg cursor-crosshair bg-background-50" >
-                </canvas>
-                <button type="button" className="absolute top-2 right-2 px-2 py-1 bg-accent-500 text-text-50 rounded-md text-sm" >Clear</button>
-            </div>
-        </div>
+                  <label className="block text-text-700 font-bold mb-2">Signature is optional</label>
+                  <div className="relative w-full">
+                    <canvas
+                      ref={canvasRef}
+                      onMouseDown={startDrawing}
+                      onMouseUp={stopDrawing}
+                      onMouseOut={stopDrawing}
+                      onMouseMove={draw}
+                      className="border border-primary-300 rounded-lg cursor-crosshair bg-background-50"
+                    ></canvas>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      type="button"
+                      onClick={clearSignature}
+                      className="absolute top-2 right-2 px-2 py-1 bg-accent-500 text-text-50 rounded-md text-sm"
+                    >
+                      Clear
+                    </motion.button>
+                  </div>
+                </div>
     )
 }
 
