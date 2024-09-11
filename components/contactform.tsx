@@ -66,7 +66,7 @@ const PlayfulContactForm: React.FC = () => {
         ctx.beginPath()
         ctx.moveTo(lastPoint.x, lastPoint.y)
         ctx.lineTo(currentPoint.x, currentPoint.y)
-        ctx.strokeStyle = 'var(--primary-500)'
+        ctx.strokeStyle = '#72725a'
         ctx.lineWidth = 2
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'

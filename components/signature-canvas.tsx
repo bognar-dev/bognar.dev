@@ -19,7 +19,7 @@ const SignatureCanvas: React.FC<SignatureCanvasProps> = ({ onSignatureChange }) 
             if (ctx) {
                 ctx.lineWidth = 2
                 ctx.lineCap = 'round'
-                ctx.strokeStyle = 'black'
+                ctx.strokeStyle = '#72725a'
             }
         }
     }, [])

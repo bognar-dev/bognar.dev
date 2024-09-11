@@ -68,9 +68,9 @@ export async function submitForm(prevState: FormState, formData: FormData): Prom
 
 export async function saveSignature(signatureData: string) {
   try {
-    const base64Data = signatureData.replace(/^data:image\/svg\+xml;base64,/, '')
+    const base64Data = signatureData.replace(/^data:image\/png;base64,/, '')
     const buffer = Buffer.from(base64Data, 'base64')
-    const fileName = `signature_${Date.now()}.svg`
+    const fileName = `signature_${Date.now()}.png`
     const filePath = path.join(process.cwd(), 'public', 'signatures', fileName)
 
     await fs.mkdir(path.dirname(filePath), { recursive: true })
