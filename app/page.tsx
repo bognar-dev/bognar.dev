@@ -11,7 +11,7 @@ import SignatureGallery from '@/components/signature-gallery'
     export default function Home() {
 
       return (
-        <LenisWrapper className=''>
+        <LenisWrapper className='flex justify-center items-center flex-col gap-8'>
           <CursorHoverMask />
           <div className="flex justify-center">
             <Button variant={'ghost'} className='text-text-600 w-auto text-3xl'>
