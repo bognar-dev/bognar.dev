@@ -16,7 +16,7 @@ export default function ThemeToggle({className}:{className?:string}) {
 
     return (
         <motion.button
-            className={cn("group rounded-lghover:bg-primary-100 ease-in duration-100 z-10 absolute top-12 left-12 ", className)} 
+            className={cn("group rounded-lghover:bg-primary-100 ease-in duration-100 flex justify-center items-center", className)}
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             initial="initial"
             name="Toggle Theme"

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import useMousePosition from '@/hooks/useMousePosition';
 
-export default function Home() {
+export default function CursorHoverMask() {
 
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();

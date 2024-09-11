@@ -1,32 +1,100 @@
-.main{
-    height: 100vh;
-  
-    .mask, .body{
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #afa18f;
-      font-size: 64px;
-      line-height: 66px;
-      cursor: default;
-      
-      p{
-        width: 1000px;
-        padding:40px;
-      }
-      span{
-        color: #ec4e39;
-      }
+.main {
+  height: 100vh;
+  position: relative; /* Ensure the main container is the positioning context */
+
+  .mask, .body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #afa18f;
+    font-size: 64px;
+    line-height: 66px;
+    cursor: default;
+
+    p {
+      width: 1000px;
+      padding: 40px;
     }
-  
-    .mask{
-      mask-image: url('../../public/mask.svg');
-      mask-repeat: no-repeat;
-      mask-size: 40px;
-      background: #ec4e39;
-      position: absolute;
-      color: black;
+
+    span {
+      color: #ec4e39;
     }
+  }
+
+  .mask {
+    mask-image: url('../../public/mask.svg');
+    mask-repeat: no-repeat;
+    mask-size: 40px;
+    background: #ec4e39;
+    position: absolute;
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    color: black;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main {
+    height: 80vh;
+  }
+
+  .main .mask, .main .body {
+    font-size: 48px;
+    line-height: 50px;
+
+    p {
+      width: 800px;
+      padding: 30px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    height: 70vh;
+  }
+
+  .main .mask, .main .body {
+    font-size: 36px;
+    line-height: 38px;
+
+    p {
+      width: 600px;
+      padding: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    height: 60vh;
+  }
+
+  .main .mask, .main .body {
+    font-size: 24px;
+    line-height: 26px;
+
+    p {
+      width: 400px;
+      padding: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    height: 50vh;
+  }
+
+  .main .mask, .main .body {
+    font-size: 18px;
+    line-height: 20px;
+
+    p {
+      width: 300px;
+      padding: 10px;
+    }
+  }
 }

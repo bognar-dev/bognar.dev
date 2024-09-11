@@ -21,7 +21,7 @@ export default function Home() {
         transition={{ type: "tween", ease: "backOut", duration:0.3}}
       >
           <p 
-            className="w-[1000px] p-10 text-[#afa18f] text-4xl leading-[66px] cursor-default"
+            className="w-[1000px] p-10 text-[#afa18f] text-xl md:text-4xl leading-[66px] cursor-default"
             onMouseEnter={() => {setIsHovered(true)}} 
             onMouseLeave={() => {setIsHovered(false)}}
           >
@@ -29,7 +29,7 @@ export default function Home() {
           </p>
       </motion.div>
 
-      <div className="w-full h-full flex items-center justify-center text-[#afa18f] text-4xl leading-[66px] cursor-default">
+      <div className="w-full h-full flex items-center justify-center text-[#afa18f] text-xl md:text-4xl leading-[66px] cursor-default">
         <p>I&apos;m a <span className="text-[#ec4e39]">selectively skilled</span> product designer with strong focus on producing high quality & impactful digital experience.</p>
       </div>
 
