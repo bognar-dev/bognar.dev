@@ -1,8 +1,10 @@
 import fonts from '@/config/fonts'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
+import { Sign } from 'crypto'
 import Link from 'next/link'
 import React from 'react'
+import SignatureForm from './signature-form'
 
 function Content() {
   return (
@@ -13,6 +15,7 @@ function Content() {
   )
 }
 
+
 const Section1 = () => {
     return (
         <div>
@@ -21,6 +24,9 @@ const Section1 = () => {
     )
 }
 
+
+
+
 const Section2 = () => {
     return (
         <div className='flex justify-between items-end'>
@@ -28,6 +34,7 @@ const Section2 = () => {
         </div>
     )
 }
+
 
 const Nav = () => {
     return (
