@@ -86,7 +86,7 @@ export default function ProjectCard({
     }
 
     return (
-        <Link href={`/projects/${project.slug}`}>
+        <Link href={linkUrl}>
             <div
                 ref={ref}
                 className="group mb-3 sm:mb-8 last:mb-0"
