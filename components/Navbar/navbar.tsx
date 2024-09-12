@@ -17,7 +17,7 @@ export default function Navbar() {
        return {
            open: {
                width: isSmallScreen ? "200px" : "480px",
-               height: isSmallScreen ? "500px" : "650px",
+               height: isSmallScreen ? "400px" : "400px",
                top: isSmallScreen ? "-15px" : "-25px",
                right: isSmallScreen ? "-15px" : "-25px",
                transition: {

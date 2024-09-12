@@ -9,7 +9,7 @@ interface MainNavProps {
 
 export default function Navbar({ items, footerLinks }: MainNavProps) {
   return (
-    <div className="flex flex-col justify-between px-10 pb-5 pt-20 h-full box-border">
+    <div className="flex flex-col justify-between pl-5 pr-10 pb-5 pt-20 h-full box-border">
        <div className="flex flex-col gap-2.5">
         {
             items.map((link, i) => {
