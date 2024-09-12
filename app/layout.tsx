@@ -2,6 +2,7 @@ import '@/app/globals.css';
 import Footer from '@/components/footer';
 import Navbar from '@/components/Navbar/navbar';
 import MotionConfigWrapper from '@/components/motion-config-wrapper';
+import LenisWrapper from '@/components/lenis-wrapper';
 import { ThemeProvider } from '@/components/theme-provider';
 import fonts from '@/config/fonts';
 import { siteConfig } from '@/config/site';
@@ -45,6 +46,7 @@ export default function RootLayout({
         <body className={cn(' text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <LenisWrapper className=''>
             <MotionConfigWrapper>
               <Magnetic className='z-10 absolute top-4 left-4 md:top-12 md:left-12'>
               <ThemeToggle className='w-20 h-20 ' />
@@ -53,6 +55,7 @@ export default function RootLayout({
               {children}
               <Footer />
             </MotionConfigWrapper>
+            </LenisWrapper>
           </ThemeProvider>
 
           <Analytics />
