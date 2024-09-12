@@ -39,9 +39,6 @@ const Projects = ({projects}:{projects:Project[]}) => {
 
     return (
         <div>
-            <AnimatePresence>
-              <ProjectFilter tags={allTags} selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            </AnimatePresence>
             <div ref={parent} className='grid gap-3 grid-cols-1 lg:grid-cols-2'>
                 {filteredProjects.map((project, index: number) => (
                     <ProjectCard project={project} key={index} className='' />

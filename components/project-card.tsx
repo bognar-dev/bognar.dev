@@ -24,9 +24,10 @@ export default function ProjectCard({
     });
     const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
     const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+    const linkUrl = project.metadata.noText && project.metadata.websiteLink ? project.metadata.websiteLink.startsWith('http') ? project.metadata.websiteLink : `https://${project.metadata.websiteLink}` : `/projects/${project.slug}`;
     if (animate) {
         return (
-            <Link href={`/projects/${project.slug}`}>
+            <Link href={linkUrl}>
                 <motion.div
                     ref={ref}
                     style={{

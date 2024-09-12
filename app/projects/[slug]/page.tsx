@@ -69,7 +69,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           </Link>
         </Button>
       </div>
-      <section className="flex flex-col items-center justify-center my-20">
+      <section className="flex flex-col items-center justify-center my-20 min-h-screen">
 
         <script
           type="application/ld+json"

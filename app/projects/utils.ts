@@ -10,6 +10,7 @@ export type Metadata = {
     websiteLink?: string
     sourceLink?: string 
     featured?: string
+    noText?: string
 }
 
 export type Project = {
