@@ -54,6 +54,7 @@ export async function submitForm(prevState: FormState, formData: FormData): Prom
   })
 
   if (!validatedFields.success) {
+    console.log("Fields cant be validated ")
     return {
       errors: validatedFields.error.flatten().fieldErrors,
     }
