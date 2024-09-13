@@ -87,7 +87,8 @@ export async function submitForm(prevState: FormState, formData: FormData): Prom
 }
 
 export async function saveSignature(signatureData: string) {
-  const ip = getIp();
+  console.log("saveSignature()")
+const ip = getIp();
   const { success, pending, limit, reset, remaining } = await ratelimit.limit(
     ip
   );
@@ -103,6 +104,7 @@ export async function saveSignature(signatureData: string) {
 
     const { url } = await put(filePath, buffer,{access: 'public'})
     revalidatePath('/')
+    console.log("Signature saved")
     return { success: true, message: 'Signature saved successfully!' }
   } catch (error) {
     console.error('Error saving signature:', error)
