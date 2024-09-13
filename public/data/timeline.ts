@@ -53,32 +53,6 @@ export const timeLineData:TimeLine[] = [
         },
         "image": "https://howtoabroad.com/wp-content/uploads/2021/12/93500807_3345193418842184_5316603190945251328_n.jpg"
     },
-    {
-        "title": "Au-Pair",
-        "text":"London, UK",
-        "date": "2020-2021",
-        
-            tag: "work",
-        
-        "link": {
-            url: "https://www.hs-niederrhein.com/homepage/",
-            text: "See University"
-        },
-        "image": "https://tonimarino.co.uk/wp-content/uploads/2019/08/London-Underground-Logo.png"
-    },
-    {
-        "title": "Neues Gymnasium Leibniz",
-        "text":"Stuttgart, Germany",
-        "date": "2012-2020",
-        
-            tag: "education",
-        
-        "link": {
-            url: "https://www.hs-niederrhein.com/homepage/",
-            text: "See University"
-        },
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Schullogo-Leibniz.JPG/250px-Schullogo-Leibniz.JPG"
-    },
 
 
     
