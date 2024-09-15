@@ -7,6 +7,8 @@ import { list } from '@vercel/blob'
 import { getSignatures } from '@/lib/getSignatures'
 
 
+export const revalidate = 3 * 60
+
 export default async function SignatureGallery() {
   const signatures = await getSignatures();
 
