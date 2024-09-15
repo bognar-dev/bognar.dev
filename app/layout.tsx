@@ -11,6 +11,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata, Viewport } from 'next';
 import ThemeToggle from '@/components/theme-toggle';
 import Magnetic from '@/components/Magnetic';
+import { Providers } from './providers';
 
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning={true} className="">
         <head />
         <body className={cn(' text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
-
+          <Providers>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LenisWrapper className=''>
             <MotionConfigWrapper>
@@ -57,7 +58,7 @@ export default function RootLayout({
             </MotionConfigWrapper>
             </LenisWrapper>
           </ThemeProvider>
-
+          </Providers>
           <Analytics />
 
         </body>
