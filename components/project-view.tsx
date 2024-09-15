@@ -25,11 +25,11 @@ function ProjectView({ project }: { project: ProjectData }) {
             <blockquote className="py-5">
                 When did I start this project ? {project.startDate}
             </blockquote>
-            {project.status == 'finished' ??
+            {project.status == 'finished' ?
 
                 <blockquote>
                     Project finished on {project.endDate}
-                </blockquote>}
+                </blockquote> : null}
 
 
             <Button className="py-2 px-4 rounded">
