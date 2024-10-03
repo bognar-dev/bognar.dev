@@ -15,16 +15,61 @@ import { Providers } from './providers';
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bognar.co.uk'),
   title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    default: 'Niklas Bognar | CompSci Student - Web enthusiast',
+    template: '%s | Niklas Bognar'
   },
-  description: siteConfig.description,
-
+  description: 'Personal portfolio of Niklas Bognar, a Full Stack Developer specializing in React, Next.js, and Node.js.',
+  openGraph: {
+    siteName: 'Niklas Bognar Portfolio',
+    type: 'website',
+    locale: 'en_GB',
+    url: 'https://bognar.co.uk',
+    images: [
+      {
+        url: 'https://bognar.co.uk/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Niklas Bognar - Full Stack Developer'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@niklasbognar',
+    creator: '@niklasbognar'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+  },
+  alternates: {
+    canonical: 'https://bognar.co.uk',
+    types: {
+      'application/rss+xml': 'https://bognar.co.uk/rss.xml',
+    },
+  },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
   },
 }
 
