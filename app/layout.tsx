@@ -91,7 +91,7 @@ export default function RootLayout({
     "name": "Niklas Bognar",
     "url": "https://bognar.co.uk",
     "sameAs": [
-      "https://twitter.com/niklasbognar",
+      "https://twitter.com/nikibgnr",
       // Add other social media profiles if available
     ],
     "jobTitle": "Full Stack Developer",
@@ -102,8 +102,8 @@ export default function RootLayout({
     "description": "Full Stack Developer specializing in React, Next.js, and Node.js.",
     "image": "https://bognar.co.uk/og-image.jpg",
     "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Your University Name" // Replace with actual university name
+      "@type": "Falmouth University",
+      "name": "Falmouth Uni" // Replace with actual university name
     },
     "knowsAbout": ["React", "Next.js", "Node.js", "Web Development"],
     "mainEntityOfPage": {
