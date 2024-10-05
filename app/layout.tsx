@@ -85,24 +85,55 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Niklas Bognar",
+    "url": "https://bognar.co.uk",
+    "sameAs": [
+      "https://twitter.com/niklasbognar",
+      // Add other social media profiles if available
+    ],
+    "jobTitle": "Full Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Self-employed"
+    },
+    "description": "Full Stack Developer specializing in React, Next.js, and Node.js.",
+    "image": "https://bognar.co.uk/og-image.jpg",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Your University Name" // Replace with actual university name
+    },
+    "knowsAbout": ["React", "Next.js", "Node.js", "Web Development"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://bognar.co.uk"
+    }
+  };
   return (
     <>
       <html lang="en" suppressHydrationWarning={true} className="">
-        <head />
+        <head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        </head>
         <body className={cn(' text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
           <Providers>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <LenisWrapper className=''>
-            <MotionConfigWrapper>
-              <Magnetic className='z-10 absolute top-4 left-4 md:top-12 md:left-12'>
-              <ThemeToggle className='w-20 h-20 ' />
-              </Magnetic>
-              <Navbar />
-              {children}
-              <Footer />
-            </MotionConfigWrapper>
-            </LenisWrapper>
-          </ThemeProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <LenisWrapper className=''>
+                <MotionConfigWrapper>
+                  <Magnetic className='z-10 absolute top-4 left-4 md:top-12 md:left-12'>
+                    <ThemeToggle className='w-20 h-20 ' />
+                  </Magnetic>
+                  <Navbar />
+                  {children}
+                  <Footer />
+                </MotionConfigWrapper>
+              </LenisWrapper>
+            </ThemeProvider>
           </Providers>
           <Analytics />
 
