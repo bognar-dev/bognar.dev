@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
 import { getProjects } from '@/app/projects/utils'
 
-const baseUrl = 'https://bognar.co.uk'
+export const baseUrl = 'https://bognar.co.uk'
+
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projects = getProjects().map((project) => ({
