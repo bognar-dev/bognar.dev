@@ -8,7 +8,7 @@ export const Blob = ({ blobRef }: { blobRef?: React.Ref<any> }) => {
             id="blob"
             className="w-40 h-40 
                 bg-gradient-to-r
-                from-primary-300 to-primary-400
+                from-primary to-primary
                 absolute 
                 left-1/2
                 top-1/2

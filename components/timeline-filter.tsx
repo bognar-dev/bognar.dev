@@ -1,8 +1,7 @@
 
 
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import Tag from './tag';
-import { useAutoAnimate } from '@formkit/auto-animate/react';
+
 import TimeLineFilterMap from './timeline-tag-map';
 
 type FilterProps = {

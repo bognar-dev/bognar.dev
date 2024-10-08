@@ -20,7 +20,7 @@
     }
 
     span {
-      color: #ec4e39;
+      color: hsl(240 60% 17%);
     }
   }
 
@@ -32,11 +32,11 @@
     mask-image: url('../../public/mask.svg');
     mask-repeat: no-repeat;
     mask-size: 40px;
-    background: #ec4e39;
+    background: hsl(240 60% 17%);
     position: absolute;
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
-    color: black;
+    color: hsl(30 12% 87%);
   }
 }
 

@@ -26,12 +26,12 @@ export default function CursorHoverMask() {
       >
          
           <p onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
-          A <span>web developer</span> with a passion for crafting dynamic websites and animations—where creativity meets code. Pushing boundaries while learning, working, and always aiming for innovative solutions.
+          A 3rd Year <span>Computer Science</span> Student at Falmouth University
           </p>
       </motion.div>
 
       <div className={styles.body}>
-      <p>I&apos;m a <span>multi-skilled</span> Computer Science student, combining embedded systems knowledge with front-end magic to deliver powerful, responsive, and engaging digital experiences.</p>
+      <p>Web <span>Enthusiast</span> With A Passion For <span>Dynamic</span> Websites</p>
       </div>
       
 

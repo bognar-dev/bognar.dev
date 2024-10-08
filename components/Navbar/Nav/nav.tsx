@@ -23,7 +23,7 @@ export default function Navbar({ items, footerLinks }: MainNavProps) {
                           animate="enter"
                           exit="exit"
                         >
-                            <a href={href} className="no-underline text-black text-3xl">
+                            <a href={href} className="no-underline  text-3xl">
                                 {title}
                             </a>
                         </motion.div>

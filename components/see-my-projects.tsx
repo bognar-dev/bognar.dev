@@ -14,7 +14,7 @@ const SeeMyProjects: React.FC = () => {
     };
     return (
         <div className="flex justify-center">
-            <Button variant={'outline'} onClick={scrollToProjects} className='text-text-600 w-auto text-3xl'>
+            <Button variant={'outline'} onClick={scrollToProjects} className='text-foreground w-auto text-3xl'>
                 See my projects
                 <ChevronDown />
             </Button>

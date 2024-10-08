@@ -6,7 +6,6 @@ import { timeLineData } from "@/public/data/timeline";
 import TimelineEvent from "./timeline-event";
 import TimeLineFilter from "./timeline-filter";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { Project } from "next/dist/build/swc";
 import { TimeLine } from "@/types/timeline";
 
 export default function Timeline() {

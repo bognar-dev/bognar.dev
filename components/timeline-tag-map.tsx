@@ -1,4 +1,4 @@
-import { useAutoAnimate } from "@formkit/auto-animate/react";
+
 import { AnimationControls, AnimationProps, Transition, motion } from "framer-motion";
 import { Dispatch, SetStateAction, useState } from "react";
 

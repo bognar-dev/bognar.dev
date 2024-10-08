@@ -75,14 +75,14 @@ export default function Card({ className, children, motion = false, blob = false
     };
     if (motion) {
         return (
-            <ScrollMotionDiv className={twMerge(className, 'overflow-hidden pt-3 w-full text-card-foreground grid bg-background-50  backdrop-blur-sm shadow-sm shadow-primary-400 rounded-xl ')}>
+            <ScrollMotionDiv className={twMerge(className, 'overflow-hidden pt-3 w-full text-card-foreground grid bg-card  backdrop-blur-sm shadow-sm shadow-primary rounded-xl ')}>
                 {children}
                 {blob && <Blob blobRef={blobRef} />}
             </ScrollMotionDiv>
         )
     }
     return (
-        <div onPointerMove={handlePointerMove} onPointerEnter={handlePointerEnter} onPointerLeave={handlePointerLeave} ref={cardRef} className={twMerge(className, ' overflow-hidden pt-3 w-full text-card-foreground grid bg-background-50 backdrop-blur-sm shadow-sm shadow-primary-400 rounded-xl ')}>
+        <div onPointerMove={handlePointerMove} onPointerEnter={handlePointerEnter} onPointerLeave={handlePointerLeave} ref={cardRef} className={twMerge(className, ' overflow-hidden pt-3 w-full text-card-foreground grid bg-card backdrop-blur-sm shadow-sm shadow-primary rounded-xl ')}>
             {children}
             {blob && <Blob blobRef={blobRef} />}
         </div>

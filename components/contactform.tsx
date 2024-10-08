@@ -36,9 +36,9 @@ const PlayfulContactForm: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="w-full flex items-center justify-center bg-background p-4"
     >
-      <div className="w-full max-w-4xl bg-background-100 rounded-lg shadow-xl overflow-hidden">
+      <div className="w-full max-w-4xl bg-background rounded-lg shadow-xl overflow-hidden">
         <div className="md:flex">
-          <div className="md:w-1/2 bg-primary-600 p-8 text-text-50">
+          <div className="md:w-1/2 bg-secondary p-8 text-background">
             <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
             <p className="mb-4">I&apos;d love to hear from you. Send us a message and I&apos;ll get back to you as soon as possible.</p>
           </div>

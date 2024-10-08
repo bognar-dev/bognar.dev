@@ -19,13 +19,13 @@ const Button = ({ isActive, toggleMenu }: ButtonProps) => {
                 transition={{ duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1] }}
             >
                 <div
-                    className="w-full h-full bg-primary-300 hover:rotate-x-90"
+                    className="w-full h-full bg-primary dark:text-foreground hover:rotate-x-90"
                     onClick={() => { toggleMenu() }}
                 >
                     <PerspectiveText label="Menu" />
                 </div>
                 <div
-                    className="w-full h-full bg-black text-primary bg-primary-300 hover:rotate-x-90"
+                    className="w-full h-full bg-background text-primary dark:text-foreground  hover:rotate-x-90"
                     onClick={() => { toggleMenu() }}
                 >
                     <PerspectiveText label="Close" />

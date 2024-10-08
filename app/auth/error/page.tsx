@@ -24,7 +24,7 @@ export default function ErrorPage() {
                 <Suspense fallback={<p>Loading...</p>}>
                     <ErrorMessage />
                 </Suspense>
-                <a href="/" className="text-blue-500 hover:underline">
+                <a href="/" className="text-primary hover:underline">
                     Return to Home
                 </a>
             </div>

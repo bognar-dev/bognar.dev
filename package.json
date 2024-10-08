@@ -7,7 +7,8 @@
     "turbo-dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "knip": "knip"
   },
   "dependencies": {
     "@formkit/auto-animate": "0.8.2",
@@ -87,6 +88,7 @@
     "autoprefixer": "10.4.20",
     "eslint": "9.10.0",
     "eslint-config-next": "14.2.11",
+    "knip": "^5.33.1",
     "postcss": "8.4.47",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.6",
