@@ -11,7 +11,7 @@ export default function CursorHoverMask() {
   const { x, y } = useMousePosition();
   const { dimension} = useWindow();
   const isSmallScreen = dimension.width <= 768;
-  const size = isHovered ? (isSmallScreen ? 500 : 1000) : (isSmallScreen ? 25 : 50);
+  const size = isHovered ? (isSmallScreen ? 500 : 600) : (isSmallScreen ? 25 : 50);
   
   return (
     <main className={styles.main}>

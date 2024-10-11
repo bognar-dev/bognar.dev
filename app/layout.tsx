@@ -12,6 +12,7 @@ import { Metadata, Viewport } from 'next';
 import ThemeToggle from '@/components/theme-toggle';
 import Magnetic from '@/components/Magnetic';
 import { Providers } from './providers';
+import thunder from '@/config/thunder/thunder';
 
 
 export const metadata: Metadata = {
@@ -120,7 +121,7 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
         </head>
-        <body className={cn(' text-text-900 no-scrollbar ', fonts.madeTommyLight.className)}>
+        <body className={cn(' text-text-900 font-normal no-scrollbar ', thunder.className)}>
           <Providers>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <LenisWrapper className=''>

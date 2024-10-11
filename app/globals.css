@@ -163,7 +163,11 @@
 
 }
 
-
+.mask {
+  mask-image: url('../public/mask.svg');
+  mask-repeat: no-repeat;
+  mask-size: 40px;
+}
 
 html {
   min-width: 360px;
