@@ -46,7 +46,7 @@ export default function ProjectCard({
 
 
                                 {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
-                                    <Tag animate={false} index={key} key={key} tag={tag} colour={""} />
+                                    <Tag animate={false} index={key} key={key} tag={tag}  />
                                 ))}
 
 
@@ -102,7 +102,7 @@ export default function ProjectCard({
 
 
                                 {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
-                                    <Tag index={key} key={key} tag={tag} colour={"primary"} />
+                                    <Tag index={key} key={key} tag={tag} />
                                 ))}
 
 

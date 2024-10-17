@@ -5,7 +5,6 @@ import { Icons } from "./icons";
 import { motion } from "framer-motion";
 interface TagProps {
     tag: string;
-    colour: string;
     className?: string;
     onClick?: () => void;
     animate?: boolean;
@@ -35,11 +34,11 @@ const fadeInAnimationVariants = {
 
 
 
-const Tag = ({ tag, colour, className, onClick, animate = false,index }: TagProps) => (
+const Tag = ({ tag, className, onClick, animate = false,index }: TagProps) => (
     animate ? (
         < motion.li
             onClick={onClick}
-            className={twMerge(` cursor-pointer flex items-center flex-auto flex-shrink justify-center mb-3 text-sm bg-${colour} rounded-sm px-2 gap-1 text-background`, className)}
+            className={twMerge(` cursor-pointer flex items-center flex-auto flex-shrink justify-center mb-3 text-sm bg-primary rounded-sm px-2 gap-1 text-white dark:text-text`, className)}
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -51,7 +50,7 @@ const Tag = ({ tag, colour, className, onClick, animate = false,index }: TagProp
             <span>{tag}</span>
         </motion.li >
     ) : (
-        <li onClick={onClick} className={twMerge(`flex items-center flex-auto flex-shrink justify-center mb-3 text-sm bg-${colour} rounded-sm px-2 gap-1 text-background`, className)}>
+        <li onClick={onClick} className={twMerge(`flex items-center flex-auto flex-shrink justify-center mb-3 text-sm bg-primary rounded-sm px-2 gap-1 text-white dark:text-text`, className)}>
             <Icons.tag className="shrink-0"/>
             <span>{tag}</span>
         </li>
