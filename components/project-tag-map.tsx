@@ -17,7 +17,7 @@ const TagMap = ({ tags, handleTagClick, selectedTags }: TagProps) => {
             {sortedTags.map((tag: string, index: number) => (
                 <Tag index={index}animate={true} key={index} tag={tag} onClick={() => handleTagClick(tag)}
                     className={`h-10 px-2 py-1 shadow-primary-50 shadow-sm select-none ${selectedTags.includes(tag) ? 'bg-primary-300 hover:bg-primary-400' : 'bg-primary-50 hover:bg-primary-100'
-                        }`} colour='' />
+                        }`} />
             ))}
         </ul>
     )
