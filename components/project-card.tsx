@@ -42,7 +42,7 @@ export default function ProjectCard({
                             <p className="my-2 leading-relaxed text-text-700">
                                 {project.metadata.summary}
                             </p>
-                            <ul className="flex flex-row md:gap-4 justify-items-start mt-2 gap-1">
+                            <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
 
 
                                 {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
@@ -99,10 +99,10 @@ export default function ProjectCard({
                         </p>
                         <div className="flex items-center">
                             <ul className="grid grid-flow-row justify-items-start mt-2 gap-1 sm:mt-auto">
-
+                                
 
                                 {project.metadata.tags.split(',').slice(0, 3).map((tag, key) => (
-                                    <Tag index={key} key={key} tag={tag} />
+                                    <Tag animate={true} index={key} key={key} tag={tag} />
                                 ))}
 
 
