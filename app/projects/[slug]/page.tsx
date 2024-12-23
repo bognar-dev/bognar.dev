@@ -62,7 +62,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
   return (
     <>
       <div className="mb-4 flex justify-center items-center pt-20 xl:absolute xl:top-52 xl:left-12">
-        <Button asChild className="bg-primary-400 text-text-700">
+        <Button asChild className="bg-primary-400 text-foreground">
           <Link href="/projects">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Go Back
@@ -103,7 +103,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
         </div>
         {project.metadata.sourceLink && (
-          <Button asChild className="bg-primary-400 text-text-700">
+          <Button asChild className="bg-primary-400 text-foreground">
             <Link href={project.metadata.sourceLink} passHref>
               <Icons.gitHub className="w-4 h-4" />
             </Link>

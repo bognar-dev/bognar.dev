@@ -121,7 +121,7 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
         </head>
-        <body className={cn(' text-text-900 font-normal no-scrollbar ', thunder.className)}>
+        <body className={cn(' text-foreground font-normal no-scrollbar ', thunder.className)}>
           <Providers>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <LenisWrapper className=''>

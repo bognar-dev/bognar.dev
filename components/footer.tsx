@@ -40,22 +40,22 @@ const Nav = () => {
     return (
         <div className='flex shrink-0 gap-20'>
             <div className='flex flex-col gap-2'>
-                <h3 className='mb-2 uppercase text-text-200'>Sitemap</h3>
+                <h3 className='mb-2 uppercase text-foreground'>Sitemap</h3>
                 {siteConfig.mainNav.map((link, i) => {
                     const { title, href } = link;
                     return (
-                        <Link href={href} key={`nav_${i}`} className='no-underline text-text-50  md:text-3xl'>
+                        <Link href={href} key={`nav_${i}`} className='no-underline text-foreground  md:text-3xl'>
                             {title}
                         </Link>
                     )
                 })}
             </div>
             <div className='flex flex-col gap-2'>
-                <h3 className='mb-2 uppercase text-text-200'>Contact</h3>
+                <h3 className='mb-2 uppercase text-foreground'>Contact</h3>
                 {siteConfig.socialLinks.map((link, i) => {
                     const { title, url } = link;
                     return (
-                        <Link href={url} key={`social_${i}`} className='no-underline text-text-50 md:text-3xl'>
+                        <Link href={url} key={`social_${i}`} className='no-underline text-foreground md:text-3xl'>
                             {title}
                         </Link>
                     )

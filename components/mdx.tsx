@@ -55,7 +55,7 @@ function Code({ children, ...props }:any) {
 }
 
 function createParagraph(props:any) {
-  return <p className="text-text-700">{props.children}</p>
+  return <p className="text-foreground">{props.children}</p>
 }
 
 function slugify(str:string) {

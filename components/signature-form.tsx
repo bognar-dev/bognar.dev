@@ -30,7 +30,7 @@ const SignatureForm: React.FC = () => {
         >
             <div className="w-full max-w-4xl bg-background-100 rounded-lg shadow-xl overflow-hidden">
                 <div className="md:flex">
-                    <div className="md:w-1/2 bg-primary-600 p-8 text-text-50">
+                    <div className="md:w-1/2 bg-primary-600 p-8 text-foreground">
                         <h2 className="text-4xl font-bold mb-4">Just here for signature gallery?</h2>
                         <p className="mb-4">Then please fill out the form below and submit it.</p>
                     </div>
@@ -44,7 +44,7 @@ const SignatureForm: React.FC = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 type="submit"
-                                className="w-full bg-primary-500 text-text-50 font-bold py-2 px-4 rounded-lg hover:bg-primary-600 transition duration-300"
+                                className="w-full bg-primary-500 text-foreground font-bold py-2 px-4 rounded-lg hover:bg-primary-600 transition duration-300"
                             >
                                 Send Signature
                             </motion.button>

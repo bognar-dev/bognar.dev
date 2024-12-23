@@ -174,7 +174,7 @@ const SignatureCanvas: React.FC<SignatureCanvasProps> = ({ onSignatureChange }) 
 
   return (
     <div>
-      <label className="block text-text-700 font-bold mb-2">Sign here</label>
+      <label className="block text-foreground font-bold mb-2">Sign here</label>
       <div className="relative w-full">
         <canvas
           ref={canvasRef}
@@ -191,7 +191,7 @@ const SignatureCanvas: React.FC<SignatureCanvasProps> = ({ onSignatureChange }) 
           whileTap={{ scale: 0.95 }}
           type="button"
           onClick={clearSignature}
-          className="absolute top-2 right-2 px-2 py-1 bg-accent-500 text-text-50 rounded-md text-sm"
+          className="absolute top-2 right-2 px-2 py-1 bg-accent-500 text-foreground rounded-md text-sm"
         >
           Clear
         </motion.button>

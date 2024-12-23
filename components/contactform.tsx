@@ -45,7 +45,7 @@ const PlayfulContactForm: React.FC = () => {
           <div className="md:w-1/2 p-8">
             <form action={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-text-700 font-bold mb-2">
+                <label htmlFor="name" className="block text-foreground font-bold mb-2">
                   Name
                 </label>
                 <motion.input
@@ -53,13 +53,13 @@ const PlayfulContactForm: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-3 py-2 text-text-700 bg-background-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-3 py-2 text-foreground bg-background-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   required
                 />
                 {state.errors?.name && <p className="text-red-500 text-sm mt-1">{state.errors.name[0]}</p>}
               </div>
               <div>
-                <label htmlFor="email" className="block text-text-700 font-bold mb-2">
+                <label htmlFor="email" className="block text-foreground font-bold mb-2">
                   Email
                 </label>
                 <motion.input
@@ -67,13 +67,13 @@ const PlayfulContactForm: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-3 py-2 text-text-700 bg-background-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-3 py-2 text-foreground bg-background-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   required
                 />
                 {state.errors?.email && <p className="text-red-500 text-sm mt-1">{state.errors.email[0]}</p>}
               </div>
               <div>
-                <label htmlFor="message" className="block text-text-700 font-bold mb-2">
+                <label htmlFor="message" className="block text-foreground font-bold mb-2">
                   Message
                 </label>
                 <motion.textarea
@@ -81,7 +81,7 @@ const PlayfulContactForm: React.FC = () => {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-3 py-2 text-text-700 bg-background-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-3 py-2 text-foreground bg-background-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   required
                 ></motion.textarea>
                 {state.errors?.message && <p className="text-red-500 text-sm mt-1">{state.errors.message[0]}</p>}
@@ -93,7 +93,7 @@ const PlayfulContactForm: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full bg-primary-500 text-text-50 font-bold py-2 px-4 rounded-lg hover:bg-primary-600 transition duration-300"
+                className="w-full bg-primary-500 text-foreground font-bold py-2 px-4 rounded-lg hover:bg-primary-600 transition duration-300"
               >
                 Send Message
               </motion.button>
