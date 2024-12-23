@@ -8,7 +8,7 @@ import SignatureForm from './signature-form'
 
 function Content() {
   return (
-    <div className='bg-primary-400 py-8 px-12 h-full w-full flex flex-col justify-between'>
+    <div className='bg-primary-400 py-8 px-12 h-full w-full flex flex-col xl:flex-row justify-between'>
         <Section1 />
         <Section2 />
     </div>
@@ -29,7 +29,7 @@ const Section1 = () => {
 
 const Section2 = () => {
     return (
-        <div className='flex justify-between items-end'>
+        <div className='flex justify-between items-end xl:self-start'>
              <p className={cn("text-3xl md:text-8xl",fonts.madeTommyBlackOutline.className)}>© {new Date().getFullYear()} Bognar.dev</p>
         </div>
     )
