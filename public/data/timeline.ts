@@ -8,10 +8,10 @@ export const timeLineData:TimeLine[] = [
         
         "tag": "work",
         "link": {
-            url: "",
+            url: "https://biggsnbognar.co.uk",
             text: "Visit our website"
         },
-        "image": "/Biggs&Bognar.svg"
+        "image": "/Logo1.svg"
     },
     {
         "title": "Falmouth University",
