@@ -31,7 +31,7 @@ export default function CursorHoverMask() {
       </motion.div>
 
       <div className={styles.body}>
-      <p>Web <span>Enthusiast</span> With A Passion For <span>Dynamic</span> Websites</p>
+      <p>Web <span >Enthusiast</span> With A Passion For <span>Dynamic</span> Websites</p>
       </div>
       
 
