@@ -42,7 +42,7 @@ export default function Navbar() {
     // Usage
     const menu = useResponsiveMenu();
 
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(true);
 
     return (
         <div className="fixed top-6 right-6 md:right-12 md:top-12 z-20 text-background dark:text-foreground">
