@@ -51,11 +51,11 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
-        <div className="eyebrow"><span className="status-dot" /> Enterprise BDR DACH · Proofpoint</div>
+        <div className="eyebrow"><span className="status-dot" /> Cybersecurity sales · Computer science</div>
         <h1>Security is<br /><em>human</em> work.</h1>
         <div className="hero-bottom">
           <p className="hero-intro">I work with security teams on the people, processes, and technology behind safer organisations — bringing a computer science mindset to consultative sales.</p>
-          <a className="text-link" href="#contact">Start a conversation <ArrowUpRight /></a>
+          <a className="text-link" href="https://www.linkedin.com/in/niklas-bogn%C3%A1r-503987243/" target="_blank" rel="noreferrer">Find me on LinkedIn <ArrowUpRight /></a>
         </div>
         <div className="scroll-note"><span>Scroll to explore</span><span className="scroll-line" /></div>
       </section>
@@ -97,7 +97,7 @@ export default function Home() {
 
       <section className="contact section" id="contact">
         <div className="section-label">04 / Say hello</div>
-        <div><p className="contact-kicker">Have a security question?</p><h2>Let&apos;s make it<br /><em>clear.</em></h2><a className="contact-link" href="mailto:niklas@bognar.dev">niklas@bognar.dev <ArrowUpRight /></a></div>
+        <div><p className="contact-kicker">Keep in touch</p><h2>More work.<br /><em>Less noise.</em></h2><a className="contact-link" href="https://www.linkedin.com/in/niklas-bogn%C3%A1r-503987243/" target="_blank" rel="noreferrer">Message me on LinkedIn <ArrowUpRight /></a></div>
       </section>
 
       <footer className="site-footer"><span>© {new Date().getFullYear()} Niklas Bognar</span><span>London · DACH · Worldwide</span><a href="https://www.linkedin.com/in/niklas-bogn%C3%A1r-503987243/" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a></footer>
