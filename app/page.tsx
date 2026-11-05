@@ -53,10 +53,14 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="eyebrow"><span className="status-dot" /> Cybersecurity sales · Computer science</div>
         <h1>Security is<br /><em>human</em> work.</h1>
-        <div className="hero-bottom">
-          <p className="hero-intro">I work with security teams on the people, processes, and technology behind safer organisations — bringing a computer science mindset to consultative sales.</p>
-          <a className="text-link" href="https://www.linkedin.com/in/niklas-bogn%C3%A1r-503987243/" target="_blank" rel="noreferrer">Find me on LinkedIn <ArrowUpRight /></a>
-        </div>
+  <div className="hero-bottom">
+    <p className="hero-intro">I work with security teams on the people, processes, and technology behind safer organisations — bringing a computer science mindset to consultative sales.</p>
+    <a className="text-link" href="https://www.linkedin.com/in/niklas-bogn%C3%A1r-503987243/" target="_blank" rel="noreferrer">Find me on LinkedIn <ArrowUpRight /></a>
+  </div>
+  <figure className="hero-portrait">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7289-KtXwNgmmxgomZFzYGvGhMyq2wHyRv6.jpeg" alt="Niklas Bognár standing outside in a black jacket" />
+    <figcaption>Brussels · 2025</figcaption>
+  </figure>
         <div className="scroll-note"><span>Scroll to explore</span><span className="scroll-line" /></div>
       </section>
 
