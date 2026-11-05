@@ -7,14 +7,14 @@ import { useState } from 'react'
 const insights = [
   {
     date: '03 days ago',
-    title: 'AI governance is becoming a security conversation.',
+    title: 'The next security conversation is about how people work.',
     body: 'Rules alone do not guarantee that agents only access what they need. The real work is making data movement visible and accountable.',
     source: 'LinkedIn / original post',
   },
   {
     date: '01 week ago',
     title: 'Security should enable the way people work.',
-    body: 'From shadow AI to sensitive data, the right controls help teams use new tools safely instead of simply blocking them.',
+    body: 'From new tools to sensitive data, I am interested in the practical choices that help people work with more confidence and less risk.',
     source: 'LinkedIn / original post',
   },
   {
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="eyebrow"><span className="status-dot" /> Enterprise BDR DACH · Proofpoint</div>
         <h1>Security is<br /><em>human</em> work.</h1>
         <div className="hero-bottom">
-          <p className="hero-intro">I help organisations protect people, secure data, and govern AI — with a computer science mindset and a consultative sales approach.</p>
+          <p className="hero-intro">I work with security teams on the people, processes, and technology behind safer organisations — bringing a computer science mindset to consultative sales.</p>
           <a className="text-link" href="#contact">Start a conversation <ArrowUpRight /></a>
         </div>
         <div className="scroll-note"><span>Scroll to explore</span><span className="scroll-line" /></div>

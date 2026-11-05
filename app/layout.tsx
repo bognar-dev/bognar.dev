@@ -6,8 +6,8 @@ import { Providers } from './providers'
 export const metadata: Metadata = {
   metadataBase: new URL('https://bognar.dev'),
   title: { default: 'Niklas Bognar — Cybersecurity Sales', template: '%s | Niklas Bognar' },
-  description: 'Niklas Bognar is an Enterprise BDR at Proofpoint with a background in computer science, focused on cybersecurity, data security, and AI governance.',
-  openGraph: { title: 'Niklas Bognar — Cybersecurity Sales', description: 'Protect people. Secure data. Govern AI.', type: 'website', url: 'https://bognar.dev' },
+  description: 'Niklas Bognar is a cybersecurity sales professional with a background in computer science, focused on helping organisations make safer decisions about people, data, and technology.',
+  openGraph: { title: 'Niklas Bognar — Cybersecurity Sales', description: 'Cybersecurity sales, computer science, and practical thinking about safer organisations.', type: 'website', url: 'https://bognar.dev' },
   robots: { index: true, follow: true },
 }
 
