@@ -59,7 +59,7 @@ export default function Home() {
   </div>
   <figure className="hero-portrait">
     <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7289-KtXwNgmmxgomZFzYGvGhMyq2wHyRv6.jpeg" alt="Niklas Bognár standing outside in a black jacket" />
-    <figcaption>Brussels · 2025</figcaption>
+    
   </figure>
         <div className="scroll-note"><span>Scroll to explore</span><span className="scroll-line" /></div>
       </section>
